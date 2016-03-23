@@ -4,7 +4,7 @@
 
 	<groupId>com.github.lynchmaniac</groupId>
 	<artifactId>poilight</artifactId>
-	<version>0.1</version>
+	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Poilight</name>
@@ -33,12 +33,12 @@
 	</developers>
 
 	<scm>
-        <connection>scm:git:git@github.com:lynchmaniac/poilight.git</connection>
-        <developerConnection>scm:git:git@github.com:lynchmaniac/poilight.git</developerConnection>
-        <url>git@github.com:lynchmaniac/poilight.git</url>
-        <tag>0.1</tag>
-    </scm>
-    
+		<connection>scm:git:git@github.com:lynchmaniac/poilight.git</connection>
+		<developerConnection>scm:git:git@github.com:lynchmaniac/poilight.git</developerConnection>
+		<url>git@github.com:lynchmaniac/poilight.git</url>
+		<tag>0.1</tag>
+	</scm>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8
@@ -50,6 +50,13 @@
 		<maven.compiler.target>${project.custom.java.version}
 		</maven.compiler.target>
 	</properties>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
@@ -86,11 +93,50 @@
 					<execution>
 						<id>attach-sources</id>
 						<goals>
-							<goal>jar</goal>
+							<goal>jar-no-fork</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.sonatype.plugins</groupId> -->
+<!-- 				<artifactId>nexus-staging-maven-plugin</artifactId> -->
+<!-- 				<version>1.6.3</version> -->
+<!-- 				<extensions>true</extensions> -->
+<!-- 				<configuration> -->
+<!-- 					<serverId>ossrh</serverId> -->
+<!-- 					<nexusUrl>https://oss.sonatype.org/</nexusUrl> -->
+<!-- 					<autoReleaseAfterClose>true</autoReleaseAfterClose> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
 		</plugins>
 	</build>
 
