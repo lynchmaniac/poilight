@@ -1,4 +1,4 @@
-# poilight
+# POILIGHT
 Poilight is a wrapper of POI to accellerate the generation of Excel's files.
 
 ## Generate a simple File
@@ -9,7 +9,9 @@ For this it is necessary to pass your data as a HashMap where each line correspo
 		PoiLight.generateExcel(excelPathFile, table);
 ```
 ## Structure of the data
-The data is a Table object. It is the table you want to achieve. This an example of a basic table
+The data is a Table object. It is the table you want to achieve. If you want to add a headers, you can precise them with the addHeader method. It take a CellContent. CellContent is a structure in which you can precise the value of the cell. You can also precise a style for this specific cell. We will see this in a later chapter.
+You can pass data to the table object with the method addData which take a RowContent as parameter. RowContent is just a list of CellContent.
+This an example of a basic table
 ```java
 		Table table = new Table();
 		table.addHeader(new CellContent("ID"));
@@ -36,5 +38,15 @@ Poilight embeds the entire 60 preset styles in Excel. You can specifie a style w
 		table.setStyle(BoardStyles.BOARD_LIGHT_RED_3_STYLE);
 		PoiLight.generateExcel(excelPathFile, table);
 ```
+You can find in the example directory a Excel File with the 60 styles.
 
+## Specific sheet
+If you want to achieve your table on a specific spreadsheet, you can simply specify the name in the table object.
+```java
+		Table table = new Table();
+		table.setSheetName("custom");
+		PoiLight.generateExcel(excelPathFile, table);
+```
 
+## Specific poistion
+By default, your table start in A1.
