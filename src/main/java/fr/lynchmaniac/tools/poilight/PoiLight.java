@@ -44,38 +44,38 @@ public class PoiLight {
 		writeExcel(wb, filePath);
 	}
 	
-	/**
-	 * Generate an Excel file.
-	 * 
-	 * @param filePath the full path where the file should be saved
-	 * @param data the data to be written in the spreadsheet
-	 */
+//	/**
+//	 * Generate an Excel file.
+//	 * 
+//	 * @param filePath the full path where the file should be saved
+//	 * @param data the data to be written in the spreadsheet
+//	 */
 //	public static void generateExcel(String filePath, LinkedHashMap<Integer, RowContent> data){
 //		XSSFWorkbook wb = new XSSFWorkbook();
 //		generateExcel(wb, filePath, data, false);
 //	}
 	
-	/**
-	 * Generate an Excel file.
-	 * 
-	 * @param filePath the full path where the file should be saved
-	 * @param data the data to be written in the spreadsheet
-	 * @param bs all properties suitable on the style of a cell
-	 */
+//	/**
+//	 * Generate an Excel file.
+//	 * 
+//	 * @param filePath the full path where the file should be saved
+//	 * @param data the data to be written in the spreadsheet
+//	 * @param bs all properties suitable on the style of a cell
+//	 */
 //	public static void generateExcel(String filePath, LinkedHashMap<Integer, RowContent> data, BoardStyles bs){
 //		XSSFWorkbook wb = new XSSFWorkbook();
 //		generateExcel(wb, filePath, data, false, null, bs);
 //	}
 	
-	/**
-	 * Generate an Excel file.
-	 * 
-	 * @param filePath the full path where the file should be saved
-	 * @param data the data to be written in the spreadsheet
-	 * @param bs all properties suitable on the style of a cell
-	 * @param firstRow the leading index of the table including the headers
-	 * @param firstCol the index of the first column
-	 */
+//	/**
+//	 * Generate an Excel file.
+//	 * 
+//	 * @param filePath the full path where the file should be saved
+//	 * @param data the data to be written in the spreadsheet
+//	 * @param bs all properties suitable on the style of a cell
+//	 * @param firstRow the leading index of the table including the headers
+//	 * @param firstCol the index of the first column
+//	 */
 //	public static void generateExcel(String filePath, LinkedHashMap<Integer, RowContent> data, BoardStyles bs, int firstRow, int firstCol){
 //		XSSFWorkbook wb = new XSSFWorkbook();
 //		generateExcel(wb, filePath, data, false, null, bs, firstRow, firstCol);
@@ -97,57 +97,57 @@ public class PoiLight {
 //		generateExcel(wb, filePath, data, true);
 //	}
 	
-	/**
-	 * Generate an Excel file in streaming mode. Use for large file.
-	 * 
-	 * @param filePath the full path where the file should be saved
-	 * @param data the data to be written in the spreadsheet
-	 * @param bs all properties suitable on the style of a cell
-	 */
+//	/**
+//	 * Generate an Excel file in streaming mode. Use for large file.
+//	 * 
+//	 * @param filePath the full path where the file should be saved
+//	 * @param data the data to be written in the spreadsheet
+//	 * @param bs all properties suitable on the style of a cell
+//	 */
 //	public static void generateStreamingExcel(String filePath, LinkedHashMap<Integer, RowContent> data, BoardStyles bs){
 //		SXSSFWorkbook wb = new SXSSFWorkbook();
 //		generateExcel(wb, filePath, data, true, null, bs);
 //	}
 	
 	
-	/**
-	 * Generate an Excel file.
-	 * 
-	 * @param wb Excel Workbook
-	 * @param filePath the full path where the file should be saved
-	 * @param data the data to be written in the spreadsheet
-	 * @param isStreaming indicates whether to write the streaming file
-	 */
+//	/**
+//	 * Generate an Excel file.
+//	 * 
+//	 * @param wb Excel Workbook
+//	 * @param filePath the full path where the file should be saved
+//	 * @param data the data to be written in the spreadsheet
+//	 * @param isStreaming indicates whether to write the streaming file
+//	 */
 //	public static void generateExcel(Workbook wb, String filePath, LinkedHashMap<Integer, RowContent> data, boolean isStreaming){
 //		generateExcel(wb, filePath, data, isStreaming, null, null);
 //	}
 
-	/**
-	 * Generate an Excel file.
-	 * 
-	 * @param wb Excel Workbook
-	 * @param filePath the full path where the file should be saved
-	 * @param data the data to be written in the spreadsheet
-	 * @param isStreaming indicates whether to write the streaming file
-	 * @param sheetName the name of the spreadsheet
-	 * @param bs all properties suitable on the style of a cell
-	 */
+//	/**
+//	 * Generate an Excel file.
+//	 * 
+//	 * @param wb Excel Workbook
+//	 * @param filePath the full path where the file should be saved
+//	 * @param data the data to be written in the spreadsheet
+//	 * @param isStreaming indicates whether to write the streaming file
+//	 * @param sheetName the name of the spreadsheet
+//	 * @param bs all properties suitable on the style of a cell
+//	 */
 //	public static void generateExcel(Workbook wb, String filePath, LinkedHashMap<Integer, RowContent> data, boolean isStreaming, String sheetName, BoardStyles bs) {
 //		generateExcel(wb, filePath, data, isStreaming, sheetName, bs, 1, 1);
 //	}
 	
-	/**
-	 * Generate an Excel file.
-	 * 
-	 * @param wb Excel Workbook
-	 * @param filePath the full path where the file should be saved
-	 * @param data the data to be written in the spreadsheet
-	 * @param isStreaming indicates whether to write the streaming file
-	 * @param sheetName the name of the spreadsheet
-	 * @param bs all properties suitable on the style of a cell
-	 * @param firstRow the leading index of the table including the headers
-	 * @param firstCol the index of the first column
-	 */
+//	/**
+//	 * Generate an Excel file.
+//	 * 
+//	 * @param wb Excel Workbook
+//	 * @param filePath the full path where the file should be saved
+//	 * @param data the data to be written in the spreadsheet
+//	 * @param isStreaming indicates whether to write the streaming file
+//	 * @param sheetName the name of the spreadsheet
+//	 * @param bs all properties suitable on the style of a cell
+//	 * @param firstRow the leading index of the table including the headers
+//	 * @param firstCol the index of the first column
+//	 */
 //	public static void generateExcel(Workbook wb, String filePath, LinkedHashMap<Integer, RowContent> data, boolean isStreaming, String sheetName, BoardStyles bs, int firstRow, int firstCol) {
 //
 //		createTable(wb, data, isStreaming, null, bs, firstRow, firstCol);
@@ -173,41 +173,41 @@ public class PoiLight {
 	}
 	
 
-	/**
-	 * Generate an Excel spreadsheet.
-	 * 
-	 * @param wb Excel Workbook
-	 * @param data the data to be written in the spreadsheet
-	 * @param isStreaming indicates whether to write the streaming file
-	 */
+//	/**
+//	 * Generate an Excel spreadsheet.
+//	 * 
+//	 * @param wb Excel Workbook
+//	 * @param data the data to be written in the spreadsheet
+//	 * @param isStreaming indicates whether to write the streaming file
+//	 */
 //	public static void createTable(Workbook wb, LinkedHashMap<Integer, RowContent> data, boolean isStreaming) {
 //		createTable(wb, data, isStreaming, null, null);
 //	}
 
-	/**
-	 * Generate an Excel spreadsheet.
-	 * 
-	 * @param wb Excel Workbook
-	 * @param data the data to be written in the spreadsheet
-	 * @param isStreaming indicates whether to write the streaming file
-	 * @param sheetName the name of the spreadsheet
-	 * @param bs all properties suitable on the style of a cell
-	 */
+//	/**
+//	 * Generate an Excel spreadsheet.
+//	 * 
+//	 * @param wb Excel Workbook
+//	 * @param data the data to be written in the spreadsheet
+//	 * @param isStreaming indicates whether to write the streaming file
+//	 * @param sheetName the name of the spreadsheet
+//	 * @param bs all properties suitable on the style of a cell
+//	 */
 //	public static void createTable(Workbook wb, LinkedHashMap<Integer, RowContent> data, boolean isStreaming, String sheetName, BoardStyles bs) {
 //		createTable(wb, data, isStreaming, sheetName, bs, 0, 0);	
 //	}
 	
-	/**
-	 * Generate an Excel spreadsheet.
-	 * 
-	 * @param wb Excel Workbook
-	 * @param data the data to be written in the spreadsheet
-	 * @param isStreaming indicates whether to write the streaming file
-	 * @param sheetName the name of the spreadsheet
-	 * @param bs all properties suitable on the style of a cell
-	 * @param firstRow the leading index of the table including the headers
-	 * @param firstCol the index of the first column
-	 */
+//	/**
+//	 * Generate an Excel spreadsheet.
+//	 * 
+//	 * @param wb Excel Workbook
+//	 * @param data the data to be written in the spreadsheet
+//	 * @param isStreaming indicates whether to write the streaming file
+//	 * @param sheetName the name of the spreadsheet
+//	 * @param bs all properties suitable on the style of a cell
+//	 * @param firstRow the leading index of the table including the headers
+//	 * @param firstCol the index of the first column
+//	 */
 //	public static void createTable(Workbook wb, LinkedHashMap<Integer, RowContent> data, boolean isStreaming, String sheetName, BoardStyles bs, Integer firstRow, Integer firstCol) {
 //		//New Sheet
 //		if (sheetName == null || "".equals(sheetName)) {
