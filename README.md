@@ -49,4 +49,19 @@ If you want to achieve your table on a specific spreadsheet, you can simply spec
 ```
 
 ## Specific poistion
-By default, your table start in A1.
+By default, your table start in A1. If you want another position, you can precise the first col and the first row of the cell at the top and left, like this :
+```java
+		Table table = new Table();
+		table.setposition("D8");
+		PoiLight.generateExcel(excelPathFile, table);
+```
+## Multiple table
+If you want multiple table on the same sheet, you can combine the table object and use the method createTable. This is a short example for making three tables in the same sheet. If you change the sheet name in the object table, then you can multiple table on multiple spreadsheet. If you have multiple sheet, then you must close your workbook with the metho Poilight.writeExcel.
+```java
+		String excelFilename = "d:\\tmp\\LightBlueWorkbook.xlsx";
+		Workbook wb = new XSSFWorkbook();
+		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_1_STYLE, "A1"));
+		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_2_STYLE, "E1"));
+		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_3_STYLE, "I1"));
+		PoiLight.writeExcel(wb, excelFilename);
+```
