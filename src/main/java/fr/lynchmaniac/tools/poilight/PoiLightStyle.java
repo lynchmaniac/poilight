@@ -9,7 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.extensions.XSSFCellBorder.BorderSide;
 
-import fr.lynchmaniac.tools.poilight.entite.BoardStyle;
+import fr.lynchmaniac.tools.poilight.entite.TableStyle;
 import fr.lynchmaniac.tools.poilight.enumeration.BoardStyles;
 import fr.lynchmaniac.tools.poilight.helpers.CreateExcelStyleHelper;
 
@@ -28,7 +28,7 @@ public class PoiLightStyle {
 	 * @param boardStyle all properties suitable on the style of a cell
 	 * @return a font
 	 */
-	protected static Font getFontStyle(Workbook workbook, BoardStyle boardStyle) {
+	protected static Font getFontStyle(Workbook workbook, TableStyle boardStyle) {
 		XSSFFont font = (XSSFFont) workbook.createFont();
 		font.setFontName(boardStyle.getFontName());
 		font.setFontHeightInPoints(boardStyle.getFontSize());
@@ -45,7 +45,7 @@ public class PoiLightStyle {
 	 * @param font a font
 	 * @return the customized style
 	 */
-	protected static CellStyle getCellStyle(Workbook workbook, BoardStyle boardStyle, Font font) {
+	protected static CellStyle getCellStyle(Workbook workbook, TableStyle boardStyle, Font font) {
 		XSSFCellStyle cellStyle = (XSSFCellStyle) workbook.createCellStyle();
 		if (boardStyle.getFillColor() != null) {
 			cellStyle.setFillForegroundColor(boardStyle.getFillColor());
@@ -76,7 +76,7 @@ public class PoiLightStyle {
 	 * @param boardStyle all properties suitable on the style of a cell
 	 * @return a cell style 
 	 */
-	protected static CellStyle createStyle(Workbook wb, BoardStyle boardStyle) {
+	protected static CellStyle createStyle(Workbook wb, TableStyle boardStyle) {
 		Font font = getFontStyle(wb, boardStyle);
 		CellStyle cs = getCellStyle(wb, boardStyle, font);
 		return cs;
@@ -89,7 +89,7 @@ public class PoiLightStyle {
 	 * @param style all properties suitable on the style of a cell
 	 * @return the style of a header
 	 */
-	public static CellStyle getHeaderStyle(Workbook wb, BoardStyles style) {
+	protected static CellStyle getHeaderStyle(Workbook wb, BoardStyles style) {
 		return createStyle(wb , CreateExcelStyleHelper.getExcelStyle().get(style).get("HEAD"));
 	}
 	/**
@@ -100,7 +100,7 @@ public class PoiLightStyle {
 	 * @param isEven indicates whether the current cell is on a par or odd row
 	 * @return the style of a body cell 
 	 */
-	public static CellStyle getBodyStyle(Workbook wb, BoardStyles style, boolean isEven) {
+	protected static CellStyle getBodyStyle(Workbook wb, BoardStyles style, boolean isEven) {
 		return getStyle(wb, style, isEven, true);
 	}
 
@@ -112,7 +112,7 @@ public class PoiLightStyle {
 	 * @param isEven indicates whether the current cell is on a par or odd row
 	 * @return style footer
 	 */
-	public static CellStyle getFooterStyle(Workbook wb, BoardStyles style, boolean isEven) {
+	protected static CellStyle getFooterStyle(Workbook wb, BoardStyles style, boolean isEven) {
 		return getStyle(wb, style, isEven, false);
 	}
 

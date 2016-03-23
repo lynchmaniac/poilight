@@ -24,6 +24,13 @@ public class RowContent {
 	public RowContent() {
 		super();
 	}
+	
+	public RowContent(CellContent ... datas) {
+		super();
+		for (CellContent cellContent : datas) {
+			addValue(cellContent);
+		}
+	}
 
 	/**
 	 * @param value the cell value

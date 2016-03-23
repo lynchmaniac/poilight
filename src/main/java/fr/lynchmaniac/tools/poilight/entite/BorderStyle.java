@@ -103,7 +103,7 @@ public class BorderStyle {
 	 *  
 	 * @param style the configuration's style
 	 */
-	public void getBorderStyle(BoardStyle style) {
+	public void getBorderStyle(TableStyle style) {
 		style.setCellBorderBottom(getBottom());
 		style.setCellBorderTop(getTop());
 		style.setCellBorderLeft(getLeft());

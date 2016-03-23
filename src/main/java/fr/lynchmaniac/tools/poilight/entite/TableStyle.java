@@ -16,7 +16,7 @@ import fr.lynchmaniac.tools.poilight.helpers.StyleHelper;
  * @author vpiard
  * @since 0.1
  */
-public class BoardStyle {
+public class TableStyle {
 	
 	/**
 	 * The font color.
@@ -71,7 +71,7 @@ public class BoardStyle {
 	/**
 	 * Constructor.
 	 */
-	public BoardStyle() {
+	public TableStyle() {
 		super();
 	}
 
@@ -80,7 +80,7 @@ public class BoardStyle {
 	 * 
 	 * @param fillColor the background color
 	 */
-	public BoardStyle(XSSFColor fillColor) {
+	public TableStyle(XSSFColor fillColor) {
 		super();
 		this.fillColor = fillColor;
 	}
@@ -96,7 +96,7 @@ public class BoardStyle {
 	 * @param fontSize the font size
 	 * @param alignment the cell's alignment
 	 */
-	public BoardStyle(XSSFColor fontColor, XSSFColor fillColor, String fontName,
+	public TableStyle(XSSFColor fontColor, XSSFColor fillColor, String fontName,
 			boolean isBold, Short fontSize, Short alignment) {
 		super();
 		this.fontColor = fontColor;

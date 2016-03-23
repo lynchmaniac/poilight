@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
-import fr.lynchmaniac.tools.poilight.entite.BoardStyle;
+import fr.lynchmaniac.tools.poilight.entite.TableStyle;
 import fr.lynchmaniac.tools.poilight.entite.BorderStyle;
 import fr.lynchmaniac.tools.poilight.enumeration.BoardStyles;
 
@@ -22,7 +22,7 @@ public class CreateExcelStyleHelper {
 	/**
 	 * Stores all Excel's styles
 	 */
-	private static HashMap<BoardStyles, HashMap<String, BoardStyle>> styles = null;
+	private static HashMap<BoardStyles, HashMap<String, TableStyle>> styles = null;
 	
 	/**
 	 * The style of the border of the cell.
@@ -337,7 +337,7 @@ public class CreateExcelStyleHelper {
 	 * 
 	 * @return the excel styles
 	 */
-	public static HashMap<BoardStyles, HashMap<String, BoardStyle>> getExcelStyle() {
+	public static HashMap<BoardStyles, HashMap<String, TableStyle>> getExcelStyle() {
 		if (styles == null) {
 			System.out.println("Initialisation des styles Excel !!!");
 			initializeStyles();
@@ -350,7 +350,7 @@ public class CreateExcelStyleHelper {
 	 * Initialize all the Excel Style from Excel 2016.
 	 */
 	private static void initializeStyles() {
-		styles = new  HashMap<BoardStyles, HashMap<String, BoardStyle>>();
+		styles = new  HashMap<BoardStyles, HashMap<String, TableStyle>>();
 		createLightStyles();
 		createMediumStyles();
 		createDarkStyles();
@@ -361,8 +361,8 @@ public class CreateExcelStyleHelper {
 	 */
 	private static void createLightStyles() {
 		
-		HashMap<String, BoardStyle> currentStyle = new HashMap<String, BoardStyle>();
-		currentStyle = new HashMap<String, BoardStyle>();
+		HashMap<String, TableStyle> currentStyle = new HashMap<String, TableStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_WHITE, BORDER_BLACK, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
@@ -370,13 +370,13 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_GRAY_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_BLACK, none));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_BLACK, oneThin));
 		currentStyle.put("FOOT_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_BLACK, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_GRAY_2_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_WHITE, BORDER_BLACK, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, allThin));
@@ -384,7 +384,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, allThin));
 		styles.put(BoardStyles.BOARD_LIGHT_GRAY_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLUE, BACKGROUND_WHITE, BORDER_BLUE, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_BLUE, FONT_BLUE, BORDER_BLUE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_BLUE, FONT_BLUE, BORDER_BLUE, none));
@@ -392,13 +392,13 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_BLUE, FONT_BLUE, BORDER_BLUE, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_BLUE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLUE_HEAD, BORDER_BLUE, none));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_BLUE, oneThin));
 		currentStyle.put("FOOT_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_BLUE, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_BLUE_2_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_WHITE, BORDER_BLUE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_BLUE, FONT_BLACK, BORDER_BLUE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_BLUE, FONT_BLACK, BORDER_BLUE, allThin));
@@ -406,7 +406,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_BLUE, FONT_BLACK, BORDER_BLUE, allThin));
 		styles.put(BoardStyles.BOARD_LIGHT_BLUE_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_RED, BACKGROUND_WHITE, BORDER_RED, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_RED, FONT_RED, BORDER_RED, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_RED, FONT_RED, BORDER_RED, none));
@@ -414,13 +414,13 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_RED, FONT_RED, BORDER_RED, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_RED_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_RED_HEAD, BORDER_RED, none));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_RED, oneThin));
 		currentStyle.put("FOOT_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_RED, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_RED_2_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_WHITE, BORDER_RED, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_RED, FONT_BLACK, BORDER_RED, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_RED, FONT_BLACK, BORDER_RED, allThin));
@@ -428,7 +428,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_RED, FONT_BLACK, BORDER_RED, allThin));
 		styles.put(BoardStyles.BOARD_LIGHT_RED_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_GREEN, BACKGROUND_WHITE, BORDER_GREEN, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GREEN, FONT_GREEN, BORDER_GREEN, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GREEN, FONT_GREEN, BORDER_GREEN, none));
@@ -436,13 +436,13 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GREEN, FONT_GREEN, BORDER_GREEN, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_GREEN_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_GREEN_HEAD, BORDER_GREEN, none));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_GREEN, oneThin));
 		currentStyle.put("FOOT_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_GREEN, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_GREEN_2_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_WHITE, BORDER_GREEN, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GREEN, FONT_BLACK, BORDER_GREEN, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GREEN, FONT_BLACK, BORDER_GREEN, allThin));
@@ -450,7 +450,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GREEN, FONT_BLACK, BORDER_GREEN, allThin));
 		styles.put(BoardStyles.BOARD_LIGHT_GREEN_3_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_PURPLE, BACKGROUND_WHITE, BORDER_PURPLE, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_PURPLE, FONT_PURPLE, BORDER_PURPLE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_PURPLE, FONT_PURPLE, BORDER_PURPLE, none));
@@ -458,13 +458,13 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_PURPLE, FONT_PURPLE, BORDER_PURPLE, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_PURPLE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_PURPLE_HEAD, BORDER_PURPLE, none));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_PURPLE, oneThin));
 		currentStyle.put("FOOT_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_PURPLE, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_PURPLE_2_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_WHITE, BORDER_PURPLE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_PURPLE, FONT_BLACK, BORDER_PURPLE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_PURPLE, FONT_BLACK, BORDER_PURPLE, allThin));
@@ -472,7 +472,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_PURPLE, FONT_BLACK, BORDER_PURPLE, allThin));
 		styles.put(BoardStyles.BOARD_LIGHT_PURPLE_3_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_TURQUOISE, BACKGROUND_WHITE, BORDER_TURQUOISE, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_TURQUOISE, FONT_TURQUOISE, BORDER_TURQUOISE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_TURQUOISE, FONT_TURQUOISE, BORDER_TURQUOISE, none));
@@ -480,13 +480,13 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_TURQUOISE, FONT_TURQUOISE, BORDER_TURQUOISE, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_TURQUOISE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_TURQUOISE_HEAD, BORDER_TURQUOISE, none));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_TURQUOISE, oneThin));
 		currentStyle.put("FOOT_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_TURQUOISE, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_TURQUOISE_2_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_WHITE, BORDER_TURQUOISE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_TURQUOISE, FONT_BLACK, BORDER_TURQUOISE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_TURQUOISE, FONT_BLACK, BORDER_TURQUOISE, allThin));
@@ -494,7 +494,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_TURQUOISE, FONT_BLACK, BORDER_TURQUOISE, allThin));
 		styles.put(BoardStyles.BOARD_LIGHT_TURQUOISE_3_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_ORANGE, BACKGROUND_WHITE, BORDER_ORANGE, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_ORANGE, FONT_ORANGE, BORDER_ORANGE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_ORANGE, FONT_ORANGE, BORDER_ORANGE, none));
@@ -502,13 +502,13 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_ORANGE, FONT_ORANGE, BORDER_ORANGE, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_ORANGE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_ORANGE_HEAD, BORDER_ORANGE, none));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_ORANGE, oneThin));
 		currentStyle.put("FOOT_EVEN", getBodyStyle(true, BACKGROUND_WHITE, null, FONT_BLACK, BORDER_ORANGE, oneThin));
 		styles.put(BoardStyles.BOARD_LIGHT_ORANGE_2_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_WHITE, BORDER_ORANGE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_ORANGE, FONT_BLACK, BORDER_ORANGE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_ORANGE, FONT_BLACK, BORDER_ORANGE, allThin));
@@ -516,7 +516,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_ORANGE, FONT_BLACK, BORDER_ORANGE, allThin));
 		styles.put(BoardStyles.BOARD_LIGHT_ORANGE_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_GRAY_MEDIUM, BORDER_BLACK, allMedium));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_WHITE, FONT_BLACK, BORDER_BLACK, mediumLeftRight));
 		currentStyle.put("FOOT_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_WHITE, FONT_BLACK, BORDER_BLACK, mediumBottomLeftRight));
@@ -528,8 +528,8 @@ public class CreateExcelStyleHelper {
 	 */
 	private static void createMediumStyles() {
 		
-		HashMap<String, BoardStyle> currentStyle = new HashMap<String, BoardStyle>();
-		currentStyle = new HashMap<String, BoardStyle>();
+		HashMap<String, TableStyle> currentStyle = new HashMap<String, TableStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_BLACK, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, oneThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, oneThin));
@@ -537,7 +537,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, oneThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_GRAY_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_WHITE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_GRAY, BACKGROUND_GRAY_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_GRAY, BACKGROUND_GRAY_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
@@ -545,7 +545,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_GRAY, BACKGROUND_GRAY_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_GRAY_2_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_BLACK, mediumTopBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, allThin));
@@ -553,7 +553,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, mediumThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_GRAY_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_GRAY, BORDER_BLACK, allThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_GRAY, BACKGROUND_GRAY_MEDIUM, FONT_BLACK, BORDER_BLACK, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_GRAY, BACKGROUND_GRAY_MEDIUM, FONT_BLACK, BORDER_BLACK, allThin));
@@ -561,7 +561,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_GRAY, BACKGROUND_GRAY_MEDIUM, FONT_BLACK, BORDER_BLACK, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_GRAY_4_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLUE_HEAD, BORDER_BLUE, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_BLUE, FONT_BLACK, BORDER_BLUE, oneThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_BLUE, FONT_BLACK, BORDER_BLUE, oneThin));
@@ -569,7 +569,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_BLUE, FONT_BLACK, BORDER_BLUE, oneThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_BLUE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLUE_HEAD, BORDER_WHITE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_BLUE, BACKGROUND_BLUE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_BLUE, BACKGROUND_BLUE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
@@ -577,7 +577,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_BLUE, BACKGROUND_BLUE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_BLUE_2_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLUE_HEAD, BORDER_BLACK, mediumTopBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
@@ -585,7 +585,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, mediumBottom));
 		styles.put(BoardStyles.BOARD_MEDIUM_BLUE_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_BLUE, BORDER_BLUE, allThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_BLUE, BACKGROUND_BLUE_MEDIUM, FONT_BLACK, BORDER_BLUE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_BLUE, BACKGROUND_BLUE_MEDIUM, FONT_BLACK, BORDER_BLUE, allThin));
@@ -593,7 +593,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_BLUE, BACKGROUND_BLUE_MEDIUM, FONT_BLACK, BORDER_BLUE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_BLUE_4_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_RED_HEAD, BORDER_RED, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_RED, FONT_BLACK, BORDER_RED, oneThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_RED, FONT_BLACK, BORDER_RED, oneThin));
@@ -601,7 +601,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_RED, FONT_BLACK, BORDER_RED, oneThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_RED_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_RED_HEAD, BORDER_WHITE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_RED, BACKGROUND_RED_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_RED, BACKGROUND_RED_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
@@ -609,7 +609,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_RED, BACKGROUND_RED_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_RED_2_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_RED_HEAD, BORDER_BLACK, mediumTopBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
@@ -617,7 +617,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, mediumBottom));
 		styles.put(BoardStyles.BOARD_MEDIUM_RED_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_RED, BORDER_RED, allThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_RED, BACKGROUND_RED_MEDIUM, FONT_BLACK, BORDER_RED, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_RED, BACKGROUND_RED_MEDIUM, FONT_BLACK, BORDER_RED, allThin));
@@ -625,7 +625,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_RED, BACKGROUND_RED_MEDIUM, FONT_BLACK, BORDER_RED, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_RED_4_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_GREEN_HEAD, BORDER_GREEN, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GREEN, FONT_BLACK, BORDER_GREEN, oneThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GREEN, FONT_BLACK, BORDER_GREEN, oneThin));
@@ -633,7 +633,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GREEN, FONT_BLACK, BORDER_GREEN, oneThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_GREEN_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_GREEN_HEAD, BORDER_WHITE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_GREEN, BACKGROUND_GREEN_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_GREEN, BACKGROUND_GREEN_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
@@ -641,7 +641,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_GREEN, BACKGROUND_GREEN_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_GREEN_2_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_GREEN_HEAD, BORDER_BLACK, mediumTopBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
@@ -649,7 +649,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, mediumBottom));
 		styles.put(BoardStyles.BOARD_MEDIUM_GREEN_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_GREEN, BORDER_GREEN, allThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_GREEN, BACKGROUND_GREEN_MEDIUM, FONT_BLACK, BORDER_GREEN, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_GREEN, BACKGROUND_GREEN_MEDIUM, FONT_BLACK, BORDER_GREEN, allThin));
@@ -657,7 +657,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_GREEN, BACKGROUND_GREEN_MEDIUM, FONT_BLACK, BORDER_GREEN, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_GREEN_4_STYLE, currentStyle);
 
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_PURPLE_HEAD, BORDER_PURPLE, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_PURPLE, FONT_BLACK, BORDER_PURPLE, oneThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_PURPLE, FONT_BLACK, BORDER_PURPLE, oneThin));
@@ -665,7 +665,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_PURPLE, FONT_BLACK, BORDER_PURPLE, oneThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_PURPLE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_PURPLE_HEAD, BORDER_WHITE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_PURPLE, BACKGROUND_PURPLE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_PURPLE, BACKGROUND_PURPLE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
@@ -673,7 +673,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_PURPLE, BACKGROUND_PURPLE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_PURPLE_2_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_PURPLE_HEAD, BORDER_BLACK, mediumTopBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
@@ -681,7 +681,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, mediumBottom));
 		styles.put(BoardStyles.BOARD_MEDIUM_PURPLE_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_PURPLE, BORDER_PURPLE, allThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_PURPLE, BACKGROUND_PURPLE_MEDIUM, FONT_BLACK, BORDER_PURPLE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_PURPLE, BACKGROUND_PURPLE_MEDIUM, FONT_BLACK, BORDER_PURPLE, allThin));
@@ -689,7 +689,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_PURPLE, BACKGROUND_PURPLE_MEDIUM, FONT_BLACK, BORDER_PURPLE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_PURPLE_4_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_TURQUOISE_HEAD, BORDER_TURQUOISE, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_TURQUOISE, FONT_BLACK, BORDER_TURQUOISE, oneThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_TURQUOISE, FONT_BLACK, BORDER_TURQUOISE, oneThin));
@@ -697,7 +697,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_TURQUOISE, FONT_BLACK, BORDER_TURQUOISE, oneThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_TURQUOISE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_TURQUOISE_HEAD, BORDER_WHITE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_TURQUOISE, BACKGROUND_TURQUOISE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_TURQUOISE, BACKGROUND_TURQUOISE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
@@ -705,7 +705,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_TURQUOISE, BACKGROUND_TURQUOISE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_TURQUOISE_2_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_TURQUOISE_HEAD, BORDER_BLACK, mediumTopBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
@@ -713,7 +713,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, mediumBottom));
 		styles.put(BoardStyles.BOARD_MEDIUM_TURQUOISE_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_TURQUOISE, BORDER_TURQUOISE, allThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_TURQUOISE, BACKGROUND_TURQUOISE_MEDIUM, FONT_BLACK, BORDER_TURQUOISE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_TURQUOISE, BACKGROUND_TURQUOISE_MEDIUM, FONT_BLACK, BORDER_TURQUOISE, allThin));
@@ -721,7 +721,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_TURQUOISE, BACKGROUND_TURQUOISE_MEDIUM, FONT_BLACK, BORDER_TURQUOISE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_TURQUOISE_4_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_ORANGE_HEAD, BORDER_ORANGE, noneThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_ORANGE, FONT_BLACK, BORDER_ORANGE, oneThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_ORANGE, FONT_BLACK, BORDER_ORANGE, oneThin));
@@ -729,7 +729,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_ORANGE, FONT_BLACK, BORDER_ORANGE, oneThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_ORANGE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_ORANGE_HEAD, BORDER_WHITE, mediumThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_ORANGE, BACKGROUND_ORANGE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_ORANGE, BACKGROUND_ORANGE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
@@ -737,7 +737,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_ORANGE, BACKGROUND_ORANGE_MEDIUM, FONT_BLACK, BORDER_WHITE, allThin));
 		styles.put(BoardStyles.BOARD_MEDIUM_ORANGE_2_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_ORANGE_HEAD, BORDER_BLACK, mediumTopBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, none));
@@ -745,7 +745,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_WHITE, BACKGROUND_GRAY, FONT_BLACK, BORDER_BLACK, mediumBottom));
 		styles.put(BoardStyles.BOARD_MEDIUM_ORANGE_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_BLACK, BACKGROUND_ORANGE, BORDER_ORANGE, allThin));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_ORANGE, BACKGROUND_ORANGE_MEDIUM, FONT_BLACK, BORDER_ORANGE, allThin));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_ORANGE, BACKGROUND_ORANGE_MEDIUM, FONT_BLACK, BORDER_ORANGE, allThin));
@@ -758,8 +758,8 @@ public class CreateExcelStyleHelper {
 	 * Configure the dark style
 	 */
 	private static void createDarkStyles() {
-		HashMap<String, BoardStyle> currentStyle = new HashMap<String, BoardStyle>();
-		currentStyle = new HashMap<String, BoardStyle>();
+		HashMap<String, TableStyle> currentStyle = new HashMap<String, TableStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_WHITE, mediumBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_GRAY_DARK, BACKGROUND_GRAY_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_GRAY_DARK, BACKGROUND_GRAY_DARKER, FONT_WHITE, BORDER_WHITE, none));
@@ -767,7 +767,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_GRAY_DARK, BACKGROUND_GRAY_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		styles.put(BoardStyles.BOARD_DARK_GRAY_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_WHITE, mediumBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_BLUE_DARK, BACKGROUND_BLUE_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_BLUE_DARK, BACKGROUND_BLUE_DARKER, FONT_WHITE, BORDER_WHITE, none));
@@ -775,7 +775,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_BLUE_DARK, BACKGROUND_BLUE_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		styles.put(BoardStyles.BOARD_DARK_BLUE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_WHITE, mediumBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_RED_DARK, BACKGROUND_RED_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_RED_DARK, BACKGROUND_RED_DARKER, FONT_WHITE, BORDER_WHITE, none));
@@ -783,7 +783,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_RED_DARK, BACKGROUND_RED_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		styles.put(BoardStyles.BOARD_DARK_RED_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_WHITE, mediumBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_GREEN_DARK, BACKGROUND_GREEN_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_GREEN_DARK, BACKGROUND_GREEN_DARKER, FONT_WHITE, BORDER_WHITE, none));
@@ -791,7 +791,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_GREEN_DARK, BACKGROUND_GREEN_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		styles.put(BoardStyles.BOARD_DARK_GREEN_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_WHITE, mediumBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_PURPLE_DARK, BACKGROUND_PURPLE_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_PURPLE_DARK, BACKGROUND_PURPLE_DARKER, FONT_WHITE, BORDER_WHITE, none));
@@ -799,7 +799,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_PURPLE_DARK, BACKGROUND_PURPLE_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		styles.put(BoardStyles.BOARD_DARK_PURPLE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_WHITE, mediumBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_TURQUOISE_DARK, BACKGROUND_TURQUOISE_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_TURQUOISE_DARK, BACKGROUND_TURQUOISE_DARKER, FONT_WHITE, BORDER_WHITE, none));
@@ -807,7 +807,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_TURQUOISE_DARK, BACKGROUND_TURQUOISE_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		styles.put(BoardStyles.BOARD_DARK_TURQUOISE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentStyle.put("HEAD", getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_WHITE, mediumBottom));
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_ORANGE_DARK, BACKGROUND_ORANGE_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		currentStyle.put("BODY_ODD", getBodyStyle(false, BACKGROUND_ORANGE_DARK, BACKGROUND_ORANGE_DARKER, FONT_WHITE, BORDER_WHITE, none));
@@ -815,8 +815,8 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_ORANGE_DARK, BACKGROUND_ORANGE_DARKER, FONT_WHITE, BORDER_WHITE, none));
 		styles.put(BoardStyles.BOARD_DARK_ORANGE_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
-		BoardStyle currentBS = getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_BLACK, none);
+		currentStyle = new HashMap<String, TableStyle>();
+		TableStyle currentBS = getHeaderStyle(FONT_WHITE, BACKGROUND_BLACK, BORDER_BLACK, none);
 		currentBS.setBold(false);
 		currentStyle.put("HEAD", currentBS);
 		currentStyle.put("BODY_EVEN", getBodyStyle(true, BACKGROUND_GRAY, BACKGROUND_GRAY_MEDIUM, FONT_BLACK, BORDER_BLACK, none));
@@ -825,7 +825,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_GRAY, BACKGROUND_GRAY_MEDIUM, FONT_BLACK, BORDER_BLACK, none));
 		styles.put(BoardStyles.BOARD_DARK_MIX_1_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentBS = getHeaderStyle(FONT_WHITE, BACKGROUND_RED_HEAD, BORDER_BLACK, none);
 		currentBS.setBold(false);
 		currentStyle.put("HEAD", currentBS);
@@ -835,7 +835,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_BLUE, BACKGROUND_BLUE_MEDIUM, FONT_BLACK, BORDER_BLACK, none));
 		styles.put(BoardStyles.BOARD_DARK_MIX_2_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentBS = getHeaderStyle(FONT_WHITE, BACKGROUND_PURPLE_HEAD, BORDER_BLACK, none);
 		currentBS.setBold(false);
 		currentStyle.put("HEAD", currentBS);
@@ -845,7 +845,7 @@ public class CreateExcelStyleHelper {
 		currentStyle.put("FOOT_ODD", getBodyStyle(false, BACKGROUND_GREEN, BACKGROUND_GREEN_MEDIUM, FONT_BLACK, BORDER_BLACK, none));
 		styles.put(BoardStyles.BOARD_DARK_MIX_3_STYLE, currentStyle);
 		
-		currentStyle = new HashMap<String, BoardStyle>();
+		currentStyle = new HashMap<String, TableStyle>();
 		currentBS = getHeaderStyle(FONT_WHITE, BACKGROUND_ORANGE_HEAD, BORDER_BLACK, none);
 		currentBS.setBold(false);
 		currentStyle.put("HEAD", currentBS);
@@ -868,8 +868,8 @@ public class CreateExcelStyleHelper {
 	 * @param borderStyle the configuration of the cell's border
 	 * @return a complete configuration for a cell
 	 */
-	private static BoardStyle getHeaderStyle(XSSFColor fontColor, XSSFColor fillColor, XSSFColor borderColor, BorderStyle borderStyle) {
-		BoardStyle header = new BoardStyle();
+	private static TableStyle getHeaderStyle(XSSFColor fontColor, XSSFColor fillColor, XSSFColor borderColor, BorderStyle borderStyle) {
+		TableStyle header = new TableStyle();
 		borderStyle.getBorderStyle(header);
 		header.setBold(true);
 		header.setFontColor(fontColor);
@@ -890,8 +890,8 @@ public class CreateExcelStyleHelper {
 	 * @param borderStyle the configuration of the cell's border
 	 * @return a complete configuration for a cell
 	 */
-	private static BoardStyle getBodyStyle(boolean isEven, XSSFColor evenColor, XSSFColor oddColor, XSSFColor fontColor, XSSFColor borderColor, BorderStyle borderStyle) {
-		BoardStyle body = new BoardStyle();
+	private static TableStyle getBodyStyle(boolean isEven, XSSFColor evenColor, XSSFColor oddColor, XSSFColor fontColor, XSSFColor borderColor, BorderStyle borderStyle) {
+		TableStyle body = new TableStyle();
 		body.setAlignment(CellStyle.ALIGN_LEFT);
 		borderStyle.getBorderStyle(body);
 		body.setFontColor(fontColor);
