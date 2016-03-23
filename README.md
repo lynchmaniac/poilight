@@ -6,31 +6,35 @@ The principle of poilight is to simply manage Excel spreadsheets. It is simple t
 For this it is necessary to pass your data as a HashMap where each line corresponds to a row of your table.
 ```java
 		String excelPathFile = "d:\\PoiLightFile.xlsx";
-		PoiLight.generateExcel(excelPathFile, getData());
+		PoiLight.generateExcel(excelPathFile, table);
 ```
 ## Structure of the data
-The data must be a LinkedHashMap<Integer, RowContent>. The Integer is the number in the row of the table. 
-RowContent is a structure for storing data and the style of each cell.
+The data is a Table object. It is the table you want to achieve. This an example of a basic table
 ```java
-		RowContent rowContent = new RowContent();
-		rowContent.addValue(new CellContent("AUTHOR"));
-		rowContent.addValue(new CellContent("TITLE"));
-		hashMap.put(0, rowContent);
-		
-		rowContent = new RowContent(); 
-		rowContent.addValue(new CellContent("Cyril Massarotto"));
-		rowContent.addValue(new CellContent("Dieu est un pote à moi"));
-		hashMap.put(1, rowContent);
-  		
-		rowContent = new RowContent(); 
-		rowContent.addValue(new CellContent("Henri Loevenbruck"));
-		rowContent.addValue(new CellContent("L'apothicaire"));
-		hashMap.put(2, rowContent);
+		Table table = new Table();
+		table.addHeader(new CellContent("ID"));
+		table.addHeader(new CellContent("NOM"));
+		table.addHeader(new CellContent("TITRE"));
+		table.addData(new RowContent(new CellContent(1), new CellContent("Henri Loevenbruck"), new CellContent("L'apothicaire")));
+		table.addData(new RowContent(new CellContent(2), new CellContent("Cyril Massarotto"), new CellContent("Dieu est un pote à moi")));
+		table.addData(new RowContent(new CellContent(3), new CellContent("Bernard Werber"), new CellContent("Les fourmis")));
+		table.addData(new RowContent(new CellContent(4), new CellContent("Maxime Chattam"), new CellContent("In Tenebris")));
+		table.addData(new RowContent(new CellContent(5), new CellContent("Franck Thilliez"), new CellContent("Pandemia")));
 ```
 
 ## Large File
 By default, the tool manages XSSF files. If you want to manage large Excel files, you just have to call the streaming API.
 ```java
 		String excelPathFile = "d:\\PoiLightBigFile.xlsx";
-		PoiLight.generateStreamingExcel(excelPathFile, getData());
+		PoiLight.generateStreamingExcel(excelPathFile, table);
 ```
+
+## The predefined styles
+Poilight embeds the entire 60 preset styles in Excel. You can specifie a style with the enum BoardStyles.
+```java
+		Table table = new Table();
+		table.setStyle(BoardStyles.BOARD_LIGHT_RED_3_STYLE);
+		PoiLight.generateExcel(excelPathFile, table);
+```
+
+
