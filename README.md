@@ -1,4 +1,4 @@
-# poilight
+# POILIGHT
 Poilight is a wrapper of POI to accellerate the generation of Excel's files.
 
 ## Generate a simple File
@@ -6,31 +6,62 @@ The principle of poilight is to simply manage Excel spreadsheets. It is simple t
 For this it is necessary to pass your data as a HashMap where each line corresponds to a row of your table.
 ```java
 		String excelPathFile = "d:\\PoiLightFile.xlsx";
-		PoiLight.generateExcel(excelPathFile, getData());
+		PoiLight.generateExcel(excelPathFile, table);
 ```
 ## Structure of the data
-The data must be a LinkedHashMap<Integer, RowContent>. The Integer is the number in the row of the table. 
-RowContent is a structure for storing data and the style of each cell.
+The data is a Table object. It is the table you want to achieve. If you want to add a headers, you can precise them with the addHeader method. It take a CellContent. CellContent is a structure in which you can precise the value of the cell. You can also precise a style for this specific cell. We will see this in a later chapter.
+You can pass data to the table object with the method addData which take a RowContent as parameter. RowContent is just a list of CellContent.
+This an example of a basic table
 ```java
-		RowContent rowContent = new RowContent();
-		rowContent.addValue(new CellContent("AUTHOR"));
-		rowContent.addValue(new CellContent("TITLE"));
-		hashMap.put(0, rowContent);
-		
-		rowContent = new RowContent(); 
-		rowContent.addValue(new CellContent("Cyril Massarotto"));
-		rowContent.addValue(new CellContent("Dieu est un pote à moi"));
-		hashMap.put(1, rowContent);
-  		
-		rowContent = new RowContent(); 
-		rowContent.addValue(new CellContent("Henri Loevenbruck"));
-		rowContent.addValue(new CellContent("L'apothicaire"));
-		hashMap.put(2, rowContent);
+		Table table = new Table();
+		table.addHeader(new CellContent("ID"));
+		table.addHeader(new CellContent("NOM"));
+		table.addHeader(new CellContent("TITRE"));
+		table.addData(new RowContent(new CellContent(1), new CellContent("Henri Loevenbruck"), new CellContent("L'apothicaire")));
+		table.addData(new RowContent(new CellContent(2), new CellContent("Cyril Massarotto"), new CellContent("Dieu est un pote à moi")));
+		table.addData(new RowContent(new CellContent(3), new CellContent("Bernard Werber"), new CellContent("Les fourmis")));
+		table.addData(new RowContent(new CellContent(4), new CellContent("Maxime Chattam"), new CellContent("In Tenebris")));
+		table.addData(new RowContent(new CellContent(5), new CellContent("Franck Thilliez"), new CellContent("Pandemia")));
 ```
 
 ## Large File
 By default, the tool manages XSSF files. If you want to manage large Excel files, you just have to call the streaming API.
 ```java
 		String excelPathFile = "d:\\PoiLightBigFile.xlsx";
-		PoiLight.generateStreamingExcel(excelPathFile, getData());
+		PoiLight.generateStreamingExcel(excelPathFile, table);
+```
+
+## The predefined styles
+Poilight embeds the entire 60 preset styles in Excel. You can specifie a style with the enum BoardStyles.
+```java
+		Table table = new Table();
+		table.setStyle(BoardStyles.BOARD_LIGHT_RED_3_STYLE);
+		PoiLight.generateExcel(excelPathFile, table);
+```
+You can find in the example directory a Excel File with the 60 styles.
+
+## Specific sheet
+If you want to achieve your table on a specific spreadsheet, you can simply specify the name in the table object.
+```java
+		Table table = new Table();
+		table.setSheetName("custom");
+		PoiLight.generateExcel(excelPathFile, table);
+```
+
+## Specific poistion
+By default, your table start in A1. If you want another position, you can precise the first col and the first row of the cell at the top and left, like this :
+```java
+		Table table = new Table();
+		table.setposition("D8");
+		PoiLight.generateExcel(excelPathFile, table);
+```
+## Multiple table
+If you want multiple table on the same sheet, you can combine the table object and use the method createTable. This is a short example for making three tables in the same sheet. If you change the sheet name in the object table, then you can multiple table on multiple spreadsheet. If you have multiple sheet, then you must close your workbook with the metho Poilight.writeExcel.
+```java
+		String excelFilename = "d:\\tmp\\LightBlueWorkbook.xlsx";
+		Workbook wb = new XSSFWorkbook();
+		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_1_STYLE, "A1"));
+		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_2_STYLE, "E1"));
+		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_3_STYLE, "I1"));
+		PoiLight.writeExcel(wb, excelFilename);
 ```
