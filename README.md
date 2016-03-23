@@ -62,3 +62,20 @@ If you want multiple table on the same sheet, you can combine the table object a
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_3_STYLE, "I1"));
 		PoiLight.writeExcel(wb, outputPathExcelFile);
 ```
+## Specific style
+
+If you don't want a predifined style, you can put a style on each cell by using the CellContent with a CellStyle from POI, like this
+
+```java
+		Table table = new Table();
+		table.addHeader(new CellContent("ID"));
+		table.addHeader(new CellContent("NOM"));
+		table.addHeader(new CellContent("TITRE"));
+		CellStyle cs = wb.createCellStyle();
+		cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162).getIndex());
+		cs.setFillPattern(CellStyle.SOLID_FOREGROUND);
+
+		table.addData(new RowContent(new CellContent(4, cs), new CellContent("Maxime Chattam"), new CellContent("In Tenebris")));
+		table.addData(new RowContent(new CellContent(5), new CellContent("Franck Thilliez"), new CellContent("Pandemia")));
+```
+Here we have a specific style on the first cell. The background is set to purple. With this mechanism you can customize style as you like.
