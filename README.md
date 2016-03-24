@@ -23,6 +23,17 @@ This an example of a basic table
 		table.addData(new RowContent(new CellContent(5), new CellContent("Franck Thilliez"), new CellContent("Pandemia")));
 ```
 
+## Installation
+Poilight is an artefact Maven so you can put this in your pom.xml to have Poilight in your project.
+```java
+  	<dependencies>
+		<dependency>
+			<groupId>com.github.lynchmaniac</groupId>
+			<artifactId>poilight</artifactId>
+			<version>0.1</version>
+		</dependency>
+	</dependencies>
+```
 ## Large File
 By default, the tool manages XSSF files. If you want to manage large Excel files, you just have to call the streaming API.
 ```java
