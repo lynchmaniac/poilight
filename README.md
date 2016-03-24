@@ -66,16 +66,16 @@ If you want multiple table on the same sheet, you can combine the table object a
 
 If you don't want a predifined style, you can put a style on each cell by using the CellContent with a CellStyle from POI, like this
 
-```java
+<pre><code>
 		Table table = new Table();
 		table.addHeader(new CellContent("ID"));
 		table.addHeader(new CellContent("NOM"));
 		table.addHeader(new CellContent("TITRE"));
-		CellStyle cs = wb.createCellStyle();
-		cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162).getIndex());
-		cs.setFillPattern(CellStyle.SOLID_FOREGROUND);
+		<b>CellStyle cs = wb.createCellStyle();</b>
+		<b>cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162).getIndex());</b>
+		<b>cs.setFillPattern(CellStyle.SOLID_FOREGROUND);</b>
 
-		table.addData(new RowContent(new CellContent(4, cs), new CellContent("Maxime Chattam"), new CellContent("In Tenebris")));
+		table.addData(new RowContent(new CellContent(4<b>, cs</b>), new CellContent("Maxime Chattam"), new CellContent("In Tenebris")));
 		table.addData(new RowContent(new CellContent(5), new CellContent("Franck Thilliez"), new CellContent("Pandemia")));
-```
+</code></pre>
 Here we have a specific style on the first cell. The background is set to purple. With this mechanism you can customize style as you like.
