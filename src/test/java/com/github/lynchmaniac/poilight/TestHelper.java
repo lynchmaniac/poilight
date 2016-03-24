@@ -15,10 +15,10 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.github.lynchmaniac.poilight.PoiLight;
-import com.github.lynchmaniac.poilight.entite.CellContent;
-import com.github.lynchmaniac.poilight.entite.RowContent;
-import com.github.lynchmaniac.poilight.entite.Table;
-import com.github.lynchmaniac.poilight.entite.TableStyle;
+import com.github.lynchmaniac.poilight.entity.CellContent;
+import com.github.lynchmaniac.poilight.entity.RowContent;
+import com.github.lynchmaniac.poilight.entity.Table;
+import com.github.lynchmaniac.poilight.entity.TableStyle;
 import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
 import com.github.lynchmaniac.poilight.helpers.CreateExcelStyleHelper;
 

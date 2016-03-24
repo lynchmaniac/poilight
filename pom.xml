@@ -4,12 +4,12 @@
 
 	<groupId>com.github.lynchmaniac</groupId>
 	<artifactId>poilight</artifactId>
-	<version>0.1</version>
+	<version>0.1.0</version>
 	<packaging>jar</packaging>
 
 	<name>Poilight</name>
 
-	<description>poilight is a wrapper has POI. It can generate quickly Excel tables. It contains 60 preset styles of Excel to generate stylized paintings cheaply.</description>
+	<description>Poilight is an Apache POI wrapper for speeding up Excel spreadsheets generation. It contains 60 preset styles of Excel to generate stylized paintings cheaply.</description>
 
 	<url>https://github.com/lynchmaniac/poilight</url>
 
@@ -41,14 +41,11 @@
 
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8
-		</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<file.encoding>UTF-8</file.encoding>
 		<project.custom.java.version>1.6</project.custom.java.version>
-		<maven.compiler.source>${project.custom.java.version}
-		</maven.compiler.source>
-		<maven.compiler.target>${project.custom.java.version}
-		</maven.compiler.target>
+		<maven.compiler.source>${project.custom.java.version}</maven.compiler.source>
+		<maven.compiler.target>${project.custom.java.version}</maven.compiler.target>
 	</properties>
 
 	<distributionManagement>

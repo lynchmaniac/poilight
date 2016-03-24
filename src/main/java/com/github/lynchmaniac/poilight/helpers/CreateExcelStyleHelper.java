@@ -5,8 +5,8 @@ import java.util.HashMap;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
-import com.github.lynchmaniac.poilight.entite.BorderStyle;
-import com.github.lynchmaniac.poilight.entite.TableStyle;
+import com.github.lynchmaniac.poilight.entity.BorderStyle;
+import com.github.lynchmaniac.poilight.entity.TableStyle;
 import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
 
 /**
@@ -870,7 +870,7 @@ public class CreateExcelStyleHelper {
 	 */
 	private static TableStyle getHeaderStyle(XSSFColor fontColor, XSSFColor fillColor, XSSFColor borderColor, BorderStyle borderStyle) {
 		TableStyle header = new TableStyle();
-		borderStyle.getBorderStyle(header);
+		borderStyle.completeBorderInfo(header);
 		header.setBold(true);
 		header.setFontColor(fontColor);
 		header.setFillColor(fillColor);
@@ -893,7 +893,7 @@ public class CreateExcelStyleHelper {
 	private static TableStyle getBodyStyle(boolean isEven, XSSFColor evenColor, XSSFColor oddColor, XSSFColor fontColor, XSSFColor borderColor, BorderStyle borderStyle) {
 		TableStyle body = new TableStyle();
 		body.setAlignment(CellStyle.ALIGN_LEFT);
-		borderStyle.getBorderStyle(body);
+		borderStyle.completeBorderInfo(body);
 		body.setFontColor(fontColor);
 		if (isEven) {
 			body.setFillColor(evenColor);

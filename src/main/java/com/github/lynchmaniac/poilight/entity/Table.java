@@ -1,4 +1,4 @@
-package com.github.lynchmaniac.poilight.entite;
+package com.github.lynchmaniac.poilight.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
  */
 public class Table {
 
+	private static Pattern pattern = Pattern.compile("^([A-Za-z]{1,3})([1-9]{1,})");
 	/**
 	 * The data for the spreadsheet.
 	 * You can add style for each data.
@@ -134,7 +135,7 @@ public class Table {
 			row = 0;
 			col = 0;
 		}
-		Pattern pattern = Pattern.compile("^([A-Za-z]{1,3})([1-9]{1,})");
+		
 		Matcher matcher = pattern.matcher(position);
 		boolean b = matcher.matches();
 		// If the regex matche

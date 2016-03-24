@@ -9,7 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.extensions.XSSFCellBorder.BorderSide;
 
-import com.github.lynchmaniac.poilight.entite.TableStyle;
+import com.github.lynchmaniac.poilight.entity.TableStyle;
 import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
 import com.github.lynchmaniac.poilight.helpers.CreateExcelStyleHelper;
 

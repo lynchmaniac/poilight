@@ -4,6 +4,6 @@
  *   
  * @since 1.0
  */
-package com.github.lynchmaniac.poilight.entite;
+package com.github.lynchmaniac.poilight.entity;
 
 

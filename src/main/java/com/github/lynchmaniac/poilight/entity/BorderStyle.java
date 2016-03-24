@@ -1,4 +1,4 @@
-package com.github.lynchmaniac.poilight.entite;
+package com.github.lynchmaniac.poilight.entity;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 
@@ -99,11 +99,12 @@ public class BorderStyle {
 	}
 	
 	/**
-	 * Save the configuration of the cell's border.
+	 * Complete all fields concerning information on the cell borders
+	 * into the global object Table.
 	 *  
 	 * @param style the configuration's style
 	 */
-	public void getBorderStyle(TableStyle style) {
+	public void completeBorderInfo(TableStyle style) {
 		style.setCellBorderBottom(getBottom());
 		style.setCellBorderTop(getTop());
 		style.setCellBorderLeft(getLeft());

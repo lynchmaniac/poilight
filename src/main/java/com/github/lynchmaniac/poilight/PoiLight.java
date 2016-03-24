@@ -13,9 +13,9 @@ import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.github.lynchmaniac.poilight.entite.CellContent;
-import com.github.lynchmaniac.poilight.entite.RowContent;
-import com.github.lynchmaniac.poilight.entite.Table;
+import com.github.lynchmaniac.poilight.entity.CellContent;
+import com.github.lynchmaniac.poilight.entity.RowContent;
+import com.github.lynchmaniac.poilight.entity.Table;
 import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
 
 /**

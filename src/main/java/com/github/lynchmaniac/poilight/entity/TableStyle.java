@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.github.lynchmaniac.poilight.entite;
+package com.github.lynchmaniac.poilight.entity;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
