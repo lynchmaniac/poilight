@@ -7,6 +7,7 @@ package fr.lynchmaniac.tools.poilight.enumeration;
  * 
  * @author vpiard
  * @since 0.1
+ * @see examples/Predefines Excel Style.xlsx
  */
 public enum BoardStyles {
 	/**

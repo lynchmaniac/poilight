@@ -3,7 +3,6 @@
  */
 package fr.lynchmaniac.tools.poilight;
 
-import java.awt.Color;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.CellStyle;
