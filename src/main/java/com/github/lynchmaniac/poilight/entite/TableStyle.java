@@ -1,13 +1,13 @@
 /**
  * 
  */
-package fr.lynchmaniac.tools.poilight.entite;
+package com.github.lynchmaniac.poilight.entite;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
-import fr.lynchmaniac.tools.poilight.PoiLightConst;
-import fr.lynchmaniac.tools.poilight.helpers.StyleHelper;
+import com.github.lynchmaniac.poilight.PoiLightConst;
+import com.github.lynchmaniac.poilight.helpers.StyleHelper;
 
 /**
  * This object is used to store the many configuration of the Excel's styles.

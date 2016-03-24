@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.lynchmaniac.tools.poilight;
+package com.github.lynchmaniac.poilight;
 
 /**
  * This class contains all constants related to different version of Excel

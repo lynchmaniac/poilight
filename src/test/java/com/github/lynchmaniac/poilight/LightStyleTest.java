@@ -1,13 +1,14 @@
 /**
  * 
  */
-package fr.lynchmaniac.tools.poilight;
+package com.github.lynchmaniac.poilight;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 
-import fr.lynchmaniac.tools.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.PoiLight;
+import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
 
 /**
  * @author piard

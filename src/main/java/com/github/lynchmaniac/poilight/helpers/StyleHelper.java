@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.lynchmaniac.tools.poilight.helpers;
+package com.github.lynchmaniac.poilight.helpers;
 
 import org.apache.poi.xssf.usermodel.XSSFColor;
 

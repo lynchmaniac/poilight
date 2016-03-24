@@ -1,20 +1,26 @@
 /**
  * 
  */
-package fr.lynchmaniac.tools.poilight;
+package com.github.lynchmaniac.poilight;
+
+import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 
-import fr.lynchmaniac.tools.poilight.entite.CellContent;
-import fr.lynchmaniac.tools.poilight.entite.RowContent;
-import fr.lynchmaniac.tools.poilight.entite.Table;
-import fr.lynchmaniac.tools.poilight.enumeration.BoardStyles;
-import fr.lynchmaniac.tools.poilight.helpers.StyleHelper;
+import com.github.lynchmaniac.poilight.entite.CellContent;
+import com.github.lynchmaniac.poilight.entite.RowContent;
+import com.github.lynchmaniac.poilight.entite.Table;
+import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.helpers.StyleHelper;
 
 /**
  * @author piard
@@ -50,20 +56,34 @@ public class PoiLightTest {
 		table.addHeader(new CellContent("NOM"));
 		table.addHeader(new CellContent("TITRE"));
 		
-		CellStyle cs = wb.createCellStyle();
-		cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162).getIndex());
+		XSSFCellStyle cs = (XSSFCellStyle) wb.createCellStyle();
+		cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162));
 		cs.setFillPattern(CellStyle.SOLID_FOREGROUND);
-		
+		table.setPosition("A1");
+		table.addData(new RowContent(new CellContent(1), new CellContent("Henri Loevenbruck"), new CellContent("L'apothicaire")));
+		table.addData(new RowContent(new CellContent(2), new CellContent("Cyril Massarotto"), new CellContent("Dieu est un pote à moi")));
+		table.addData(new RowContent(new CellContent(3), new CellContent("Bernard Werber"), new CellContent("Les fourmis")));
 		table.addData(new RowContent(new CellContent(4, cs), new CellContent("Maxime Chattam"), new CellContent("In Tenebris")));
 		table.addData(new RowContent(new CellContent(5), new CellContent("Franck Thilliez"), new CellContent("Pandemia")));
 		
 		
-		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_ORANGE_1_STYLE, "A1"));
+		PoiLight.createTable(wb, table);
 		PoiLight.writeExcel(wb, excelFilename);
 
-		TestHelper.testTable(excelFilename, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_ORANGE_1_STYLE, "A1"));
-		TestHelper.testTable(excelFilename, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_ORANGE_2_STYLE, "E1"));
-		TestHelper.testTable(excelFilename, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_ORANGE_3_STYLE, "I1"));
+		try {
+			wb = new XSSFWorkbook(excelFilename);
+			Sheet sheet = wb.getSheet(PoiLight.DEFAULT_SHEET_NAME);
+			Row row = sheet.getRow(4);
+			Cell cell = row.getCell(0);
+			XSSFCellStyle csValue = (XSSFCellStyle) cell.getCellStyle();
+			assertEquals(CellStyle.SOLID_FOREGROUND, csValue.getFillPattern());
+			assertEquals(StyleHelper.getColor(128, 100, 162), csValue.getFillForegroundXSSFColor()); 
+			
+			wb.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	

@@ -1,4 +1,4 @@
-package fr.lynchmaniac.tools.poilight.entite;
+package com.github.lynchmaniac.poilight.entite;
 
 import java.util.ArrayList;
 import java.util.List;

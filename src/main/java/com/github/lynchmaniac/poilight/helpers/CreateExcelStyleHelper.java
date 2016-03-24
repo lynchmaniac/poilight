@@ -1,13 +1,13 @@
-package fr.lynchmaniac.tools.poilight.helpers;
+package com.github.lynchmaniac.poilight.helpers;
 
 import java.util.HashMap;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
-import fr.lynchmaniac.tools.poilight.entite.TableStyle;
-import fr.lynchmaniac.tools.poilight.entite.BorderStyle;
-import fr.lynchmaniac.tools.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.entite.BorderStyle;
+import com.github.lynchmaniac.poilight.entite.TableStyle;
+import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
 
 /**
  * Create and store all the Excel's style. It's based on the Execl 2016 version.

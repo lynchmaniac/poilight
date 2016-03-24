@@ -1,11 +1,11 @@
-package fr.lynchmaniac.tools.poilight.entite;
+package com.github.lynchmaniac.poilight.entite;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import fr.lynchmaniac.tools.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
 
 /**
  * This class contain all the data to draw a table.

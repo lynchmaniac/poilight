@@ -1,4 +1,4 @@
-package fr.lynchmaniac.tools.poilight;
+package com.github.lynchmaniac.poilight;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,12 +14,13 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import fr.lynchmaniac.tools.poilight.entite.CellContent;
-import fr.lynchmaniac.tools.poilight.entite.RowContent;
-import fr.lynchmaniac.tools.poilight.entite.Table;
-import fr.lynchmaniac.tools.poilight.entite.TableStyle;
-import fr.lynchmaniac.tools.poilight.enumeration.BoardStyles;
-import fr.lynchmaniac.tools.poilight.helpers.CreateExcelStyleHelper;
+import com.github.lynchmaniac.poilight.PoiLight;
+import com.github.lynchmaniac.poilight.entite.CellContent;
+import com.github.lynchmaniac.poilight.entite.RowContent;
+import com.github.lynchmaniac.poilight.entite.Table;
+import com.github.lynchmaniac.poilight.entite.TableStyle;
+import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.helpers.CreateExcelStyleHelper;
 
 public class TestHelper {
 

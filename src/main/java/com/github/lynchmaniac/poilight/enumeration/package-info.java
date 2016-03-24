@@ -4,6 +4,6 @@
  * 
  * @since 1.0
  */
-package fr.lynchmaniac.tools.poilight.enumeration;
+package com.github.lynchmaniac.poilight.enumeration;
 
 

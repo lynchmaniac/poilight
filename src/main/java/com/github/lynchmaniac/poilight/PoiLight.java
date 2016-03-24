@@ -1,4 +1,4 @@
-package fr.lynchmaniac.tools.poilight;
+package com.github.lynchmaniac.poilight;
 
 import java.io.FileOutputStream;
 import java.util.List;
@@ -13,10 +13,10 @@ import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import fr.lynchmaniac.tools.poilight.entite.CellContent;
-import fr.lynchmaniac.tools.poilight.entite.RowContent;
-import fr.lynchmaniac.tools.poilight.entite.Table;
-import fr.lynchmaniac.tools.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.entite.CellContent;
+import com.github.lynchmaniac.poilight.entite.RowContent;
+import com.github.lynchmaniac.poilight.entite.Table;
+import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
 
 /**
  * This class is the entry point of the application. It contains methods to generate 
