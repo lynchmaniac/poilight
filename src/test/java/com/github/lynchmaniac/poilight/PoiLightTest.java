@@ -187,6 +187,11 @@ public class PoiLightTest {
 
 
 		PoiLight.writeExcel(wb, excelFilename);
+		try {
+			wb.close();
+		} catch (IOException e) {
+			assertFalse(true);
+		}
 		
 		TestHelper.testTable(excelFilename, TestHelper.getTable("Light", BoardStyles.BOARD_LIGHT_GRAY_1_STYLE, "B4"));
 		TestHelper.testTable(excelFilename, TestHelper.getTable("Light", BoardStyles.BOARD_LIGHT_GRAY_2_STYLE, "B13"));
