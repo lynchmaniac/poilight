@@ -31,8 +31,6 @@ import com.github.lynchmaniac.poilight.models.Table;
  */
 public class PoiLight {
 
-	public static final String DEFAULT_SHEET_NAME = "data";
-
 	/**
 	 * Generate an Excel file.
 	 * 
@@ -109,7 +107,7 @@ public class PoiLight {
 	private static void createTable(Workbook wb, Table data, boolean isStreaming) {
 		// determine the current sheet
 		if (data.getSheetName() == null || "".equals(data.getSheetName())) {
-			data.setSheetName(DEFAULT_SHEET_NAME);
+			data.setSheetName(PoiLightConst.DEFAULT_SHEET_NAME);
 		}
 		
 		Sheet sheet = wb.getSheet(data.getSheetName());

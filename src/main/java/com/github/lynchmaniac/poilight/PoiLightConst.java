@@ -12,6 +12,16 @@ package com.github.lynchmaniac.poilight;
 public class PoiLightConst {
 	
 	/**
+	 * The default sheet name
+	 */
+	public static final String DEFAULT_SHEET_NAME = "data";
+	
+	/**
+	 * the default position of a table
+	 */
+	public static final String DEFAULT_POSITION = "A1";
+	
+	/**
 	 * In Excel 97, the maximum number of column.
 	 */
 	public static Integer EXCEL_1997_MAX_COL = 256;
@@ -61,4 +71,5 @@ public class PoiLightConst {
 	 * In Excel 2007, the name of the default font.
 	 */
 	public static String EXCEL_2007_DEFAULT_FONT_NAME = "Calibri";
+	
 }

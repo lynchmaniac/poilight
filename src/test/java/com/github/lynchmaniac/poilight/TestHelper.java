@@ -16,7 +16,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.github.lynchmaniac.poilight.PoiLight;
 import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 import com.github.lynchmaniac.poilight.helpers.CreateExcelStyleHelper;
 import com.github.lynchmaniac.poilight.models.ExcelCell;
@@ -39,7 +38,7 @@ public class TestHelper {
 		HashMap<BoardStyles, HashMap<String, TableStyle>>  styles = CreateExcelStyleHelper.getExcelStyle();
 		try {
 			XSSFWorkbook wb = new XSSFWorkbook(excelFileName);
-			String sheetName = PoiLight.DEFAULT_SHEET_NAME;
+			String sheetName = PoiLightConst.DEFAULT_SHEET_NAME;
 			if (table.getSheetName() != null && !"".equals(table.getSheetName())) {
 				sheetName = table.getSheetName();
 			}

@@ -83,7 +83,7 @@ public class PoiLightTest {
 
 		try {
 			wb = new XSSFWorkbook(excelFilename);
-			Sheet sheet = wb.getSheet(PoiLight.DEFAULT_SHEET_NAME);
+			Sheet sheet = wb.getSheet(PoiLightConst.DEFAULT_SHEET_NAME);
 			Row row = sheet.getRow(4);
 			Cell cell = row.getCell(0);
 			XSSFCellStyle csValue = (XSSFCellStyle) cell.getCellStyle();
