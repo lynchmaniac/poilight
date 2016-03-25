@@ -3,11 +3,12 @@ package com.github.lynchmaniac.poilight.enumeration;
 
 
 /**
- * Enumeration for different predefined excel styles
+ * Enumeration for different predefined excel styles.
+ * To understand all the styles, please see at 
+ * examples/Predefines Excel Style.xlsx
  * 
  * @author vpiard
  * @since 0.1
- * @see examples/Predefines Excel Style.xlsx
  */
 public enum BoardStyles {
 	/**

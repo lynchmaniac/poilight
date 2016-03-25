@@ -61,9 +61,6 @@ public class Table {
 		this.data = data;
 	}
 	
-	/**
-	 * @param data
-	 */
 	public void addData(RowContent data) {
 		if (this.data == null) {
 			this.data = new ArrayList<RowContent>();
@@ -98,9 +95,6 @@ public class Table {
 		this.header = header;
 	}
 	
-	/**
-	 * @param header
-	 */
 	public void addHeader(CellContent header) {
 		if (this.header == null) {
 			this.header = new ArrayList<CellContent>();
