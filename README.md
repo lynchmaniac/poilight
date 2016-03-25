@@ -61,7 +61,7 @@ If you want to achieve your table on a specific spreadsheet, you can simply spec
 By default, your table start in A1. If you want another position, you can precise the first col and the first row of the cell at the top and left, like this :
 ```java
 		Table table = new Table();
-		table.setposition("D8");
+		table.setPosition("D8");
 		PoiLight.generateExcel(outputPathExcelFile, table);
 ```
 ## Multiple table
