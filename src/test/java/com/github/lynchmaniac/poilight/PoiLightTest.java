@@ -100,7 +100,7 @@ public class PoiLightTest {
 	
 	
 	
-	//@Test
+	@Test
 	public void AllStylesWorkbook() {
 		String excelFilename = TestHelper.getFullPath("AllStylesWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
