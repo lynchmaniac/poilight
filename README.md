@@ -1,10 +1,14 @@
 # POILIGHT
+[![Build Status](https://travis-ci.org/lynchmaniac/poilight.svg?branch=master)](https://travis-ci.org/lynchmaniac/poilight)
+
 Poilight is a wrapper of POI to accellerate the generation of Excel's files.
 
 ## Generate a simple File
-The principle of poilight is to simply manage Excel spreadsheets. It is simple tables corresponding to the output of your Java applications.
-For this it is necessary to pass your data as a HashMap where each line corresponds to a row of your table.
+The principle of poilight is to simply manage Excel spreadsheets. It's simple tables corresponding to the output of your Java applications. You must set a complete full path for your file and fill some data. For that, you can use the Table object, see the next chapter.
+
 ```java
+		String outputPathExcelFile = "file.xlsx";
+		Table table = new Table();
 		PoiLight.generateExcel(outputPathExcelFile, table);
 ```
 ## Structure of the data
