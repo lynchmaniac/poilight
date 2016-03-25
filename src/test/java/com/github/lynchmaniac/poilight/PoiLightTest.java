@@ -57,7 +57,7 @@ public class PoiLightTest {
 		TestHelper.testTable(excelFilename, data);
 	}
 
-	@Test
+//	@Test
 	public void customStyleWorkbook() {
 		String excelFilename = TestHelper.getFullPath("CustomStyleWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
@@ -100,7 +100,7 @@ public class PoiLightTest {
 	
 	
 	
-	@Test
+//	@Test
 	public void AllStylesWorkbook() {
 		String excelFilename = TestHelper.getFullPath("AllStylesWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();

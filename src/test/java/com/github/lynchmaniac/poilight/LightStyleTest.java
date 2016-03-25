@@ -132,7 +132,7 @@ public class LightStyleTest {
 		TestHelper.testTable(excelFilename, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_ORANGE_3_STYLE, "I1"));
 	}
 	
-	@Test
+//	@Test
 	public void lightWorkbook() {
 		String excelFilename = TestHelper.getFullPath("LightWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();

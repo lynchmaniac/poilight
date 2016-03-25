@@ -150,7 +150,7 @@ public class DarkStyleTest {
 	}
 	
 	
-	@Test
+//	@Test
 	public void darkWorkbook() {
 		String excelFilename = TestHelper.getFullPath("DarkWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
