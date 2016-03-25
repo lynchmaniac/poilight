@@ -12,19 +12,19 @@ The principle of poilight is to simply manage Excel spreadsheets. It's simple ta
 		PoiLight.generateExcel(outputPathExcelFile, table);
 ```
 ## Structure of the data
-The data is a Table object. It is the table you want to achieve. If you want to add a headers, you can precise them with the addHeader method. It take a CellContent. CellContent is a structure in which you can precise the value of the cell. You can also precise a style for this specific cell. We will see this in a later chapter.
-You can pass data to the table object with the method addData which take a RowContent as parameter. RowContent is just a list of CellContent.
+The data is a Table object. It is the table you want to achieve. If you want to add a headers, you can precise them with the addHeader method. It take a ExcelCell. ExcelCell is a structure in which you can precise the value and the of the cell. We will see this in a later chapter.
+You can pass data to the table object with the method addData which take a ExcelRow as parameter. ExcelRow is just a list of ExcelCell.
 This an example of a basic table
 ```java
 		Table table = new Table();
-		table.addHeader(new CellContent("ID"));
-		table.addHeader(new CellContent("NOM"));
-		table.addHeader(new CellContent("TITRE"));
-		table.addData(new RowContent(new CellContent(1), new CellContent("Henri Loevenbruck"), new CellContent("L'apothicaire")));
-		table.addData(new RowContent(new CellContent(2), new CellContent("Cyril Massarotto"), new CellContent("Dieu est un pote à moi")));
-		table.addData(new RowContent(new CellContent(3), new CellContent("Bernard Werber"), new CellContent("Les fourmis")));
-		table.addData(new RowContent(new CellContent(4), new CellContent("Maxime Chattam"), new CellContent("In Tenebris")));
-		table.addData(new RowContent(new CellContent(5), new CellContent("Franck Thilliez"), new CellContent("Pandemia")));
+		table.addHeader(new ExcelCell("ID"));
+		table.addHeader(new ExcelCell("NOM"));
+		table.addHeader(new ExcelCell("TITRE"));
+		table.addData(new ExcelRow(new ExcelCell(1), new ExcelCell("Henri Loevenbruck"), new ExcelCell("L'apothicaire")));
+		table.addData(new ExcelRow(new ExcelCell(2), new ExcelCell("Cyril Massarotto"), new ExcelCell("Dieu est un pote à moi")));
+		table.addData(new ExcelRow(new ExcelCell(3), new ExcelCell("Bernard Werber"), new ExcelCell("Les fourmis")));
+		table.addData(new ExcelRow(new ExcelCell(4), new ExcelCell("Maxime Chattam"), new ExcelCell("In Tenebris")));
+		table.addData(new ExcelRow(new ExcelCell(5), new ExcelCell("Franck Thilliez"), new ExcelCell("Pandemia")));
 ```
 
 ## Installation
@@ -83,14 +83,14 @@ If you don't want a predifined style, you can put a style on each cell by using 
 
 <pre><code>
 		Table table = new Table();
-		table.addHeader(new CellContent("ID"));
-		table.addHeader(new CellContent("NOM"));
-		table.addHeader(new CellContent("TITRE"));
+		table.addHeader(new ExcelCell("ID"));
+		table.addHeader(new ExcelCell("NOM"));
+		table.addHeader(new ExcelCell("TITRE"));
 		<b>CellStyle cs = wb.createCellStyle();</b>
 		<b>cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162).getIndex());</b>
 		<b>cs.setFillPattern(CellStyle.SOLID_FOREGROUND);</b>
 
-		table.addData(new RowContent(new CellContent(4<b>, cs</b>), new CellContent("Maxime Chattam"), new CellContent("In Tenebris")));
-		table.addData(new RowContent(new CellContent(5), new CellContent("Franck Thilliez"), new CellContent("Pandemia")));
+		table.addData(new ExcelRow(new ExcelCell(4<b>, cs</b>), new ExcelCell("Maxime Chattam"), new ExcelCell("In Tenebris")));
+		table.addData(new ExcelRow(new ExcelCell(5), new ExcelCell("Franck Thilliez"), new ExcelCell("Pandemia")));
 </code></pre>
 Here we have a specific style on the first cell. The background is set to purple. With this mechanism you can customize style as you like.
