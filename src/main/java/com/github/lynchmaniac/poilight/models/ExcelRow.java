@@ -11,23 +11,23 @@ import java.util.List;
  * @author vpiard
  * @since 0.1
  */
-public class RowContent {
+public class ExcelRow {
 
 	/**
 	 * All the cell of a row.
 	 */
-	private List<CellContent> value;
+	private List<ExcelCell> value;
 
 	/**
 	 * Constructor.
 	 */
-	public RowContent() {
+	public ExcelRow() {
 		super();
 	}
 	
-	public RowContent(CellContent ... datas) {
+	public ExcelRow(ExcelCell ... datas) {
 		super();
-		for (CellContent cellContent : datas) {
+		for (ExcelCell cellContent : datas) {
 			addValue(cellContent);
 		}
 	}
@@ -35,7 +35,7 @@ public class RowContent {
 	/**
 	 * @param value the cell value
 	 */
-	public RowContent(List<CellContent> value) {
+	public ExcelRow(List<ExcelCell> value) {
 		super();
 		this.value = value;
 	}
@@ -43,9 +43,9 @@ public class RowContent {
 	/**
 	 * @return value the cell value
 	 */
-	public List<CellContent> getValue() {
+	public List<ExcelCell> getValue() {
 		if (value == null) {
-			value = new ArrayList<CellContent>();
+			value = new ArrayList<ExcelCell>();
 		}
 		return value;
 	}
@@ -53,9 +53,9 @@ public class RowContent {
 	/**
 	 * @param value value to define
 	 */
-	public void addValue(CellContent value) {
+	public void addValue(ExcelCell value) {
 		if (this.value == null) {
-			this.value = new ArrayList<CellContent>();
+			this.value = new ArrayList<ExcelCell>();
 		}
 		this.value.add(value);
 	}

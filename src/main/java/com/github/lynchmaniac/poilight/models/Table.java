@@ -20,12 +20,12 @@ public class Table {
 	 * The data for the spreadsheet.
 	 * You can add style for each data.
 	 */
-	private List<RowContent> data;
+	private List<ExcelRow> data;
 	/**
 	 * The header content of the table.
 	 * You can add style for each hearder.
 	 */
-	private List<CellContent> header;
+	private List<ExcelCell> header;
 	/**
 	 * The nam of the spreadsheet
 	 */
@@ -46,9 +46,9 @@ public class Table {
 	/**
 	 * @return the data
 	 */
-	public List<RowContent> getData() {
+	public List<ExcelRow> getData() {
 		if (data == null) {
-			data = new ArrayList<RowContent>();
+			data = new ArrayList<ExcelRow>();
 		}
 		return data;
 	}
@@ -57,13 +57,13 @@ public class Table {
 	 * @param data
 	 *            the data to set
 	 */
-	public void setData(List<RowContent> data) {
+	public void setData(List<ExcelRow> data) {
 		this.data = data;
 	}
 	
-	public void addData(RowContent data) {
+	public void addData(ExcelRow data) {
 		if (this.data == null) {
-			this.data = new ArrayList<RowContent>();
+			this.data = new ArrayList<ExcelRow>();
 		}
 		this.data.add(data);
 	}
@@ -71,9 +71,9 @@ public class Table {
 	/**
 	 * @return the header
 	 */
-	public List<CellContent> getHeader() {
+	public List<ExcelCell> getHeader() {
 		if (this.header == null) {
-			this.header = new ArrayList<CellContent>();
+			this.header = new ArrayList<ExcelCell>();
 		}
 		return header;
 	}
@@ -91,13 +91,13 @@ public class Table {
 	 * @param header
 	 *            the header to set
 	 */
-	public void setHeader(List<CellContent> header) {
+	public void setHeader(List<ExcelCell> header) {
 		this.header = header;
 	}
 	
-	public void addHeader(CellContent header) {
+	public void addHeader(ExcelCell header) {
 		if (this.header == null) {
-			this.header = new ArrayList<CellContent>();
+			this.header = new ArrayList<ExcelCell>();
 		}
 		this.header.add(header);
 	}

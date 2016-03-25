@@ -19,8 +19,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.github.lynchmaniac.poilight.PoiLight;
 import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 import com.github.lynchmaniac.poilight.helpers.CreateExcelStyleHelper;
-import com.github.lynchmaniac.poilight.models.CellContent;
-import com.github.lynchmaniac.poilight.models.RowContent;
+import com.github.lynchmaniac.poilight.models.ExcelCell;
+import com.github.lynchmaniac.poilight.models.ExcelRow;
 import com.github.lynchmaniac.poilight.models.Table;
 import com.github.lynchmaniac.poilight.models.TableStyle;
 
@@ -192,14 +192,14 @@ public class TestHelper {
 
 	static Table getTable() {
 		Table table = new Table();
-		table.addHeader(new CellContent("ID"));
-		table.addHeader(new CellContent("NOM"));
-		table.addHeader(new CellContent("TITRE"));
-		table.addData(new RowContent(new CellContent(1), new CellContent("Henri Loevenbruck"), new CellContent("L'apothicaire")));
-		table.addData(new RowContent(new CellContent(2), new CellContent("Cyril Massarotto"), new CellContent("Dieu est un pote à moi")));
-		table.addData(new RowContent(new CellContent(3), new CellContent("Bernard Werber"), new CellContent("Les fourmis")));
-		table.addData(new RowContent(new CellContent(4), new CellContent("Maxime Chattam"), new CellContent("In Tenebris")));
-		table.addData(new RowContent(new CellContent(5), new CellContent("Franck Thilliez"), new CellContent("Pandemia")));
+		table.addHeader(new ExcelCell("ID"));
+		table.addHeader(new ExcelCell("NOM"));
+		table.addHeader(new ExcelCell("TITRE"));
+		table.addData(new ExcelRow(new ExcelCell(1), new ExcelCell("Henri Loevenbruck"), new ExcelCell("L'apothicaire")));
+		table.addData(new ExcelRow(new ExcelCell(2), new ExcelCell("Cyril Massarotto"), new ExcelCell("Dieu est un pote à moi")));
+		table.addData(new ExcelRow(new ExcelCell(3), new ExcelCell("Bernard Werber"), new ExcelCell("Les fourmis")));
+		table.addData(new ExcelRow(new ExcelCell(4), new ExcelCell("Maxime Chattam"), new ExcelCell("In Tenebris")));
+		table.addData(new ExcelRow(new ExcelCell(5), new ExcelCell("Franck Thilliez"), new ExcelCell("Pandemia")));
 
 		return table;
 	}

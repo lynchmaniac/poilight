@@ -10,7 +10,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
  * @author vpiard
  * @since 0.1
  */
-public class CellContent {
+public class ExcelCell {
 
 	private Object value;
 	private boolean color;
@@ -21,7 +21,7 @@ public class CellContent {
 	 * 
 	 * @param value the cell's value
 	 */
-	public CellContent(Object value) {
+	public ExcelCell(Object value) {
 		super();
 		this.value = value;
 		this.color = false;
@@ -32,7 +32,7 @@ public class CellContent {
 	 * @param value the cell's value
 	 * @param style the cell's style
 	 */
-	public CellContent(Object value, CellStyle style) {
+	public ExcelCell(Object value, CellStyle style) {
 		super();
 		this.value = value;
 		this.style = style;
@@ -44,7 +44,7 @@ public class CellContent {
 	 * @param value the cell's value
 	 * @param color indicates whether the cell should be colored
 	 */
-	public CellContent(Object value, boolean color) {
+	public ExcelCell(Object value, boolean color) {
 		super();
 		this.value = value;
 		this.color = color;
@@ -58,7 +58,7 @@ public class CellContent {
 	 * @param color indicates whether the cell should be colored
 	 * @param style the cell's style
 	 */
-	public CellContent(Object value, boolean color, CellStyle style) {
+	public ExcelCell(Object value, boolean color, CellStyle style) {
 		super();
 		this.value = value;
 		this.color = color;

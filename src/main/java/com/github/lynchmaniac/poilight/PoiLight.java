@@ -15,8 +15,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
-import com.github.lynchmaniac.poilight.models.CellContent;
-import com.github.lynchmaniac.poilight.models.RowContent;
+import com.github.lynchmaniac.poilight.models.ExcelCell;
+import com.github.lynchmaniac.poilight.models.ExcelRow;
 import com.github.lynchmaniac.poilight.models.Table;
 
 /**
@@ -137,7 +137,7 @@ public class PoiLight {
 				row = sheet.createRow(idx);
 			}
 			int i = data.getCol();
-			for (CellContent cell : data.getHeader()) {
+			for (ExcelCell cell : data.getHeader()) {
 				Cell c = row.getCell(i);
 				if (c == null) {
 					c = row.createCell(i);
@@ -150,14 +150,14 @@ public class PoiLight {
 		}
 		
 		// Generate column headings
-		for (RowContent currentRowContent : data.getData()) {
+		for (ExcelRow currentRowContent : data.getData()) {
 			
 			Row row = sheet.getRow(idx);
 			if (row == null) {
 				row = sheet.createRow(idx);
 			}
 			int i = data.getCol();
-			for (CellContent cell : currentRowContent.getValue()) {
+			for (ExcelCell cell : currentRowContent.getValue()) {
 				Cell c = row.getCell(i);
 				if (c == null) {
 					c = row.createCell(i);
@@ -186,7 +186,7 @@ public class PoiLight {
 	 * @param firstRow the leading index of the table including the headers
 	 * @return controlled the index
 	 */
-	private static Integer controlRowIndex(Workbook wb, List<RowContent> data, Integer firstRow) {
+	private static Integer controlRowIndex(Workbook wb, List<ExcelRow> data, Integer firstRow) {
 		Integer result = firstRow;
 		Integer limit = firstRow + data.size();
 		if (firstRow < 0) {
@@ -212,7 +212,7 @@ public class PoiLight {
 	 * @param firstCol the index of the first column
 	 * @return controlled the index
 	 */	
-	private static Integer controlColIndex(Workbook wb, List<RowContent> data, Integer firstCol) {
+	private static Integer controlColIndex(Workbook wb, List<ExcelRow> data, Integer firstCol) {
 		Integer result = firstCol;
 		Integer limit = firstCol + data.get(0).getValue().size();
 		if (firstCol < 0) {
@@ -238,7 +238,7 @@ public class PoiLight {
 	 * @param isFooter indicates whether it is a footer
 	 * @param isEven indicates whether the current cell is on a par or odd row
 	 */
-	private static void applyCellStyle(Workbook wb, CellContent cell, Cell c, BoardStyles style, boolean isHeader, boolean isFooter, boolean isEven) {
+	private static void applyCellStyle(Workbook wb, ExcelCell cell, Cell c, BoardStyles style, boolean isHeader, boolean isFooter, boolean isEven) {
 		if (cell.getStyle() != null) {
 			c.setCellStyle(cell.getStyle());
 		} else {
@@ -262,7 +262,7 @@ public class PoiLight {
 	 * @param c the cell
 	 * @param cell the content of the cell
 	 */
-	private static void setCellValue(Cell c, CellContent cell) {
+	private static void setCellValue(Cell c, ExcelCell cell) {
 		if (cell.getValue() instanceof String) {
 			c.setCellValue((String) cell.getValue());
 		}
