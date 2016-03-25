@@ -147,7 +147,7 @@ public class MediumStyleTest {
 	}
 	
 
-	@Test
+//	@Test
 	public void mediumWorkbook() {
 		String excelFilename = TestHelper.getFullPath("MediumWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
