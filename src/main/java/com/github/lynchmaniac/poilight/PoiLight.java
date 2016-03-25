@@ -1,6 +1,7 @@
 package com.github.lynchmaniac.poilight;
 
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -13,10 +14,10 @@ import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.github.lynchmaniac.poilight.entity.CellContent;
-import com.github.lynchmaniac.poilight.entity.RowContent;
-import com.github.lynchmaniac.poilight.entity.Table;
-import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
+import com.github.lynchmaniac.poilight.models.CellContent;
+import com.github.lynchmaniac.poilight.models.RowContent;
+import com.github.lynchmaniac.poilight.models.Table;
 
 /**
  * This class is the entry point of the application. It contains methods to generate 
@@ -69,7 +70,7 @@ public class PoiLight {
 			wb.write(fileOut);
 			fileOut.close();
 		}
-		catch (Exception e) {
+		catch (IOException e) {
 			System.out.println(e);
 		}
 	}

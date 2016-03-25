@@ -3,12 +3,15 @@
  */
 package com.github.lynchmaniac.poilight;
 
+import java.io.File;
+
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.github.lynchmaniac.poilight.PoiLight;
-import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 
 /**
  * @author piard
@@ -17,10 +20,25 @@ import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
  */
 public class DarkStyleTest {
 	
+	@BeforeClass
+	public static void cleanRessources() {
+		new File(TestHelper.getFullPath("DarkGrayWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkBlueWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkRedWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkGreenWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkPurpleWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkTurquoiseWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkOrangeWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkMix1Workbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkMix2Workbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkMix3Workbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkMix4Workbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DarkWorkbook.xlsx")).delete();
+	}
 	
 	@Test
 	public void darkGrayWorkbook() {
-		String excelFilename = "d:\\tmp\\DarkGrayWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkGrayWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_GRAY_1_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -30,7 +48,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkBlueWorkbook() {
-		String excelFilename = "d:\\tmp\\DarkBlueWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkBlueWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_BLUE_1_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -42,7 +60,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkRedWorkbook() {
-		String excelFilename = "d:\\tmp\\DarkRedWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkRedWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_RED_1_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -52,7 +70,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkGreenWorkbook() {
-		String excelFilename = "d:\\tmp\\DarkGreenWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkGreenWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_GREEN_1_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -62,7 +80,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkPurpleWorkbook() {
-		String excelFilename = "d:\\tmp\\DarkPurpleWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkPurpleWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_PURPLE_1_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -72,7 +90,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkTurquoiseWorkbook() {
-		String excelFilename = "d:\\tmp\\DarkTurquoiseWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkTurquoiseWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_TURQUOISE_1_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -82,7 +100,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkOrangeWorkbook() {
-		String excelFilename = "d:\\tmp\\DarkOrangeWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkOrangeWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_ORANGE_1_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -93,7 +111,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkMix1Workbook() {
-		String excelFilename = "d:\\tmp\\DarkMix1Workbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkMix1Workbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_MIX_1_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -103,7 +121,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkMix2Workbook() {
-		String excelFilename = "d:\\tmp\\DarkMix2Workbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkMix2Workbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_MIX_2_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -113,7 +131,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkMix3Workbook() {
-		String excelFilename = "d:\\tmp\\DarkMix3Workbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkMix3Workbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_MIX_3_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -123,7 +141,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkMix4Workbook() {
-		String excelFilename = "d:\\tmp\\DarkMix4Workbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkMix4Workbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_DARK_MIX_4_STYLE, "A1"));
 		PoiLight.writeExcel(wb, excelFilename);
@@ -134,7 +152,7 @@ public class DarkStyleTest {
 	
 	@Test
 	public void darkWorkbook() {
-		String excelFilename = "d:\\tmp\\DarkWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DarkWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 
 		

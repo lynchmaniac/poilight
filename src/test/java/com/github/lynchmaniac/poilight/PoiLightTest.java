@@ -4,7 +4,9 @@
 package com.github.lynchmaniac.poilight;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -14,13 +16,14 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.github.lynchmaniac.poilight.entity.CellContent;
-import com.github.lynchmaniac.poilight.entity.RowContent;
-import com.github.lynchmaniac.poilight.entity.Table;
-import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 import com.github.lynchmaniac.poilight.helpers.StyleHelper;
+import com.github.lynchmaniac.poilight.models.CellContent;
+import com.github.lynchmaniac.poilight.models.RowContent;
+import com.github.lynchmaniac.poilight.models.Table;
 
 /**
  * @author piard
@@ -29,26 +32,34 @@ import com.github.lynchmaniac.poilight.helpers.StyleHelper;
  */
 public class PoiLightTest {
 
-
 	private static Table data = TestHelper.getTable();
+
+	@BeforeClass
+	public static void cleanRessources() {
+		new File(TestHelper.getFullPath("DefaultWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DefaultStreamingWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("CustomStyleWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("AllStylesWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("DefaultStreamingWorkbook.xlsx")).delete();
+	}
 	
 	@Test
 	public void defaultWorkbook() {
-		String excelFilename = "d:\\tmp\\DefaultWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DefaultWorkbook.xlsx");
 		PoiLight.generateExcel(excelFilename, data);
 		TestHelper.testTable(excelFilename, data);
 	}
 	
 	@Test
 	public void defaultStreamingWorkbook() throws IOException {
-		String excelFilename = "d:\\tmp\\DefaultStreamingWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("DefaultStreamingWorkbook.xlsx");
 		PoiLight.generateStreamingExcel(excelFilename, data);
 		TestHelper.testTable(excelFilename, data);
 	}
 
 	@Test
 	public void customStyleWorkbook() {
-		String excelFilename = "d:\\tmp\\CustomStyleWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("CustomStyleWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		
 		Table table = new Table();
@@ -82,6 +93,7 @@ public class PoiLightTest {
 			wb.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+			assertFalse(true);
 		}
 		
 	}
@@ -90,7 +102,7 @@ public class PoiLightTest {
 	
 	@Test
 	public void AllStylesWorkbook() {
-		String excelFilename = "d:\\tmp\\AllStylesWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("AllStylesWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 
 		PoiLight.createTable(wb, TestHelper.getTable("Light", BoardStyles.BOARD_LIGHT_GRAY_1_STYLE, "B4"));

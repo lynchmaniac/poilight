@@ -5,9 +5,9 @@ import java.util.HashMap;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
-import com.github.lynchmaniac.poilight.entity.BorderStyle;
-import com.github.lynchmaniac.poilight.entity.TableStyle;
-import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
+import com.github.lynchmaniac.poilight.models.BorderStyle;
+import com.github.lynchmaniac.poilight.models.TableStyle;
 
 /**
  * Create and store all the Excel's style. It's based on the Execl 2016 version.
@@ -339,7 +339,6 @@ public class CreateExcelStyleHelper {
 	 */
 	public static HashMap<BoardStyles, HashMap<String, TableStyle>> getExcelStyle() {
 		if (styles == null) {
-			System.out.println("Initialisation des styles Excel !!!");
 			initializeStyles();
 		}
 		return styles;

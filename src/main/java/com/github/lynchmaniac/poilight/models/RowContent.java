@@ -1,4 +1,4 @@
-package com.github.lynchmaniac.poilight.entity;
+package com.github.lynchmaniac.poilight.models;
 
 import java.util.ArrayList;
 import java.util.List;

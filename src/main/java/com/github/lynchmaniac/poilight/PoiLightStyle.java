@@ -9,9 +9,9 @@ import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.extensions.XSSFCellBorder.BorderSide;
 
-import com.github.lynchmaniac.poilight.entity.TableStyle;
-import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 import com.github.lynchmaniac.poilight.helpers.CreateExcelStyleHelper;
+import com.github.lynchmaniac.poilight.models.TableStyle;
 
 /**
  * This class contains all the methods to apply the style to the cells of the Excel workbook

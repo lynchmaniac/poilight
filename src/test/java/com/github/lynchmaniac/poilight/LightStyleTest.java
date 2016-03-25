@@ -3,12 +3,15 @@
  */
 package com.github.lynchmaniac.poilight;
 
+import java.io.File;
+
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.github.lynchmaniac.poilight.PoiLight;
-import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 
 /**
  * @author piard
@@ -17,9 +20,21 @@ import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
  */
 public class LightStyleTest {
 	
+	@BeforeClass
+	public static void cleanRessources() {
+		new File(TestHelper.getFullPath("LightGrayWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("LightBlueWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("LightRedWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("LightGreenWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("LightPurpleWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("LightTurquoiseWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("LightOrangeWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("LightWorkbook.xlsx")).delete();
+	}
+	
 	@Test
 	public void lightGrayWorkbook() {
-		String excelFilename = "d:\\tmp\\LightGrayWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("LightGrayWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_GRAY_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_GRAY_2_STYLE, "E1"));
@@ -33,7 +48,7 @@ public class LightStyleTest {
 	
 	@Test
 	public void lightBlueWorkbook() {
-		String excelFilename = "d:\\tmp\\LightBlueWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("LightBlueWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_2_STYLE, "E1"));
@@ -49,7 +64,7 @@ public class LightStyleTest {
 	
 	@Test
 	public void lightRedWorkbook() {
-		String excelFilename = "d:\\tmp\\LightRedWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("LightRedWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_RED_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_RED_2_STYLE, "E1"));
@@ -63,7 +78,7 @@ public class LightStyleTest {
 	
 	@Test
 	public void lightGreenWorkbook() {
-		String excelFilename = "d:\\tmp\\LightGreenWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("LightGreenWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_GREEN_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_GREEN_2_STYLE, "E1"));
@@ -77,7 +92,7 @@ public class LightStyleTest {
 	
 	@Test
 	public void lightPurpleWorkbook() {
-		String excelFilename = "d:\\tmp\\LightPurpleWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("LightPurpleWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_PURPLE_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_PURPLE_2_STYLE, "E1"));
@@ -91,7 +106,7 @@ public class LightStyleTest {
 	
 	@Test
 	public void lightTurquoiseWorkbook() {
-		String excelFilename = "d:\\tmp\\LightTurquoiseWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("LightTurquoiseWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_TURQUOISE_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_TURQUOISE_2_STYLE, "E1"));
@@ -105,7 +120,7 @@ public class LightStyleTest {
 	
 	@Test
 	public void lightOrangeWorkbook() {
-		String excelFilename = "d:\\tmp\\LightOrangeWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("LightOrangeWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_ORANGE_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_ORANGE_2_STYLE, "E1"));
@@ -119,7 +134,7 @@ public class LightStyleTest {
 	
 	@Test
 	public void lightWorkbook() {
-		String excelFilename = "d:\\tmp\\LightWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("LightWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_GRAY_1_STYLE, "B3"));

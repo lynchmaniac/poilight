@@ -3,12 +3,15 @@
  */
 package com.github.lynchmaniac.poilight;
 
+import java.io.File;
+
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.github.lynchmaniac.poilight.PoiLight;
-import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 
 /**
  * @author piard
@@ -17,10 +20,21 @@ import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
  */
 public class MediumStyleTest {
 	
+	@BeforeClass
+	public static void cleanRessources() {
+		new File(TestHelper.getFullPath("MediumGrayWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("MediumBlueWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("MediumRedWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("MediumGreenWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("MediumPurpleWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("MediumTurquoiseWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("MediumOrangeWorkbook.xlsx")).delete();
+		new File(TestHelper.getFullPath("MediumWorkbook.xlsx")).delete();
+	}
 	
 	@Test
 	public void mediumGrayWorkbook() {
-		String excelFilename = "d:\\tmp\\MediumGrayWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("MediumGrayWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_GRAY_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_GRAY_2_STYLE, "E1"));
@@ -36,7 +50,7 @@ public class MediumStyleTest {
 	
 	@Test
 	public void mediumBlueWorkbook() {
-		String excelFilename = "d:\\tmp\\MediumBlueWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("MediumBlueWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_BLUE_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_BLUE_2_STYLE, "E1"));
@@ -54,7 +68,7 @@ public class MediumStyleTest {
 	
 	@Test
 	public void mediumRedWorkbook() {
-		String excelFilename = "d:\\tmp\\MediumRedWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("MediumRedWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_RED_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_RED_2_STYLE, "E1"));
@@ -70,7 +84,7 @@ public class MediumStyleTest {
 	
 	@Test
 	public void mediumGreenWorkbook() {
-		String excelFilename = "d:\\tmp\\MediumGreenWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("MediumGreenWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_GREEN_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_GREEN_2_STYLE, "E1"));
@@ -86,7 +100,7 @@ public class MediumStyleTest {
 	
 	@Test
 	public void mediumPurpleWorkbook() {
-		String excelFilename = "d:\\tmp\\MediumPurpleWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("MediumPurpleWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_PURPLE_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_PURPLE_2_STYLE, "E1"));
@@ -102,7 +116,7 @@ public class MediumStyleTest {
 	
 	@Test
 	public void mediumTurquoiseWorkbook() {
-		String excelFilename = "d:\\tmp\\MediumTurquoiseWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("MediumTurquoiseWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_TURQUOISE_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_TURQUOISE_2_STYLE, "E1"));
@@ -118,7 +132,7 @@ public class MediumStyleTest {
 	
 	@Test
 	public void mediumOrangeWorkbook() {
-		String excelFilename = "d:\\tmp\\MediumOrangeWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("MediumOrangeWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_ORANGE_1_STYLE, "A1"));
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_MEDIUM_ORANGE_2_STYLE, "E1"));
@@ -135,7 +149,7 @@ public class MediumStyleTest {
 
 	@Test
 	public void mediumWorkbook() {
-		String excelFilename = "d:\\tmp\\MediumWorkbook.xlsx";
+		String excelFilename = TestHelper.getFullPath("MediumWorkbook.xlsx");
 		Workbook wb = new XSSFWorkbook();
 
 		

@@ -1,4 +1,4 @@
-package com.github.lynchmaniac.poilight.entity;
+package com.github.lynchmaniac.poilight.models;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 

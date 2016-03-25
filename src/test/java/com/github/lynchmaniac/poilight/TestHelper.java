@@ -1,7 +1,9 @@
 package com.github.lynchmaniac.poilight;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,67 +17,18 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.github.lynchmaniac.poilight.PoiLight;
-import com.github.lynchmaniac.poilight.entity.CellContent;
-import com.github.lynchmaniac.poilight.entity.RowContent;
-import com.github.lynchmaniac.poilight.entity.Table;
-import com.github.lynchmaniac.poilight.entity.TableStyle;
-import com.github.lynchmaniac.poilight.enumeration.BoardStyles;
+import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 import com.github.lynchmaniac.poilight.helpers.CreateExcelStyleHelper;
+import com.github.lynchmaniac.poilight.models.CellContent;
+import com.github.lynchmaniac.poilight.models.RowContent;
+import com.github.lynchmaniac.poilight.models.Table;
+import com.github.lynchmaniac.poilight.models.TableStyle;
 
 public class TestHelper {
 
-
-//	private static HashMap<Integer, HashMap<Integer, Cell>> allCells = new HashMap<Integer, HashMap<Integer,Cell>>();
-
-
-//	private static void getAllCells(XSSFSheet sheet, Integer firstRow, Integer firstCol) {
-//		int limitRow = firstRow + 6;
-//		int limitCol = firstCol + 3;
-//		for (int i = firstRow; i < limitRow; i++) {
-//			HashMap<Integer, Cell> colMap = new HashMap<Integer, Cell>();
-//			Row currentRow = sheet.getRow(i);
-//			for (int j = firstCol; j < limitCol; j++) {
-//				colMap.put(j, currentRow.getCell(j));
-//			}
-//			allCells.put(i, colMap);
-//		}
-//	}
-
-//	private static Cell getCell(Integer row, Integer col) {
-//		return allCells.get(row).get(col);
-//	}
-
-//	private static void testContent(XSSFSheet sheet, Integer firstRow, Integer firstCol) {
-//
-//		String[] id = new String[] {"ID", "1", "2", "3", "4", "5"};
-//		String[] name = new String[] {"NOM", "Henri Loevenbruck", "Cyril Massarotto", "Bernard Werber", "Maxime Chattam", "Franck Thilliez"};
-//		String[] title = new String[] {"TITRE", "L'apothicaire", "Dieu est un pote à moi", "Les fourmis", "In Tenebris", "Pandemia"};
-//
-//		int idCol = firstCol;
-//		int limit = firstRow + 6;
-//		int idxExpected = 0;
-//		for (int i = firstRow; i < limit; i++) {
-//
-//			switch (getCell(i,idCol).getCellType()) {
-//			case Cell.CELL_TYPE_STRING:
-//				assertEquals("Contrôle du rang " + i + " et de la colonne " + idCol, id[idxExpected], getCell(i,idCol).getStringCellValue());
-//				break;
-//			case Cell.CELL_TYPE_NUMERIC:
-//				Double doubles = getCell(i,idCol).getNumericCellValue();
-//				assertEquals("Contrôle du rang " + i + " et de la colonne " + idCol, id[idxExpected], String.valueOf(doubles.intValue()));
-//				break;
-//			default:
-//				System.out.println();
-//			}
-//			idCol++;
-//			assertEquals("Contrôle du rang " + i + " et de la colonne " + idCol, name[idxExpected], getCell(i,idCol).getStringCellValue());
-//			idCol++;
-//			assertEquals("Contrôle du rang " + i + " et de la colonne " + idCol, title[idxExpected], getCell(i,idCol).getStringCellValue());
-//			idCol = firstCol;
-//			idxExpected++;
-//		}
-//
-//	}
+	protected static String getFullPath(String fileName) {
+		return "src" + File.separator + "test" + File.separator + "resources" + File.separator + fileName;
+	}
 
 	public static void testTable(String excelFileName, Table table) {
 		testTable(excelFileName, table, false);
@@ -99,6 +52,7 @@ public class TestHelper {
 			wb.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+			assertFalse(true);
 		}
 	}
 
@@ -227,52 +181,6 @@ public class TestHelper {
 			assertEquals(expected, value);
 		}
 	}
-
-
-
-
-//	private static XSSFWorkbook getTestWorkbook(String excelFilename) {
-//		XSSFWorkbook wb = null;
-//		try {
-//			wb = new XSSFWorkbook(excelFilename);
-//
-//		} catch (IOException e) {
-//			assertFalse(e.getMessage(), true);
-//		}
-//		return wb;
-//	}
-//	private static XSSFSheet getSheet(XSSFWorkbook wb, String sheetName) {
-//		//Get first sheet from the workbook
-//		return wb.getSheet(sheetName);
-//	}
-
-//	private static void testBoardData(XSSFSheet sheet, Integer firstRow, Integer firstCol) {
-//		allCells = new HashMap<Integer, HashMap<Integer,Cell>>();
-//		firstRow = firstRow - 1;
-//		firstCol = firstCol - 1;
-//		getAllCells(sheet, firstRow, firstCol);
-//		testContent(sheet, firstRow, firstCol);
-//	}
-
-//	static void controlResultTest(String excelFilename) {
-//		controlResultTest(excelFilename, PoiLight.DEFAULT_SHEET_NAME, 1, 1);
-//	}
-
-
-//	private static void controlResultTest(String excelFilename, String sheetName, Integer firstRow, Integer firstCol) {
-//		XSSFWorkbook wb = getTestWorkbook(excelFilename);
-//		XSSFSheet sheet = getSheet(wb, sheetName);
-//		testBoardData(sheet, firstRow, firstCol);
-//	}
-
-//	static void controlResultTest(String excelFilename, String sheetName, List<Coordinates> coords) {
-//		XSSFWorkbook wb = getTestWorkbook(excelFilename);
-//		XSSFSheet sheet = getSheet(wb, sheetName);
-//		for (Coordinates coord : coords) {
-//			testBoardData(sheet, coord.getRow(), coord.getCol());
-//		}
-//	}
-
 
 	static Table getTable(String sheetName, BoardStyles bs, String position) {
 		Table table = getTable();
