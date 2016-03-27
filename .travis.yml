@@ -1,2 +1,2 @@
 language: java
-script: mvn clean verify
+script: set MAVEN_OPTS="-Xmx256m" & mvn clean install
