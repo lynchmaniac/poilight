@@ -12,119 +12,106 @@ import org.apache.poi.ss.usermodel.CellStyle;
  */
 public class ExcelCell {
 
-	private Object value;
-	private boolean color;
-	private CellStyle style;
-	
-	/**
-	 * Constructor.
-	 * 
-	 * @param value the cell's value
-	 */
-	public ExcelCell(Object value) {
-		super();
-		this.value = value;
-		this.color = false;
-	}
-	/**
-	 * Constructor.
-	 * 
-	 * @param value the cell's value
-	 * @param style the cell's style
-	 */
-	public ExcelCell(Object value, CellStyle style) {
-		super();
-		this.value = value;
-		this.style = style;
-	}
-	
-	/**
-	 * Constructor.
-	 * 
-	 * @param value the cell's value
-	 * @param color indicates whether the cell should be colored
-	 */
-	public ExcelCell(Object value, boolean color) {
-		super();
-		this.value = value;
-		this.color = color;
-	}
+  /**
+   * Represent the content of the cell.
+   * It can be whatever you want : String, numerical, date...
+   */
+  private Object value;
+  /**
+   * Indicates if the cell must be colored or not.
+   * It's useful when you want to highlight a cell.
+   */
+  private boolean color;
+  /**
+   * Represent the style of the cell.
+   */
+  private CellStyle style;
+
+  /**
+   * Constructor.
+   * 
+   * @param value the cell's value
+   */
+  public ExcelCell(Object value) {
+    super();
+    this.value = value;
+    this.color = false;
+  }
+  
+  /**
+   * Constructor.
+   * 
+   * @param value the cell's value
+   * @param style the cell's style
+   */
+  public ExcelCell(Object value, CellStyle style) {
+    super();
+    this.value = value;
+    this.style = style;
+  }
+
+  /**
+   * Constructor.
+   * 
+   * @param value the cell's value
+   * @param color indicates whether the cell should be colored
+   */
+  public ExcelCell(Object value, boolean color) {
+    super();
+    this.value = value;
+    this.color = color;
+  }
 
 
-	/**
-	 * Constructor.
-	 * 
-	 * @param value the cell's value
-	 * @param color indicates whether the cell should be colored
-	 * @param style the cell's style
-	 */
-	public ExcelCell(Object value, boolean color, CellStyle style) {
-		super();
-		this.value = value;
-		this.color = color;
-		this.style = style;
-	}
-	/**
-	 * @return value
-	 */
-	public Object getValue() {
-		return value;
-	}
+  /**
+   * Constructor.
+   * 
+   * @param value the cell's value
+   * @param color indicates whether the cell should be colored
+   * @param style the cell's style
+   */
+  public ExcelCell(Object value, boolean color, CellStyle style) {
+    super();
+    this.value = value;
+    this.color = color;
+    this.style = style;
+  }
 
-	/**
-	 * @param value value to define
-	 */
-	public void setValue(String value) {
-		this.value = value;
-	}
-	
-	/**
-	 * @param value value to define
-	 */
-	public void setValue(Double value) {
-		this.value = String.valueOf(value);
-	}
-	
-	/**
-	 * @param value value to define
-	 */
-	public void setValue(Integer value) {
-		this.value = String.valueOf(value);
-	}
-	
-	/**
-	 * @param value value to define
-	 */
-	public void setValue(Long value) {
-		this.value = String.valueOf(value);
-	}
 
-	/**
-	 * @return color
-	 */
-	public boolean isColor() {
-		return color;
-	}
+  public Object getValue() {
+    return value;
+  }
 
-	/**
-	 * @param color color to define
-	 */
-	public void setColor(boolean color) {
-		this.color = color;
-	}
+  public void setValue(String value) {
+    this.value = value;
+  }
 
-	/**
-	 * @return style
-	 */
-	public CellStyle getStyle() {
-		return style;
-	}
+  public void setValue(Double value) {
+    this.value = String.valueOf(value);
+  }
 
-	/**
-	 * @param style style to define
-	 */
-	public void setStyle(CellStyle style) {
-		this.style = style;
-	}
-	
+  public void setValue(Integer value) {
+    this.value = String.valueOf(value);
+  }
+
+  public void setValue(Long value) {
+    this.value = String.valueOf(value);
+  }
+
+  public boolean isColor() {
+    return color;
+  }
+
+  public void setColor(boolean color) {
+    this.color = color;
+  }
+
+  public CellStyle getStyle() {
+    return style;
+  }
+
+  public void setStyle(CellStyle style) {
+    this.style = style;
+  }
+
 }

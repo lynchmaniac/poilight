@@ -13,50 +13,58 @@ import java.util.List;
  */
 public class ExcelRow {
 
-	/**
-	 * All the cell of a row.
-	 */
-	private List<ExcelCell> value;
+  /**
+   * All the cell of a row.
+   */
+  private List<ExcelCell> value;
 
-	/**
-	 * Constructor.
-	 */
-	public ExcelRow() {
-		super();
-	}
-	
-	public ExcelRow(ExcelCell ... datas) {
-		super();
-		for (ExcelCell cellContent : datas) {
-			addValue(cellContent);
-		}
-	}
+  /**
+   * Constructor.
+   */
+  public ExcelRow() {
+    super();
+  }
 
-	/**
-	 * @param value the cell value
-	 */
-	public ExcelRow(List<ExcelCell> value) {
-		super();
-		this.value = value;
-	}
+  /**
+   * Constructor.
+   * You can put all the ExcelCell in parameters you want.
+   * It's useful when you want to create a row easily.
+   *
+   * @param datas a number undefined of ExcellCell
+   */
+  public ExcelRow(ExcelCell ... datas) {
+    super();
+    for (ExcelCell cellContent : datas) {
+      addValue(cellContent);
+    }
+  }
 
-	/**
-	 * @return value the cell value
-	 */
-	public List<ExcelCell> getValue() {
-		if (value == null) {
-			value = new ArrayList<ExcelCell>();
-		}
-		return value;
-	}
+  public ExcelRow(List<ExcelCell> value) {
+    super();
+    this.value = value;
+  }
 
-	/**
-	 * @param value value to define
-	 */
-	public void addValue(ExcelCell value) {
-		if (this.value == null) {
-			this.value = new ArrayList<ExcelCell>();
-		}
-		this.value.add(value);
-	}
+  /**
+   * Returns all the ExcelCell of the row.
+   * 
+   * @return all the ExcelCell of the row
+   */
+  public List<ExcelCell> getValue() {
+    if (value == null) {
+      value = new ArrayList<ExcelCell>();
+    }
+    return value;
+  }
+
+  /**
+   * Add a ExcelCell of the current row.
+   * 
+   * @param value a ExcelCell
+   */
+  public void addValue(ExcelCell value) {
+    if (this.value == null) {
+      this.value = new ArrayList<ExcelCell>();
+    }
+    this.value.add(value);
+  }
 }

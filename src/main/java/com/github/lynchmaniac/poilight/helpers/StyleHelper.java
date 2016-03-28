@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.github.lynchmaniac.poilight.helpers;
 
 import org.apache.poi.xssf.usermodel.XSSFColor;
@@ -14,21 +11,21 @@ import org.apache.poi.xssf.usermodel.XSSFColor;
  */
 public class StyleHelper {
 
-	/**
-	 * Returns the final color from the three red, green and blue.
-	 * 
-	 * @param red the hexadecimal value of the red
-	 * @param green the hexadecimal value of the green 
-	 * @param blue the hexadecimal value of the blue
-	 * @return the final color
-	 */
-	public static XSSFColor getColor(int red, int green, int blue) {
-		byte[] rgb = new byte[3];
-		rgb[0] = (byte) red; 
-		rgb[1] = (byte) green; 
-		rgb[2] = (byte) blue; 
-		return  new XSSFColor(rgb);
-	
-	}
+  /**
+   * Returns the final color from the three red, green and blue.
+   * 
+   * @param red the hexadecimal value of the red
+   * @param green the hexadecimal value of the green 
+   * @param blue the hexadecimal value of the blue
+   * @return the final color
+   */
+  public static XSSFColor getColor(int red, int green, int blue) {
+    byte[] rgb = new byte[3];
+    rgb[0] = (byte) red; 
+    rgb[1] = (byte) green; 
+    rgb[2] = (byte) blue; 
+    return  new XSSFColor(rgb);
+
+  }
 
 }
