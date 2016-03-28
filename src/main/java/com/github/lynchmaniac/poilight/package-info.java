@@ -1,8 +1,9 @@
 /**
- * Package contenant la classe principale qui portent
- * les diverses méthodes utilitaires.
+ * Package containing the main class which 
+ * carry the various utility methods
  * 
- * @since 1.0
+ * @author vpiard
+ * @since 0.1
  */
 package com.github.lynchmaniac.poilight;
 

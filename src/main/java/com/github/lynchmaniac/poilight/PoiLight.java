@@ -22,7 +22,7 @@ import java.util.List;
 
 
 /**
- * This class is the entry point of the application. It contains methods to generate 
+ * This class is the entry point of this library. It contains methods to generate 
  * Excel spreadsheets as well as methods to generate complete Excel files.
  * If the user does not specify a style in leaf cells then the default style is applied. 
  * Otherwise it can use the predefined styles from Excel 2016. If it specifies a 
@@ -31,8 +31,16 @@ import java.util.List;
  * @author vpiard
  * @since 0.1
  */
-public class PoiLight {
+public final class PoiLight {
 
+  
+  /**
+   * Constructor.
+   */
+  public PoiLight() {
+    
+  }
+  
   /**
    * Generate an Excel file.
    * 
@@ -64,13 +72,18 @@ public class PoiLight {
    * @param filePath the full path where the file should be saved
    */
   public static void writeExcel(Workbook wb, String filePath) {
+    FileOutputStream fileOut = null;
     try {
-      FileOutputStream fileOut = new FileOutputStream(filePath);
-
+      fileOut = new FileOutputStream(filePath);
       wb.write(fileOut);
-      fileOut.close();
     } catch (IOException exception) {
       System.out.println(exception);
+    } finally {
+      try {
+        fileOut.close();
+      } catch (IOException exception) {
+        System.out.println(exception);
+      }
     }
   }
 

@@ -107,12 +107,12 @@ public class TestHelper {
         default:
           assertValue(header[cellIdx], cell.getStringCellValue(), isExtractStyle);
       }
-      assertValue(headerExpectedStyle.getCellBorderBottom().shortValue(), style.getBorderBottom(), isExtractStyle);
-      assertValue(headerExpectedStyle.getCellBorderBottom().shortValue(), style.getBorderBottom(), isExtractStyle);
-      assertValue(headerExpectedStyle.getCellBorderLeft().shortValue(), style.getBorderLeft(), isExtractStyle);
-      assertValue(headerExpectedStyle.getCellBorderRight().shortValue(), style.getBorderRight(), isExtractStyle);
-      assertValue(headerExpectedStyle.getCellBorderTop().shortValue(), style.getBorderTop(), isExtractStyle);
-      assertValue(headerExpectedStyle.getAlignment().shortValue(), style.getAlignment(), isExtractStyle); 
+      assertValue(headerExpectedStyle.getCellBorderBottom(), style.getBorderBottom(), isExtractStyle);
+      assertValue(headerExpectedStyle.getCellBorderBottom(), style.getBorderBottom(), isExtractStyle);
+      assertValue(headerExpectedStyle.getCellBorderLeft(), style.getBorderLeft(), isExtractStyle);
+      assertValue(headerExpectedStyle.getCellBorderRight(), style.getBorderRight(), isExtractStyle);
+      assertValue(headerExpectedStyle.getCellBorderTop(), style.getBorderTop(), isExtractStyle);
+      assertValue(headerExpectedStyle.getAlignment(), style.getAlignment(), isExtractStyle); 
       assertValue(headerExpectedStyle.getBorderColor().getIndex(), style.getLeftBorderColor(), isExtractStyle);
       assertValue(headerExpectedStyle.getBorderColor().getIndex(), style.getRightBorderColor(), isExtractStyle);
       assertValue(headerExpectedStyle.getBorderColor().getIndex(), style.getBottomBorderColor(), isExtractStyle);
@@ -122,7 +122,7 @@ public class TestHelper {
       Font font = wb.getFontAt(style.getFontIndex());
       assertValue(headerExpectedStyle.getFontColor().getIndex(), font.getColor(), isExtractStyle);
       assertValue(headerExpectedStyle.getFontName(), font.getFontName(), isExtractStyle);
-      assertValue(headerExpectedStyle.getFontSize().shortValue(), font.getFontHeightInPoints(), isExtractStyle);
+      assertValue(headerExpectedStyle.getFontSize(), font.getFontHeightInPoints(), isExtractStyle);
       assertValue(headerExpectedStyle.isBold(), font.getBold(), isExtractStyle);
       tableIdx++;
     }
@@ -163,11 +163,11 @@ public class TestHelper {
           bodyExpectedStyle = styles.get(table.getStyle()).get("BODY_ODD");
         }
 
-        assertValue(bodyExpectedStyle.getCellBorderBottom().shortValue(), style.getBorderBottom(), isExtractStyle);
-        assertValue(bodyExpectedStyle.getCellBorderLeft().shortValue(), style.getBorderLeft(), isExtractStyle);
-        assertValue(bodyExpectedStyle.getCellBorderRight().shortValue(), style.getBorderRight(), isExtractStyle);
-        assertValue(bodyExpectedStyle.getCellBorderTop().shortValue(), style.getBorderTop(), isExtractStyle);
-        assertValue(bodyExpectedStyle.getAlignment().shortValue(), style.getAlignment(), isExtractStyle); 
+        assertValue(bodyExpectedStyle.getCellBorderBottom(), style.getBorderBottom(), isExtractStyle);
+        assertValue(bodyExpectedStyle.getCellBorderLeft(), style.getBorderLeft(), isExtractStyle);
+        assertValue(bodyExpectedStyle.getCellBorderRight(), style.getBorderRight(), isExtractStyle);
+        assertValue(bodyExpectedStyle.getCellBorderTop(), style.getBorderTop(), isExtractStyle);
+        assertValue(bodyExpectedStyle.getAlignment(), style.getAlignment(), isExtractStyle); 
         assertValue(bodyExpectedStyle.getBorderColor().getIndex(), style.getLeftBorderColor(), isExtractStyle);
         assertValue(bodyExpectedStyle.getBorderColor().getIndex(), style.getRightBorderColor(), isExtractStyle);
         assertValue(bodyExpectedStyle.getBorderColor().getIndex(), style.getBottomBorderColor(), isExtractStyle);
@@ -177,7 +177,7 @@ public class TestHelper {
         Font font = wb.getFontAt(style.getFontIndex());
         assertValue(bodyExpectedStyle.getFontColor().getIndex(), font.getColor(), isExtractStyle);
         assertValue(bodyExpectedStyle.getFontName(), font.getFontName(), isExtractStyle);
-        assertValue(bodyExpectedStyle.getFontSize().shortValue(), font.getFontHeightInPoints(), isExtractStyle);
+        assertValue(bodyExpectedStyle.getFontSize(), font.getFontHeightInPoints(), isExtractStyle);
         assertValue(bodyExpectedStyle.isBold(), font.getBold(), isExtractStyle);
         cellIdx++;
         tableIdx++;

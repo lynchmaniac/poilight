@@ -2,6 +2,7 @@ package com.github.lynchmaniac.poilight.models;
 
 import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -9,14 +10,19 @@ import java.util.regex.Pattern;
 
 
 /**
- * This class contain all the data to draw a table.
+ * This class contains all the data to draw a table.
  * 
  * @author vpiard
  * @since 0.1
  */
-public class Table {
+public class Table implements Serializable {
 
-  private static Pattern pattern = Pattern.compile("^([A-Za-z]{1,3})([1-9]{1,})");
+  /**
+   * UID.
+   */
+  private static final long serialVersionUID = 5597446760000118027L;
+
+  private static final Pattern pattern = Pattern.compile("^([A-Za-z]{1,3})([1-9]{1,})");
   
   /**
    * The data for the spreadsheet.
@@ -38,12 +44,12 @@ public class Table {
   /**
    * The row of the first table cell, the top left.
    */
-  private Integer row = 0;
+  private int row = 0;
   
   /**
    * The col of the first table cell, the top left.
    */
-  private Integer col = 0;
+  private int col = 0;
   
   /**
    * The predifened Excel's style.
@@ -163,7 +169,7 @@ public class Table {
   private int getColNum(String colName) {
 
 
-    StringBuffer buff = new StringBuffer(colName.trim());
+    StringBuilder  buff = new StringBuilder(colName.trim());
     //string to lower case, reverse then place in char array
     char[] chars = buff.reverse().toString().toLowerCase().toCharArray();
 

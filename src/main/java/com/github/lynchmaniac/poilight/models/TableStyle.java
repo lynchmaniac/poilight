@@ -6,6 +6,8 @@ import com.github.lynchmaniac.poilight.helpers.StyleHelper;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
+import java.io.Serializable;
+
 /**
  * This object is used to store the many configuration of the Excel's styles.
  * This object properies is after apply to the real properties of POI.
@@ -13,8 +15,12 @@ import org.apache.poi.xssf.usermodel.XSSFColor;
  * @author vpiard
  * @since 0.1
  */
-public class TableStyle {
+public class TableStyle implements Serializable {
 
+  /**
+   * UID.
+   */
+  private static final long serialVersionUID = -6584637308090528538L;
   /**
    * The font color.
    */
@@ -38,31 +44,31 @@ public class TableStyle {
   /**
    * The font size.
    */
-  private Short fontSize = new Short("11");
+  private short fontSize = 11;
   /**
    * Indicate the cell's alignment.
    */
-  private Short alignment = CellStyle.ALIGN_LEFT;
+  private short alignment = CellStyle.ALIGN_LEFT;
 
   /**
    * The style of the border left of the cell.
    */
-  private Short cellBorderLeft = CellStyle.BORDER_MEDIUM;
+  private short cellBorderLeft = CellStyle.BORDER_MEDIUM;
 
   /**
    * The style of the border right of the cell.
    */
-  private Short cellBorderRight = CellStyle.BORDER_MEDIUM;
+  private short cellBorderRight = CellStyle.BORDER_MEDIUM;
 
   /**
    * The style of the border top of the cell.
    */
-  private Short cellBorderTop = CellStyle.BORDER_THIN;
+  private short cellBorderTop = CellStyle.BORDER_THIN;
 
   /**
    * The style of the border bottom of the cell.
    */
-  private Short cellBorderBottom = CellStyle.BORDER_THIN;
+  private short cellBorderBottom = CellStyle.BORDER_THIN;
 
 
   /**
@@ -94,7 +100,7 @@ public class TableStyle {
    * @param alignment the cell's alignment
    */
   public TableStyle(XSSFColor fontColor, XSSFColor fillColor, String fontName,
-      boolean isBold, Short fontSize, Short alignment) {
+      boolean isBold, short fontSize, short alignment) {
     super();
     this.fontColor = fontColor;
     this.fillColor = fillColor;
@@ -145,51 +151,51 @@ public class TableStyle {
     this.isBold = isBold;
   }
 
-  public Short getFontSize() {
+  public short getFontSize() {
     return fontSize;
   }
 
-  public void setFontSize(Short fontSize) {
+  public void setFontSize(short fontSize) {
     this.fontSize = fontSize;
   }
 
-  public Short getAlignment() {
+  public short getAlignment() {
     return alignment;
   }
 
-  public void setAlignment(Short alignment) {
+  public void setAlignment(short alignment) {
     this.alignment = alignment;
   }
 
-  public Short getCellBorderLeft() {
+  public short getCellBorderLeft() {
     return cellBorderLeft;
   }
 
-  public void setCellBorderLeft(Short cellBorderLeft) {
+  public void setCellBorderLeft(short cellBorderLeft) {
     this.cellBorderLeft = cellBorderLeft;
   }
 
-  public Short getCellBorderRight() {
+  public short getCellBorderRight() {
     return cellBorderRight;
   }
 
-  public void setCellBorderRight(Short cellBorderRight) {
+  public void setCellBorderRight(short cellBorderRight) {
     this.cellBorderRight = cellBorderRight;
   }
 
-  public Short getCellBorderTop() {
+  public short getCellBorderTop() {
     return cellBorderTop;
   }
 
-  public void setCellBorderTop(Short cellBorderTop) {
+  public void setCellBorderTop(short cellBorderTop) {
     this.cellBorderTop = cellBorderTop;
   }
 
-  public Short getCellBorderBottom() {
+  public short getCellBorderBottom() {
     return cellBorderBottom;
   }
 
-  public void setCellBorderBottom(Short cellBorderBottom) {
+  public void setCellBorderBottom(short cellBorderBottom) {
     this.cellBorderBottom = cellBorderBottom;
   }
 

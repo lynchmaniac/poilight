@@ -61,7 +61,7 @@ public class PoiLightTest {
   @Test
   public void customStyleWorkbook() {
     Workbook wb = new XSSFWorkbook();
-
+    
     Table table = new Table();
     table.addHeader(new ExcelCell("ID"));
     table.addHeader(new ExcelCell("NOM"));
@@ -71,7 +71,7 @@ public class PoiLightTest {
     cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162));
     cs.setFillPattern(CellStyle.SOLID_FOREGROUND);
     table.setPosition("A1");
-    table.addData(new ExcelRow(new ExcelCell(1), new ExcelCell("Henri Loevenbruck"), new ExcelCell("L'apothicaire")));
+    table.addData(new ExcelRow(new ExcelCell("1"), new ExcelCell("Henri Loevenbruck"), new ExcelCell("L'apothicaire")));
     table.addData(new ExcelRow(new ExcelCell(2), new ExcelCell("Cyril Massarotto"), new ExcelCell("Dieu est un pote à moi")));
     table.addData(new ExcelRow(new ExcelCell(3), new ExcelCell("Bernard Werber"), new ExcelCell("Les fourmis")));
     table.addData(new ExcelRow(new ExcelCell(4, cs), new ExcelCell("Maxime Chattam"), new ExcelCell("In Tenebris")));

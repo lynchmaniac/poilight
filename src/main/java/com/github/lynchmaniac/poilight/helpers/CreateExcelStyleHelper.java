@@ -18,10 +18,17 @@ import java.util.HashMap;
  * 
  * @author vpiard
  * @since 0.1
- *
  */
-public class CreateExcelStyleHelper {
+public final class CreateExcelStyleHelper {
 
+  
+  /**
+   * Constructor.
+   */
+  public CreateExcelStyleHelper() {
+    
+  }
+  
   /**
    * Stores all Excel's styles.
    */
@@ -35,7 +42,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_THIN<br>
    * Right : BORDER_THIN<br>
    */
-  private static BorderStyle mediumThin = new BorderStyle(CellStyle.BORDER_MEDIUM, 
+  private static final BorderStyle mediumThin = new BorderStyle(CellStyle.BORDER_MEDIUM, 
                                                           CellStyle.BORDER_THIN, 
                                                           CellStyle.BORDER_THIN,
                                                           CellStyle.BORDER_THIN);
@@ -47,7 +54,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static BorderStyle mediumTopBottom = new BorderStyle(CellStyle.BORDER_MEDIUM, 
+  private static final BorderStyle mediumTopBottom = new BorderStyle(CellStyle.BORDER_MEDIUM, 
                                                                 CellStyle.BORDER_MEDIUM, 
                                                                 CellStyle.BORDER_NONE, 
                                                                 CellStyle.BORDER_NONE);
@@ -59,7 +66,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static BorderStyle mediumBottom = new BorderStyle(CellStyle.BORDER_MEDIUM, 
+  private static final BorderStyle mediumBottom = new BorderStyle(CellStyle.BORDER_MEDIUM, 
                                                             CellStyle.BORDER_NONE, 
                                                             CellStyle.BORDER_NONE, 
                                                             CellStyle.BORDER_NONE);
@@ -71,7 +78,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static BorderStyle none = new BorderStyle(CellStyle.BORDER_NONE, 
+  private static final BorderStyle none = new BorderStyle(CellStyle.BORDER_NONE, 
                                                     CellStyle.BORDER_NONE, 
                                                     CellStyle.BORDER_NONE, 
                                                     CellStyle.BORDER_NONE);
@@ -83,7 +90,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static BorderStyle oneThin = new BorderStyle(CellStyle.BORDER_THIN, 
+  private static final BorderStyle oneThin = new BorderStyle(CellStyle.BORDER_THIN, 
                                                         CellStyle.BORDER_NONE, 
                                                         CellStyle.BORDER_NONE, 
                                                         CellStyle.BORDER_NONE);
@@ -95,7 +102,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static BorderStyle noneThin = new BorderStyle(CellStyle.BORDER_THIN, 
+  private static final BorderStyle noneThin = new BorderStyle(CellStyle.BORDER_THIN, 
                                                         CellStyle.BORDER_THIN, 
                                                         CellStyle.BORDER_NONE, 
                                                         CellStyle.BORDER_NONE);
@@ -107,7 +114,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_THIN<br>
    * Right : BORDER_THIN<br>
    */
-  private static BorderStyle allThin = new BorderStyle(CellStyle.BORDER_THIN, 
+  private static final BorderStyle allThin = new BorderStyle(CellStyle.BORDER_THIN, 
                                                         CellStyle.BORDER_THIN, 
                                                         CellStyle.BORDER_THIN, 
                                                         CellStyle.BORDER_THIN);
@@ -119,7 +126,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_MEDIUM<br>
    * Right : BORDER_MEDIUM<br>
    */
-  private static BorderStyle allMedium = new BorderStyle(CellStyle.BORDER_MEDIUM, 
+  private static final BorderStyle allMedium = new BorderStyle(CellStyle.BORDER_MEDIUM, 
                                                           CellStyle.BORDER_MEDIUM, 
                                                           CellStyle.BORDER_MEDIUM, 
                                                           CellStyle.BORDER_MEDIUM);
@@ -131,7 +138,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_MEDIUM<br>
    * Right : BORDER_MEDIUM<br>
    */
-  private static BorderStyle mediumLeftRight = new BorderStyle(CellStyle.BORDER_THIN, 
+  private static final BorderStyle mediumLeftRight = new BorderStyle(CellStyle.BORDER_THIN, 
                                                                 CellStyle.BORDER_THIN, 
                                                                 CellStyle.BORDER_MEDIUM, 
                                                                 CellStyle.BORDER_MEDIUM);
@@ -143,7 +150,7 @@ public class CreateExcelStyleHelper {
    * Left : BORDER_MEDIUM<br>
    * Right : BORDER_MEDIUM<br>
    */
-  private static BorderStyle mediumBottomLeftRight = new BorderStyle(CellStyle.BORDER_MEDIUM, 
+  private static final BorderStyle mediumBottomLeftRight = new BorderStyle(CellStyle.BORDER_MEDIUM, 
                                                                       CellStyle.BORDER_THIN, 
                                                                       CellStyle.BORDER_MEDIUM, 
                                                                       CellStyle.BORDER_MEDIUM);
@@ -152,216 +159,216 @@ public class CreateExcelStyleHelper {
   /**
    * The font color WHITE : 255, 255, 255.
    */
-  private static XSSFColor FONT_WHITE = StyleHelper.getColor(255, 255, 255);
+  private static final XSSFColor FONT_WHITE = StyleHelper.getColor(255, 255, 255);
   /**
    * The font color BLACK : 0, 0, 0.
    */
-  private static XSSFColor FONT_BLACK = StyleHelper.getColor(0, 0, 0);
+  private static final XSSFColor FONT_BLACK = StyleHelper.getColor(0, 0, 0);
   /**
    * The font color BLUE : 54, 96, 146.
    */
-  private static XSSFColor FONT_BLUE = StyleHelper.getColor(54, 96, 146);
+  private static final XSSFColor FONT_BLUE = StyleHelper.getColor(54, 96, 146);
   /**
    * The font color RED : 150, 54, 52.
    */
-  private static XSSFColor FONT_RED = StyleHelper.getColor(150, 54, 52);
+  private static final XSSFColor FONT_RED = StyleHelper.getColor(150, 54, 52);
   /**
    * The font color GREEN : 118, 147, 60.
    */
-  private static XSSFColor FONT_GREEN = StyleHelper.getColor(118, 147, 60);
+  private static final XSSFColor FONT_GREEN = StyleHelper.getColor(118, 147, 60);
   /**
    * The font color PURPLE : 96, 73, 122.
    */
-  private static XSSFColor FONT_PURPLE = StyleHelper.getColor(96, 73, 122);
+  private static final XSSFColor FONT_PURPLE = StyleHelper.getColor(96, 73, 122);
   /**
    * The font color TURQUOISE : 49, 134, 155.
    */
-  private static XSSFColor FONT_TURQUOISE = StyleHelper.getColor(49, 134, 155);
+  private static final XSSFColor FONT_TURQUOISE = StyleHelper.getColor(49, 134, 155);
   /**
    * The font color ORANGE : 226, 107,10.
    */
-  private static XSSFColor FONT_ORANGE = StyleHelper.getColor(226, 107,10);
+  private static final XSSFColor FONT_ORANGE = StyleHelper.getColor(226, 107,10);
 
 
   /**
    * Color WHITE : 255, 255, 255.
    */
-  private static XSSFColor BACKGROUND_WHITE = StyleHelper.getColor(255, 255, 255);
+  private static final XSSFColor BACKGROUND_WHITE = StyleHelper.getColor(255, 255, 255);
   /**
    * Color BLACK : 0, 0, 0.
    */
-  private static XSSFColor BACKGROUND_BLACK = StyleHelper.getColor(0, 0, 0);
+  private static final XSSFColor BACKGROUND_BLACK = StyleHelper.getColor(0, 0, 0);
   /**
    * Color GRAY : 217, 217, 217.
    */
-  private static XSSFColor BACKGROUND_GRAY = StyleHelper.getColor(217, 217, 217);
+  private static final XSSFColor BACKGROUND_GRAY = StyleHelper.getColor(217, 217, 217);
   /**
    * Color GRAY Medium : 166, 166, 166.
    */
-  private static XSSFColor BACKGROUND_GRAY_MEDIUM = StyleHelper.getColor(166, 166, 166);
+  private static final XSSFColor BACKGROUND_GRAY_MEDIUM = StyleHelper.getColor(166, 166, 166);
   /**
    * Color GRAY DARK : 115, 115, 115.
    */
-  private static XSSFColor BACKGROUND_GRAY_DARK = StyleHelper.getColor(115, 115, 115);
+  private static final XSSFColor BACKGROUND_GRAY_DARK = StyleHelper.getColor(115, 115, 115);
   /**
    * Color GRAY DARKER : 64, 64, 64.
    */
-  private static XSSFColor BACKGROUND_GRAY_DARKER = StyleHelper.getColor(64, 64, 64);
+  private static final XSSFColor BACKGROUND_GRAY_DARKER = StyleHelper.getColor(64, 64, 64);
   /**
    * Color BLUE : 220, 230,241.
    */
-  private static XSSFColor BACKGROUND_BLUE = StyleHelper.getColor(220, 230,241);
+  private static final XSSFColor BACKGROUND_BLUE = StyleHelper.getColor(220, 230,241);
   /**
    * Color BLUE : 79, 129, 189.
    */
-  private static XSSFColor BACKGROUND_BLUE_HEAD = StyleHelper.getColor(79, 129, 189);
+  private static final XSSFColor BACKGROUND_BLUE_HEAD = StyleHelper.getColor(79, 129, 189);
   /**
    * Color BLUE MEDIUM: 184, 204, 228.
    */
-  private static XSSFColor BACKGROUND_BLUE_MEDIUM = StyleHelper.getColor(184, 204, 228);
+  private static final XSSFColor BACKGROUND_BLUE_MEDIUM = StyleHelper.getColor(184, 204, 228);
   /**
    * Color BLUE DARK : 79, 129, 189.
    */
-  private static XSSFColor BACKGROUND_BLUE_DARK = StyleHelper.getColor(79, 129, 189);
+  private static final XSSFColor BACKGROUND_BLUE_DARK = StyleHelper.getColor(79, 129, 189);
   /**
    * Color BLUE DARKER : 54, 96, 146.
    */
-  private static XSSFColor BACKGROUND_BLUE_DARKER = StyleHelper.getColor(54, 96, 146);
+  private static final XSSFColor BACKGROUND_BLUE_DARKER = StyleHelper.getColor(54, 96, 146);
   /**
    * Color RED : 242, 220, 219.
    */
-  private static XSSFColor BACKGROUND_RED = StyleHelper.getColor(242, 220, 219);
+  private static final XSSFColor BACKGROUND_RED = StyleHelper.getColor(242, 220, 219);
   /**
    * Color RED HEAD : 192, 80, 77.
    */
-  private static XSSFColor BACKGROUND_RED_HEAD = StyleHelper.getColor(192, 80, 77);
+  private static final XSSFColor BACKGROUND_RED_HEAD = StyleHelper.getColor(192, 80, 77);
   /**
    * Color RED MEDIUM : 230, 184, 183.
    */
-  private static XSSFColor BACKGROUND_RED_MEDIUM = StyleHelper.getColor(230, 184, 183);
+  private static final XSSFColor BACKGROUND_RED_MEDIUM = StyleHelper.getColor(230, 184, 183);
   /**
    * Color RED DARK : 192, 80, 77.
    */
-  private static XSSFColor BACKGROUND_RED_DARK = StyleHelper.getColor(192, 80, 77);
+  private static final XSSFColor BACKGROUND_RED_DARK = StyleHelper.getColor(192, 80, 77);
   /**
    * Color RED DARKER : 150, 54, 52.
    */
-  private static XSSFColor BACKGROUND_RED_DARKER = StyleHelper.getColor(150, 54, 52);
+  private static final XSSFColor BACKGROUND_RED_DARKER = StyleHelper.getColor(150, 54, 52);
   /**
    * Color GREEN : 235, 241, 222.
    */
-  private static XSSFColor BACKGROUND_GREEN = StyleHelper.getColor(235, 241, 222);
+  private static final XSSFColor BACKGROUND_GREEN = StyleHelper.getColor(235, 241, 222);
   /**
    * Color GREEN HEAD : 155, 187, 89.
    */
-  private static XSSFColor BACKGROUND_GREEN_HEAD = StyleHelper.getColor(155, 187, 89);
+  private static final XSSFColor BACKGROUND_GREEN_HEAD = StyleHelper.getColor(155, 187, 89);
   /**
    * Color GREEN MEDIUM : 216, 228, 188.
    */
-  private static XSSFColor BACKGROUND_GREEN_MEDIUM = StyleHelper.getColor(216, 228, 188);
+  private static final XSSFColor BACKGROUND_GREEN_MEDIUM = StyleHelper.getColor(216, 228, 188);
   /**
    * Color GREEN DARK : 155, 187, 89.
    */
-  private static XSSFColor BACKGROUND_GREEN_DARK = StyleHelper.getColor(155, 187, 89);
+  private static final XSSFColor BACKGROUND_GREEN_DARK = StyleHelper.getColor(155, 187, 89);
   /**
    * Color GREEN DARKER : 118, 147, 60.
    */
-  private static XSSFColor BACKGROUND_GREEN_DARKER = StyleHelper.getColor(118, 147, 60);
+  private static final XSSFColor BACKGROUND_GREEN_DARKER = StyleHelper.getColor(118, 147, 60);
   /**
    * Color PURPLE : 228, 223, 236.
    */
-  private static XSSFColor BACKGROUND_PURPLE = StyleHelper.getColor(228, 223, 236);
+  private static final XSSFColor BACKGROUND_PURPLE = StyleHelper.getColor(228, 223, 236);
   /**
    * Color PURPLE HEAD : 128, 100, 162.
    */
-  private static XSSFColor BACKGROUND_PURPLE_HEAD = StyleHelper.getColor(128, 100, 162);
+  private static final XSSFColor BACKGROUND_PURPLE_HEAD = StyleHelper.getColor(128, 100, 162);
   /**
    * Color PURPLE MEDIUM : 204, 192, 218.
    */
-  private static XSSFColor BACKGROUND_PURPLE_MEDIUM = StyleHelper.getColor(204, 192, 218);
+  private static final XSSFColor BACKGROUND_PURPLE_MEDIUM = StyleHelper.getColor(204, 192, 218);
   /**
    * Color PURPLE DARK : 128, 100, 162.
    */
-  private static XSSFColor BACKGROUND_PURPLE_DARK = StyleHelper.getColor(128, 100, 162);
+  private static final XSSFColor BACKGROUND_PURPLE_DARK = StyleHelper.getColor(128, 100, 162);
   /**
    * Color PURPLE DARKER : 96, 73, 122.
    */
-  private static XSSFColor BACKGROUND_PURPLE_DARKER = StyleHelper.getColor(96, 73, 122);
+  private static final XSSFColor BACKGROUND_PURPLE_DARKER = StyleHelper.getColor(96, 73, 122);
   /**
    * Color TURQUOISE  : 218, 238, 243.
    */
-  private static XSSFColor BACKGROUND_TURQUOISE = StyleHelper.getColor(218, 238, 243);
+  private static final XSSFColor BACKGROUND_TURQUOISE = StyleHelper.getColor(218, 238, 243);
   /**
    * Color TURQUOISE HEAD : 75, 172, 198.
    */
-  private static XSSFColor BACKGROUND_TURQUOISE_HEAD = StyleHelper.getColor(75, 172, 198);
+  private static final XSSFColor BACKGROUND_TURQUOISE_HEAD = StyleHelper.getColor(75, 172, 198);
   /**
    * Color TURQUOISE MEDIUM : 183, 222, 232.
    */
-  private static XSSFColor BACKGROUND_TURQUOISE_MEDIUM = StyleHelper.getColor(183, 222, 232);
+  private static final XSSFColor BACKGROUND_TURQUOISE_MEDIUM = StyleHelper.getColor(183, 222, 232);
   /**
    * Color TURQUOISE DARK : 75, 172, 198.
    */
-  private static XSSFColor BACKGROUND_TURQUOISE_DARK = StyleHelper.getColor(75, 172, 198);
+  private static final XSSFColor BACKGROUND_TURQUOISE_DARK = StyleHelper.getColor(75, 172, 198);
   /**
    * Color TURQUOISE DARKER : 49, 134, 155.
    */
-  private static XSSFColor BACKGROUND_TURQUOISE_DARKER = StyleHelper.getColor(49, 134, 155);
+  private static final XSSFColor BACKGROUND_TURQUOISE_DARKER = StyleHelper.getColor(49, 134, 155);
   /**
    * Color ORANGE : 253, 233, 217.
    */
-  private static XSSFColor BACKGROUND_ORANGE = StyleHelper.getColor(253, 233, 217);
+  private static final XSSFColor BACKGROUND_ORANGE = StyleHelper.getColor(253, 233, 217);
   /**
    * Color ORANGE HEAD : 247, 150, 70.
    */
-  private static XSSFColor BACKGROUND_ORANGE_HEAD = StyleHelper.getColor(247, 150, 70);
+  private static final XSSFColor BACKGROUND_ORANGE_HEAD = StyleHelper.getColor(247, 150, 70);
   /**
    * Color ORANGE MEDIUM : 252, 213, 180.
    */
-  private static XSSFColor BACKGROUND_ORANGE_MEDIUM = StyleHelper.getColor(252, 213, 180);
+  private static final XSSFColor BACKGROUND_ORANGE_MEDIUM = StyleHelper.getColor(252, 213, 180);
   /**
    * Color ORANGE DARK : 247, 150, 70.
    */
-  private static XSSFColor BACKGROUND_ORANGE_DARK = StyleHelper.getColor(247, 150, 70);
+  private static final XSSFColor BACKGROUND_ORANGE_DARK = StyleHelper.getColor(247, 150, 70);
   /**
    * Color ORANGE DARKER : 226, 107, 10.
    */
-  private static XSSFColor BACKGROUND_ORANGE_DARKER = StyleHelper.getColor(226, 107, 10);
+  private static final XSSFColor BACKGROUND_ORANGE_DARKER = StyleHelper.getColor(226, 107, 10);
 
 
 
   /**
    * Border WHITE : 255, 255, 255.
    */
-  private static XSSFColor BORDER_WHITE = StyleHelper.getColor(255, 255, 255);
+  private static final XSSFColor BORDER_WHITE = StyleHelper.getColor(255, 255, 255);
   /**
    * Border BLACK : 0, 0, 0.
    */
-  private static XSSFColor BORDER_BLACK = StyleHelper.getColor(0, 0, 0);
+  private static final XSSFColor BORDER_BLACK = StyleHelper.getColor(0, 0, 0);
   /**
    * Border BLUE : 79, 129, 189.
    */
-  private static XSSFColor BORDER_BLUE = StyleHelper.getColor(79, 129, 189);
+  private static final XSSFColor BORDER_BLUE = StyleHelper.getColor(79, 129, 189);
   /**
    * Border RED : 192, 80, 77.
    */
-  private static XSSFColor BORDER_RED = StyleHelper.getColor(192, 80, 77);
+  private static final XSSFColor BORDER_RED = StyleHelper.getColor(192, 80, 77);
   /**
    * Border GREEN : 155, 187, 89.
    */
-  private static XSSFColor BORDER_GREEN = StyleHelper.getColor(155, 187, 89);
+  private static final XSSFColor BORDER_GREEN = StyleHelper.getColor(155, 187, 89);
   /**
    * Border PURPLE : 128, 100, 162.
    */
-  private static XSSFColor BORDER_PURPLE = StyleHelper.getColor(128, 100, 162);
+  private static final XSSFColor BORDER_PURPLE = StyleHelper.getColor(128, 100, 162);
   /**
    * Border TURQUOISE : 75, 172, 198.
    */
-  private static XSSFColor BORDER_TURQUOISE = StyleHelper.getColor(75, 172, 198);
+  private static final XSSFColor BORDER_TURQUOISE = StyleHelper.getColor(75, 172, 198);
   /**
    * Border ORANGE : 247, 150, 70.
    */
-  private static XSSFColor BORDER_ORANGE = StyleHelper.getColor(247, 150, 70);
+  private static final XSSFColor BORDER_ORANGE = StyleHelper.getColor(247, 150, 70);
 
 
 

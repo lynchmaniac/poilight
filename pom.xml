@@ -9,7 +9,7 @@
 
 	<name>Poilight</name>
 
-	<description>Poilight is an Apache POI wrapper for speeding up Excel spreadsheets generation. It contains 60 preset styles of Excel to generate stylized paintings cheaply.</description>
+	<description>Poilight is a wrapper of POI to accelerate the generation of Excel's files. Poilight embeds the entire 60 preset styles in Excel.</description>
 
 	<url>https://github.com/lynchmaniac/poilight</url>
 
@@ -113,7 +113,7 @@
 					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
-<!--  A DECOMMENTER POUR LE DEPLOIEMENT MAVEN -->
+<!--  ONLY FOR DEPLOYEMENT MAVEN -->
 <!-- 			<plugin> -->
 <!-- 				<groupId>org.apache.maven.plugins</groupId> -->
 <!-- 				<artifactId>maven-gpg-plugin</artifactId> -->

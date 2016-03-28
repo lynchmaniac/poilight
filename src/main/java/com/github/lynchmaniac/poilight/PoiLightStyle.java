@@ -18,8 +18,15 @@ import org.apache.poi.xssf.usermodel.extensions.XSSFCellBorder.BorderSide;
  * @author vpiard
  * @since 0.1
  */
-public class PoiLightStyle {
+public final class PoiLightStyle {
 
+  /**
+   * Constructor.
+   */
+  public PoiLightStyle() {
+    
+  }
+  
   /**
    * Create and send a form from the saved configuration.
    * 

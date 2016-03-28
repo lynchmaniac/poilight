@@ -1,5 +1,6 @@
 package com.github.lynchmaniac.poilight.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +12,13 @@ import java.util.List;
  * @author vpiard
  * @since 0.1
  */
-public class ExcelRow {
+public class ExcelRow implements Serializable {
 
+  /**
+   * UID.
+   */
+  private static final long serialVersionUID = 6578060542569742883L;
+  
   /**
    * All the cell of a row.
    */
@@ -50,9 +56,7 @@ public class ExcelRow {
    * @return all the ExcelCell of the row
    */
   public List<ExcelCell> getValue() {
-    if (value == null) {
-      value = new ArrayList<ExcelCell>();
-    }
+    initializeList();
     return value;
   }
 
@@ -62,9 +66,16 @@ public class ExcelRow {
    * @param value a ExcelCell
    */
   public void addValue(ExcelCell value) {
+    initializeList();
+    this.value.add(value);
+  }
+  
+  /**
+   * Check if the list is null and instanciate a new if it's true.
+   */
+  private void initializeList() {
     if (this.value == null) {
       this.value = new ArrayList<ExcelCell>();
     }
-    this.value.add(value);
   }
 }

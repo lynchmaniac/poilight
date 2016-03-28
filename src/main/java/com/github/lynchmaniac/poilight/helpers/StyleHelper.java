@@ -3,14 +3,21 @@ package com.github.lynchmaniac.poilight.helpers;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
 /**
- * This class contains all the technical utilities related style.
+ * This class contains all the technical utilities related to styles.
  * 
  * @author vpiard
  * @since 0.1
- *
  */
-public class StyleHelper {
+public final class StyleHelper {
 
+  
+  /**
+   * Constructor.
+   */
+  public StyleHelper() {
+    
+  }
+  
   /**
    * Returns the final color from the three red, green and blue.
    * 

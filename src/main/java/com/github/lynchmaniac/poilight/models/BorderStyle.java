@@ -3,7 +3,8 @@ package com.github.lynchmaniac.poilight.models;
 import org.apache.poi.ss.usermodel.CellStyle;
 
 /**
- * Configure all the style for each side of the cell.
+ * Configure all the border style for each side of the cell.
+ * You can have one specific style for every side of the cell.
  * 
  * @author vpiard
  * @since 0.1
@@ -13,19 +14,19 @@ public class BorderStyle {
   /**
    * The bottom cell style.
    */
-  private Short bottom = CellStyle.BORDER_NONE;
+  private short bottom = CellStyle.BORDER_NONE;
   /**
    * The top cell style.
    */
-  private Short top = CellStyle.BORDER_NONE;
+  private short top = CellStyle.BORDER_NONE;
   /**
    * The left cell style.
    */
-  private Short left = CellStyle.BORDER_NONE;
+  private short left = CellStyle.BORDER_NONE;
   /**
    * The right cell style.
    */
-  private Short right = CellStyle.BORDER_NONE;
+  private short right = CellStyle.BORDER_NONE;
 
   /**
    * Constructor.
@@ -42,7 +43,7 @@ public class BorderStyle {
    * @param left the left cell style
    * @param right the right cell style
    */
-  public BorderStyle(Short bottom, Short top, Short left, Short right) {
+  public BorderStyle(short bottom, short top, short left, short right) {
     super();
     this.bottom = bottom;
     this.top = top;
@@ -50,35 +51,35 @@ public class BorderStyle {
     this.right = right;
   }
   
-  public Short getBottom() {
+  public short getBottom() {
     return bottom;
   }
   
-  public void setBottom(Short bottom) {
+  public void setBottom(short bottom) {
     this.bottom = bottom;
   }
   
-  public Short getTop() {
+  public short getTop() {
     return top;
   }
   
-  public void setTop(Short top) {
+  public void setTop(short top) {
     this.top = top;
   }
   
-  public Short getLeft() {
+  public short getLeft() {
     return left;
   }
   
-  public void setLeft(Short left) {
+  public void setLeft(short left) {
     this.left = left;
   }
   
-  public Short getRight() {
+  public short getRight() {
     return right;
   }
   
-  public void setRight(Short right) {
+  public void setRight(short right) {
     this.right = right;
   }
 

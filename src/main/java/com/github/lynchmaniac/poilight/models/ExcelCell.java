@@ -1,7 +1,9 @@
 package com.github.lynchmaniac.poilight.models;
 
+
 import org.apache.poi.ss.usermodel.CellStyle;
 
+import java.io.Serializable;
 
 
 /**
@@ -10,8 +12,13 @@ import org.apache.poi.ss.usermodel.CellStyle;
  * @author vpiard
  * @since 0.1
  */
-public class ExcelCell {
+public class ExcelCell implements Serializable {
 
+  /**
+   * UID.
+   */
+  private static final long serialVersionUID = -3458532388085217659L;
+  
   /**
    * Represent the content of the cell.
    * It can be whatever you want : String, numerical, date...
@@ -87,15 +94,15 @@ public class ExcelCell {
   }
 
   public void setValue(Double value) {
-    this.value = String.valueOf(value);
+    this.value = value;
   }
 
   public void setValue(Integer value) {
-    this.value = String.valueOf(value);
+    this.value = value;
   }
 
   public void setValue(Long value) {
-    this.value = String.valueOf(value);
+    this.value = value;
   }
 
   public boolean isColor() {
