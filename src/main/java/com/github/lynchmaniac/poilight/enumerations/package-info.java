@@ -1,8 +1,8 @@
 /**
- * Package contenant les diverses énumérations utilisées
- * dans la librairie.
+ * Package containing various enumerations used in the library.
  * 
- * @since 1.0
+ * @author vpiard
+ * @since 0.1
  */
 package com.github.lynchmaniac.poilight.enumerations;
 

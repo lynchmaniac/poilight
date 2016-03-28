@@ -1,8 +1,9 @@
 /**
- * Package contenant toutes les entités
- * de la librairie. Il s'agit de simple POJO.
+ * Package containing all features of the library.
+ * This is a simple POJO.
  *   
- * @since 1.0
+ * @author vpiard
+ * @since 0.1
  */
 package com.github.lynchmaniac.poilight.models;
 

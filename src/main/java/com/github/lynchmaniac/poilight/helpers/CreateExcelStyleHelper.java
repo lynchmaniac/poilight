@@ -18,7 +18,6 @@ import java.util.HashMap;
  * 
  * @author vpiard
  * @since 0.1
- *
  */
 public class CreateExcelStyleHelper {
 

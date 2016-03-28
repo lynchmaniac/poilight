@@ -7,7 +7,6 @@ import org.apache.poi.xssf.usermodel.XSSFColor;
  * 
  * @author vpiard
  * @since 0.1
- *
  */
 public class StyleHelper {
 
