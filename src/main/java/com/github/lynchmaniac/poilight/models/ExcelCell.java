@@ -1,13 +1,16 @@
 package com.github.lynchmaniac.poilight.models;
 
-
 import org.apache.poi.ss.usermodel.CellStyle;
 
 import java.io.Serializable;
 
 
+
 /**
- * This object resume the content of a cell
+ * This object resume the content of a cell.
+ * You can customize the style of the cell with the property style.
+ * If you want to highlight the cell, you must set the property color to true.
+ * If you want set a formula in the cell, you must set the property formula to true.
  * 
  * @author vpiard
  * @since 0.1
@@ -33,6 +36,11 @@ public class ExcelCell implements Serializable {
    * Represent the style of the cell.
    */
   private CellStyle style;
+  
+  /**
+   * Indicate if the content of the cell is a formula.
+   */
+  private boolean formula;
 
   /**
    * Constructor.
@@ -61,12 +69,12 @@ public class ExcelCell implements Serializable {
    * Constructor.
    * 
    * @param value the cell's value
-   * @param color indicates whether the cell should be colored
+   * @param isFormula indicate if the content of the cell is a formula
    */
-  public ExcelCell(Object value, boolean color) {
+  public ExcelCell(Object value, boolean isFormula) {
     super();
     this.value = value;
-    this.color = color;
+    this.formula = isFormula;
   }
 
 
@@ -74,16 +82,31 @@ public class ExcelCell implements Serializable {
    * Constructor.
    * 
    * @param value the cell's value
-   * @param color indicates whether the cell should be colored
+   * @param isFormula indicate if the content of the cell is a formula
    * @param style the cell's style
    */
-  public ExcelCell(Object value, boolean color, CellStyle style) {
+  public ExcelCell(Object value, boolean isFormula, CellStyle style) {
+    super();
+    this.value = value;
+    this.formula = isFormula;
+    this.style = style;
+  }
+
+  /**
+   * Constructor.
+   * 
+   * @param value the cell's value
+   * @param isFormula indicate if the content of the cell is a formula
+   * @param style the cell's style
+   * @param color indicates whether the cell should be colored
+   */
+  public ExcelCell(Object value, boolean isFormula, CellStyle style, boolean color) {
     super();
     this.value = value;
     this.color = color;
     this.style = style;
+    this.formula = isFormula;
   }
-
 
   public Object getValue() {
     return value;
@@ -119,6 +142,14 @@ public class ExcelCell implements Serializable {
 
   public void setStyle(CellStyle style) {
     this.style = style;
+  }
+
+  public boolean isFormula() {
+    return formula;
+  }
+
+  public void setFormula(boolean formula) {
+    this.formula = formula;
   }
 
 }

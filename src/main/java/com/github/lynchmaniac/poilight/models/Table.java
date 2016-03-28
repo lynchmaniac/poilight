@@ -114,6 +114,17 @@ public class Table implements Serializable {
     }
     this.header.add(header);
   }
+  
+  /**
+   * Fix all the header in one time.
+   * 
+   * @param datas all the header  
+   */
+  public void addHeaders(ExcelCell ... datas) {
+    for (ExcelCell header : datas) {
+      addHeader(header);
+    }
+  }
 
   /**
    * Return the name of the sheet which must

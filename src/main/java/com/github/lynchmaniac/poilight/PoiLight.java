@@ -120,6 +120,7 @@ public final class PoiLight {
    * @param firstCol the index of the first column
    */
   private static void createTable(Workbook wb, Table data, boolean isStreaming) {
+    
     // determine the current sheet
     if (data.getSheetName() == null || "".equals(data.getSheetName())) {
       data.setSheetName(PoiLightConst.DEFAULT_SHEET_NAME);
@@ -278,7 +279,12 @@ public final class PoiLight {
    */
   private static void setCellValue(Cell currentCell, ExcelCell cell) {
     if (cell.getValue() instanceof String) {
-      currentCell.setCellValue((String) cell.getValue());
+      if (cell.isFormula()) {
+        currentCell.setCellType(Cell.CELL_TYPE_FORMULA);
+        currentCell.setCellFormula((String) cell.getValue());
+      } else {
+        currentCell.setCellValue((String) cell.getValue());
+      }
     }
     if (cell.getValue() instanceof Integer) {
       currentCell.setCellValue((Integer) cell.getValue());
