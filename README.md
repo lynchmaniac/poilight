@@ -1,7 +1,7 @@
 # POILIGHT
 [![Build Status](https://travis-ci.org/lynchmaniac/poilight.svg?branch=master)](https://travis-ci.org/lynchmaniac/poilight)
 
-Poilight is a wrapper of POI to accellerate the generation of Excel's files.
+Poilight is a wrapper of POI to accelerate the generation of Excel's files.
 
 ## Generate a simple File
 The principle of poilight is to simply manage Excel spreadsheets. It's simple tables corresponding to the output of your Java applications. You must set a complete full path for your file and fill some data. For that, you can use the Table object, see the next chapter.
@@ -12,9 +12,9 @@ The principle of poilight is to simply manage Excel spreadsheets. It's simple ta
 		PoiLight.generateExcel(outputPathExcelFile, table);
 ```
 ## Structure of the data
-The data is a Table object. It is the table you want to achieve. If you want to add a headers, you can precise them with the addHeader method. It take a ExcelCell. ExcelCell is a structure in which you can precise the value and the of the cell. We will see this in a later chapter.
-You can pass data to the table object with the method addData which take a ExcelRow as parameter. ExcelRow is just a list of ExcelCell.
-This an example of a basic table
+The data is a Table object. It is the table you want to achieve. If you want to add a header, you can specify them with the addHeader method. It takes a ExcelCell. ExcelCell is a structure in which you can precise the value and the of the cell. We will see this in a later chapter.
+You can pass data to the table object with the method addData which takes a ExcelRow as parameter. ExcelRow is just a list of ExcelCell objects.
+Below is an example of a basic table :
 ```java
 		Table table = new Table();
 		table.addHeader(new ExcelCell("ID"));
@@ -28,7 +28,7 @@ This an example of a basic table
 ```
 
 ## Installation
-Poilight is an artefact Maven so you can put this in your pom.xml to have Poilight in your project.
+Poilight is a Maven artefact so you can put the dependency below in your pom.xml to use Poilight in your project.
 ```java
   	<dependencies>
 		<dependency>
@@ -45,13 +45,13 @@ By default, the tool manages XSSF files. If you want to manage large Excel files
 ```
 
 ## The predefined styles
-Poilight embeds the entire 60 preset styles in Excel. You can specifie a style with the enum BoardStyles.
+Poilight embeds the entire 60 preset styles in Excel. You can specify a style with the BoardStyles enum.
 ```java
 		Table table = new Table();
 		table.setStyle(BoardStyles.BOARD_LIGHT_RED_3_STYLE);
 		PoiLight.generateExcel(outputPathExcelFile, table);
 ```
-You can find in the example directory a Excel File with the 60 styles.
+You can find in the example directory an Excel File with the 60 styles.
 
 ## Specific sheet
 If you want to achieve your table on a specific spreadsheet, you can simply specify the name in the table object.
@@ -69,7 +69,7 @@ By default, your table start in A1. If you want another position, you can precis
 		PoiLight.generateExcel(outputPathExcelFile, table);
 ```
 ## Multiple table
-If you want multiple table on the same sheet, you can combine the table object and use the method createTable. This is a short example for making three tables in the same sheet. If you change the sheet name in the object table, then you can multiple table on multiple spreadsheet. If you have multiple sheet, then you must close your workbook with the metho Poilight.writeExcel.
+If you want multiple tables on the same sheet, you can mix the table object and use the method createTable. This is a short example for making three tables in the same sheet. If you change the sheet name in the object table, then you can multiply table for as many spreadsheet. If you have multiple sheets, then you must close your workbook with the metho Poilight.writeExcel.
 ```java
 		Workbook wb = new XSSFWorkbook();
 		PoiLight.createTable(wb, TestHelper.getTable("custom", BoardStyles.BOARD_LIGHT_BLUE_1_STYLE, "A1"));
@@ -79,7 +79,7 @@ If you want multiple table on the same sheet, you can combine the table object a
 ```
 ## Specific style
 
-If you don't want a predifined style, you can put a style on each cell by using the CellContent with a CellStyle from POI, like this
+If you don't want a predifined style, you can put a style on each cell by using the CellContent class with a CellStyle object from POI, like this
 
 <pre><code>
 		Table table = new Table();
