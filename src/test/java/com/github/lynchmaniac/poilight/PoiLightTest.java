@@ -115,13 +115,31 @@ public class PoiLightTest {
     PoiLight.generateExcel(TestHelper.getFullPath("TableNewStyleWorkbook.xlsx"), table);
     
   }
+  
+  @Test
+  public void tableNewStyle2Workbook() {
+    Table table = new Table();
+    table.addHeaders("ID", "NOM", "TITRE");
+    table.setPosition("D4");
+    table.setSheetName("test");
+    table.setStyle(BoardStyles.BOARD_DARK_MIX_4_STYLE);
+    table.addData(new ExcelRow(1, "Henri Loevenbruck", "L'apothicaire"));
+    table.addData(new ExcelRow(2, "Cyril Massarotto", "Dieu est un pote à moi"));
+    table.addData(new ExcelRow(3, "Bernard Werber", "Les fourmis"));
+    table.addData(new ExcelRow(4, "Maxime Chattam", "In Tenebris"));
+    table.addData(new ExcelRow(5, "Franck Thilliez", "Pandemia"));
+    
+    String excelFilename = TestHelper.getFullPath("TableNewStyle2Workbook.xlsx");
+    PoiLight.generateExcel(excelFilename, table);
+    TestHelper.testTable(excelFilename, table);
+  }
 
 
   /**
    * Create all the predefined Style in the same Workbook with
    * 3 differents tabs, one light, one medium and one dark.
    */
-  //@Test
+  @Test
   public void allStylesWorkbook() {
     String excelFilename = TestHelper.getFullPath("AllStylesWorkbook.xlsx");
     Workbook wb = new XSSFWorkbook();

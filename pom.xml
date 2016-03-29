@@ -4,7 +4,7 @@
 
 	<groupId>com.github.lynchmaniac</groupId>
 	<artifactId>poilight</artifactId>
-	<version>0.1.2-SNAPSHOT</version>
+	<version>0.1.2</version>
 	<packaging>jar</packaging>
 
 	<name>Poilight</name>
@@ -51,8 +51,8 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-			<!-- <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url> -->
+<!-- 			<url>https://oss.sonatype.org/content/repositories/snapshots</url> -->
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</snapshotRepository>
 		<repository>
 			<id>ossrh</id>

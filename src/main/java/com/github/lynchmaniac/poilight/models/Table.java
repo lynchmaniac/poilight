@@ -116,13 +116,24 @@ public class Table implements Serializable {
   }
   
   /**
-   * Fix all the header in one time.
+   * Fix all the ExcellCell header in one time.
    * 
    * @param datas all the header  
    */
   public void addHeaders(ExcelCell ... datas) {
     for (ExcelCell header : datas) {
       addHeader(header);
+    }
+  }
+  
+  /**
+   * Fix all the object header in one time.
+   * 
+   * @param datas all the header  
+   */
+  public void addHeaders(Object ... datas) {
+    for (Object content : datas) {
+      addHeader(new ExcelCell(content));
     }
   }
 

@@ -45,6 +45,21 @@ public class ExcelRow implements Serializable {
     }
   }
 
+  /**
+   * Constructor.
+   * You can put all the Object in parameters you want.
+   * It's useful when you want to create a row easily.
+   * But with this method you can't style on cell.
+   *
+   * @param datas a number undefined of ExcellCell
+   */
+  public ExcelRow(Object ... datas) {
+    super();
+    for (Object content : datas) {
+      addValue(new ExcelCell(content));
+    }
+  }
+  
   public ExcelRow(List<ExcelCell> value) {
     super();
     this.value = value;
