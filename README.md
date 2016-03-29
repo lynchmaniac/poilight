@@ -121,3 +121,16 @@ If you want multiple tables on the same sheet, you can mix the table object and 
 		PoiLight.createTable(wb, table_3);
 		PoiLight.writeExcel(wb, outputPathExcelFile);
 ```
+## Formula
+
+If you want to add formulas in your cells, is simple. Simply specify the boolean true when instantiating a ExcelCell.
+```java
+    Table table = new Table();
+    table.addHeaders("ID", "NOM", "TITRE", "FORMULE");
+    table.addData(new ExcelRow(new ExcelCell(1), new ExcelCell(2), new ExcelCell(3), new ExcelCell("SUM(D5:F5)", true)));
+    table.addData(new ExcelRow(new ExcelCell(2), new ExcelCell(10), new ExcelCell(5641), new ExcelCell("SUM(D6:F6)", true)));
+    table.addData(new ExcelRow(new ExcelCell(3), new ExcelCell(20), new ExcelCell(654), new ExcelCell("SUM(D7:F7)", true)));
+    table.addData(new ExcelRow(new ExcelCell(4), new ExcelCell(30), new ExcelCell(43), new ExcelCell("SUM(D8:F8)", true)));
+    
+    PoiLight.generateExcel(TestHelper.getFullPath("TableNewStyleWorkbook.xlsx"), table);
+```
