@@ -1,7 +1,7 @@
 language: java
-script: set MAVEN_OPTS="-Xmx256m" & mvn clean install
 before_script:
  - "echo $JAVA_OPTS"
  - "export JAVA_OPTS=-Xmx512m"
+script: set MAVEN_OPTS="-Xmx256m" & mvn clean install
 jdk:
   - oraclejdk7
