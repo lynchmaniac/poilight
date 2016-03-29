@@ -117,6 +117,22 @@ public class PoiLightTest {
   }
   
   @Test
+  public void tableNewStyle1Workbook() {
+    Table table = new Table();
+    table.addHeaders(new ExcelCell("ID"), new ExcelCell("NOM"), new ExcelCell("TITRE"), new ExcelCell("FORMULE"));
+    table.setPosition("D4");
+    table.setSheetName("test");
+    table.setStyle(BoardStyles.BOARD_DARK_MIX_4_STYLE);
+    table.addData(new ExcelRow(1, 2, 3, new ExcelCell("SUM(D5:F5)", true)));
+    table.addData(new ExcelRow(2, 10, 5641, new ExcelCell("SUM(D6:F6)", true)));
+    table.addData(new ExcelRow(3, 20, 654, new ExcelCell("SUM(D7:F7)", true)));
+    table.addData(new ExcelRow(4, 30, 43, new ExcelCell("SUM(D8:F8)", true)));
+    
+    PoiLight.generateExcel(TestHelper.getFullPath("TableNewStyle1Workbook.xlsx"), table);
+    
+  }
+  
+  @Test
   public void tableNewStyle2Workbook() {
     Table table = new Table();
     table.addHeaders("ID", "NOM", "TITRE");

@@ -56,7 +56,11 @@ public class ExcelRow implements Serializable {
   public ExcelRow(Object ... datas) {
     super();
     for (Object content : datas) {
-      addValue(new ExcelCell(content));
+      if (content instanceof ExcelCell) {
+        addValue((ExcelCell) content);
+      } else {
+        addValue(new ExcelCell(content));
+      }
     }
   }
   
