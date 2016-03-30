@@ -100,7 +100,7 @@ public class PoiLightTest {
   }
 
   
-  @Test
+  //@Test
   public void tableNewStyleWorkbook() {
     Table table = new Table();
     table.addHeaders(new ExcelCell("ID"), new ExcelCell("NOM"), new ExcelCell("TITRE"), new ExcelCell("FORMULE"));
@@ -116,7 +116,7 @@ public class PoiLightTest {
     
   }
   
-  @Test
+  //@Test
   public void tableNewStyle1Workbook() {
     Table table = new Table();
     table.addHeaders(new ExcelCell("ID"), new ExcelCell("NOM"), new ExcelCell("TITRE"), new ExcelCell("FORMULE"));
@@ -132,7 +132,7 @@ public class PoiLightTest {
     
   }
   
-  @Test
+  //@Test
   public void tableNewStyle2Workbook() {
     Table table = new Table();
     table.addHeaders("ID", "NOM", "TITRE");
