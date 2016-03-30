@@ -100,7 +100,7 @@ public class PoiLightTest {
   }
 
   
-  @Test
+  //@Test
   public void tableNewStyleWorkbook() {
     Table table = new Table();
     table.addHeaders(new ExcelCell("ID"), new ExcelCell("NOM"), new ExcelCell("TITRE"), new ExcelCell("FORMULE"));
@@ -116,7 +116,7 @@ public class PoiLightTest {
     
   }
   
-  @Test
+  //@Test
   public void tableNewStyle1Workbook() {
     Table table = new Table();
     table.addHeaders(new ExcelCell("ID"), new ExcelCell("NOM"), new ExcelCell("TITRE"), new ExcelCell("FORMULE"));
@@ -132,7 +132,7 @@ public class PoiLightTest {
     
   }
   
-  @Test
+  //@Test
   public void tableNewStyle2Workbook() {
     Table table = new Table();
     table.addHeaders("ID", "NOM", "TITRE");
@@ -155,7 +155,7 @@ public class PoiLightTest {
    * Create all the predefined Style in the same Workbook with
    * 3 differents tabs, one light, one medium and one dark.
    */
-  @Test
+  //@Test
   public void allStylesWorkbook() {
     String excelFilename = TestHelper.getFullPath("AllStylesWorkbook.xlsx");
     Workbook wb = new XSSFWorkbook();
