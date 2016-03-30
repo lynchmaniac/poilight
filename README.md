@@ -12,7 +12,7 @@ Poilight is a Maven artefact so you can put the dependency below in your pom.xml
 		<dependency>
 			<groupId>com.github.lynchmaniac</groupId>
 			<artifactId>poilight</artifactId>
-			<version>0.1</version>
+			<version>0.1.2</version>
 		</dependency>
 	</dependencies>
 ```
