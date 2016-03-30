@@ -155,7 +155,7 @@ public class PoiLightTest {
    * Create all the predefined Style in the same Workbook with
    * 3 differents tabs, one light, one medium and one dark.
    */
-  @Test
+  //@Test
   public void allStylesWorkbook() {
     String excelFilename = TestHelper.getFullPath("AllStylesWorkbook.xlsx");
     Workbook wb = new XSSFWorkbook();
