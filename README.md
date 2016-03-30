@@ -53,16 +53,17 @@ In poilight for a table, each row is represent by an ExcelRow object and each ce
 If you want to add a specific style to a cell, you can replace the strings of the header o data by an ExcelCell object. This accept in second parameter a CellStyle.
 You can customize all the style you want with this object.
 
-<pre><code>
+```java
 		Table table = new Table();
 		table.addHeaders("ID", "NOM", "TITRE");
-		<b>CellStyle cs = wb.createCellStyle();</b>
-		<b>cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162).getIndex());</b>
-		<b>cs.setFillPattern(CellStyle.SOLID_FOREGROUND);</b>
+		CellStyle cs = wb.createCellStyle();
+		cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162).getIndex());
+		cs.setFillPattern(CellStyle.SOLID_FOREGROUND);
+		....
+		table.addData(new ExcelRow(new ExcelCell(4, cs), "Maxime Chattam", "In Tenebris"));
+		table.addData(new ExcelRow(5, "Franck Thilliez", "Pandemia"));
+```
 
-		table.addData(new ExcelRow(new ExcelCell(4<b>, cs</b>), new ExcelCell("Maxime Chattam"), new ExcelCell("In Tenebris")));
-		table.addData(new ExcelRow(new ExcelCell(5), new ExcelCell("Franck Thilliez"), new ExcelCell("Pandemia")));
-</code></pre>
 Here we have a specific style on the first cell. The background is set to purple. With this mechanism you can customize style as you like.
 
 ###The predefined styles
