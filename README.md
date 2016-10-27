@@ -1,5 +1,6 @@
 # POILIGHT
 [![Build Status](https://travis-ci.org/lynchmaniac/poilight.svg?branch=master)](https://travis-ci.org/lynchmaniac/poilight)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Poilight is a wrapper of POI to accelerate the generation of Excel's files. Poilight only deals with Excel's files.
 
