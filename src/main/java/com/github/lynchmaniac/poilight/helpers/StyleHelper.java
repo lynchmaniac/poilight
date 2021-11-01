@@ -1,5 +1,6 @@
 package com.github.lynchmaniac.poilight.helpers;
 
+import org.apache.poi.xssf.usermodel.DefaultIndexedColorMap;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
 /**
@@ -11,11 +12,8 @@ import org.apache.poi.xssf.usermodel.XSSFColor;
 public final class StyleHelper {
 
   
-  /**
-   * Constructor.
-   */
-  public StyleHelper() {
-    
+  private StyleHelper() {
+    throw new IllegalStateException("Utility class");
   }
   
   /**
@@ -31,7 +29,8 @@ public final class StyleHelper {
     rgb[0] = (byte) red; 
     rgb[1] = (byte) green; 
     rgb[2] = (byte) blue; 
-    return  new XSSFColor(rgb);
+
+    return new XSSFColor(rgb, new DefaultIndexedColorMap());
 
   }
 

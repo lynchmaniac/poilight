@@ -100,7 +100,7 @@ public class TestHelper {
       TableStyle headerExpectedStyle = styles.get(table.getStyle()).get("HEAD");
 
       switch (cell.getCellType()) {
-        case Cell.CELL_TYPE_NUMERIC:
+        case NUMERIC:
           Double doubles = cell.getNumericCellValue();
           assertValue(header[cellIdx], String.valueOf(doubles.intValue()), isExtractStyle);
           break;
@@ -145,7 +145,7 @@ public class TestHelper {
         Cell cell = body.getCell(tableIdx);
 
         switch (cell.getCellType()) {
-          case Cell.CELL_TYPE_NUMERIC:
+          case NUMERIC:
             Double doubles = cell.getNumericCellValue();
             assertValue(dataExpected.get(cellIdx), String.valueOf(doubles.intValue()), isExtractStyle);
             break;

@@ -280,7 +280,6 @@ public final class PoiLight {
   private static void setCellValue(Cell currentCell, ExcelCell cell) {
     if (cell.getValue() instanceof String) {
       if (cell.isFormula()) {
-        currentCell.setCellType(Cell.CELL_TYPE_FORMULA);
         currentCell.setCellFormula((String) cell.getValue());
       } else {
         currentCell.setCellValue((String) cell.getValue());
