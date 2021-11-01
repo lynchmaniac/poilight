@@ -3,7 +3,8 @@ package com.github.lynchmaniac.poilight.models;
 import com.github.lynchmaniac.poilight.PoiLightConst;
 import com.github.lynchmaniac.poilight.helpers.StyleHelper;
 
-import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
 import java.io.Serializable;
@@ -24,15 +25,15 @@ public class TableStyle implements Serializable {
   /**
    * The font color.
    */
-  private XSSFColor fontColor = StyleHelper.getColor(0, 0, 0);
+  private transient XSSFColor fontColor = StyleHelper.getColor(0, 0, 0);
   /**
    * The color of the border of the cell.
    */
-  private XSSFColor borderColor = StyleHelper.getColor(0, 0, 0);
+  private transient XSSFColor borderColor = StyleHelper.getColor(0, 0, 0);
   /**
    * The style of the background of the cell.
    */
-  private XSSFColor fillColor = null;
+  private transient XSSFColor fillColor = null;
   /**
    * The font name.
    */
@@ -48,27 +49,27 @@ public class TableStyle implements Serializable {
   /**
    * Indicate the cell's alignment.
    */
-  private short alignment = CellStyle.ALIGN_LEFT;
+  private HorizontalAlignment alignment = HorizontalAlignment.LEFT;
 
   /**
    * The style of the border left of the cell.
    */
-  private short cellBorderLeft = CellStyle.BORDER_MEDIUM;
+  private BorderStyle cellBorderLeft = BorderStyle.MEDIUM;
 
   /**
    * The style of the border right of the cell.
    */
-  private short cellBorderRight = CellStyle.BORDER_MEDIUM;
+  private BorderStyle cellBorderRight = BorderStyle.MEDIUM;
 
   /**
    * The style of the border top of the cell.
    */
-  private short cellBorderTop = CellStyle.BORDER_THIN;
+  private BorderStyle cellBorderTop = BorderStyle.THIN;
 
   /**
    * The style of the border bottom of the cell.
    */
-  private short cellBorderBottom = CellStyle.BORDER_THIN;
+  private BorderStyle cellBorderBottom = BorderStyle.THIN;
 
 
   /**
@@ -100,7 +101,7 @@ public class TableStyle implements Serializable {
    * @param alignment the cell's alignment
    */
   public TableStyle(XSSFColor fontColor, XSSFColor fillColor, String fontName,
-      boolean isBold, short fontSize, short alignment) {
+      boolean isBold, short fontSize, HorizontalAlignment alignment) {
     super();
     this.fontColor = fontColor;
     this.fillColor = fillColor;
@@ -159,43 +160,43 @@ public class TableStyle implements Serializable {
     this.fontSize = fontSize;
   }
 
-  public short getAlignment() {
+  public HorizontalAlignment getAlignment() {
     return alignment;
   }
 
-  public void setAlignment(short alignment) {
+  public void setAlignment(HorizontalAlignment alignment) {
     this.alignment = alignment;
   }
 
-  public short getCellBorderLeft() {
+  public BorderStyle getCellBorderLeft() {
     return cellBorderLeft;
   }
 
-  public void setCellBorderLeft(short cellBorderLeft) {
+  public void setCellBorderLeft(BorderStyle cellBorderLeft) {
     this.cellBorderLeft = cellBorderLeft;
   }
 
-  public short getCellBorderRight() {
+  public BorderStyle getCellBorderRight() {
     return cellBorderRight;
   }
 
-  public void setCellBorderRight(short cellBorderRight) {
+  public void setCellBorderRight(BorderStyle cellBorderRight) {
     this.cellBorderRight = cellBorderRight;
   }
 
-  public short getCellBorderTop() {
+  public BorderStyle getCellBorderTop() {
     return cellBorderTop;
   }
 
-  public void setCellBorderTop(short cellBorderTop) {
+  public void setCellBorderTop(BorderStyle cellBorderTop) {
     this.cellBorderTop = cellBorderTop;
   }
 
-  public short getCellBorderBottom() {
+  public BorderStyle getCellBorderBottom() {
     return cellBorderBottom;
   }
 
-  public void setCellBorderBottom(short cellBorderBottom) {
+  public void setCellBorderBottom(BorderStyle cellBorderBottom) {
     this.cellBorderBottom = cellBorderBottom;
   }
 

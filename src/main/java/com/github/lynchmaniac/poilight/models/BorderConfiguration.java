@@ -1,6 +1,6 @@
 package com.github.lynchmaniac.poilight.models;
 
-import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.BorderStyle;
 
 /**
  * Configure all the border style for each side of the cell.
@@ -9,29 +9,29 @@ import org.apache.poi.ss.usermodel.CellStyle;
  * @author vpiard
  * @since 0.1
  */
-public class BorderStyle {
+public class BorderConfiguration {
 
   /**
    * The bottom cell style.
    */
-  private short bottom = CellStyle.BORDER_NONE;
+  private BorderStyle bottom = BorderStyle.NONE;
   /**
    * The top cell style.
    */
-  private short top = CellStyle.BORDER_NONE;
+  private BorderStyle top = BorderStyle.NONE;
   /**
    * The left cell style.
    */
-  private short left = CellStyle.BORDER_NONE;
+  private BorderStyle left = BorderStyle.NONE;
   /**
    * The right cell style.
    */
-  private short right = CellStyle.BORDER_NONE;
+  private BorderStyle right = BorderStyle.NONE;
 
   /**
    * Constructor.
    */
-  public BorderStyle() {
+  public BorderConfiguration() {
     super();
   }
 
@@ -43,7 +43,7 @@ public class BorderStyle {
    * @param left the left cell style
    * @param right the right cell style
    */
-  public BorderStyle(short bottom, short top, short left, short right) {
+  public BorderConfiguration(BorderStyle bottom, BorderStyle top, BorderStyle left, BorderStyle right) {
     super();
     this.bottom = bottom;
     this.top = top;
@@ -51,35 +51,35 @@ public class BorderStyle {
     this.right = right;
   }
   
-  public short getBottom() {
+  public BorderStyle getBottom() {
     return bottom;
   }
   
-  public void setBottom(short bottom) {
+  public void setBottom(BorderStyle bottom) {
     this.bottom = bottom;
   }
   
-  public short getTop() {
+  public BorderStyle getTop() {
     return top;
   }
   
-  public void setTop(short top) {
+  public void setTop(BorderStyle top) {
     this.top = top;
   }
   
-  public short getLeft() {
+  public BorderStyle getLeft() {
     return left;
   }
   
-  public void setLeft(short left) {
+  public void setLeft(BorderStyle left) {
     this.left = left;
   }
   
-  public short getRight() {
+  public BorderStyle getRight() {
     return right;
   }
   
-  public void setRight(short right) {
+  public void setRight(BorderStyle right) {
     this.right = right;
   }
 

@@ -10,7 +10,7 @@ import com.github.lynchmaniac.poilight.models.ExcelRow;
 import com.github.lynchmaniac.poilight.models.Table;
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -69,7 +69,7 @@ public class PoiLightTest {
 
     XSSFCellStyle cs = (XSSFCellStyle) wb.createCellStyle();
     cs.setFillForegroundColor(StyleHelper.getColor(128, 100, 162));
-    cs.setFillPattern(CellStyle.SOLID_FOREGROUND);
+    cs.setFillPattern(FillPatternType.SOLID_FOREGROUND);
     table.setPosition("A1");
     table.addData(new ExcelRow(new ExcelCell("1"), new ExcelCell("Henri Loevenbruck"), new ExcelCell("L'apothicaire")));
     table.addData(new ExcelRow(new ExcelCell(2), new ExcelCell("Cyril Massarotto"), new ExcelCell("Dieu est un pote à moi")));
@@ -88,7 +88,7 @@ public class PoiLightTest {
       Row row = sheet.getRow(4);
       Cell cell = row.getCell(0);
       XSSFCellStyle csValue = (XSSFCellStyle) cell.getCellStyle();
-      assertEquals(CellStyle.SOLID_FOREGROUND, csValue.getFillPattern());
+      assertEquals(FillPatternType.SOLID_FOREGROUND, csValue.getFillPattern());
       assertEquals(StyleHelper.getColor(128, 100, 162), csValue.getFillForegroundXSSFColor()); 
 
       wb.close();

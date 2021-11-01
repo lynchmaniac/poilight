@@ -5,6 +5,7 @@ import com.github.lynchmaniac.poilight.helpers.CreateExcelStyleHelper;
 import com.github.lynchmaniac.poilight.models.TableStyle;
 
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
@@ -55,7 +56,7 @@ public final class PoiLightStyle {
     XSSFCellStyle cellStyle = (XSSFCellStyle) workbook.createCellStyle();
     if (boardStyle.getFillColor() != null) {
       cellStyle.setFillForegroundColor(boardStyle.getFillColor());
-      cellStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+      cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
     }
     cellStyle.setBorderLeft(boardStyle.getCellBorderLeft());
     cellStyle.setBorderRight(boardStyle.getCellBorderRight());

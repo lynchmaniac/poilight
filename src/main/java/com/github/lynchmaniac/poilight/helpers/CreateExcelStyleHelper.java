@@ -2,10 +2,11 @@ package com.github.lynchmaniac.poilight.helpers;
 
 
 import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
-import com.github.lynchmaniac.poilight.models.BorderStyle;
+import com.github.lynchmaniac.poilight.models.BorderConfiguration;
 import com.github.lynchmaniac.poilight.models.TableStyle;
 
-import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 
 import java.util.HashMap;
@@ -26,7 +27,7 @@ public final class CreateExcelStyleHelper {
    * Constructor.
    */
   public CreateExcelStyleHelper() {
-    
+    throw new IllegalStateException("Utility class");
   }
   
   /**
@@ -42,10 +43,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_THIN<br>
    * Right : BORDER_THIN<br>
    */
-  private static final BorderStyle mediumThin = new BorderStyle(CellStyle.BORDER_MEDIUM, 
-                                                          CellStyle.BORDER_THIN, 
-                                                          CellStyle.BORDER_THIN,
-                                                          CellStyle.BORDER_THIN);
+  private static final BorderConfiguration mediumThin = new BorderConfiguration(BorderStyle.MEDIUM, 
+                                                          BorderStyle.THIN, 
+                                                          BorderStyle.THIN,
+                                                          BorderStyle.THIN);
   /**
    * The style of the border of the cell.
    * <br>
@@ -54,10 +55,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static final BorderStyle mediumTopBottom = new BorderStyle(CellStyle.BORDER_MEDIUM, 
-                                                                CellStyle.BORDER_MEDIUM, 
-                                                                CellStyle.BORDER_NONE, 
-                                                                CellStyle.BORDER_NONE);
+  private static final BorderConfiguration mediumTopBottom = new BorderConfiguration(BorderStyle.MEDIUM, 
+                                                                BorderStyle.MEDIUM, 
+                                                                BorderStyle.NONE, 
+                                                                BorderStyle.NONE);
   /**
    * The style of the border of the cell.
    * <br>
@@ -66,10 +67,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static final BorderStyle mediumBottom = new BorderStyle(CellStyle.BORDER_MEDIUM, 
-                                                            CellStyle.BORDER_NONE, 
-                                                            CellStyle.BORDER_NONE, 
-                                                            CellStyle.BORDER_NONE);
+  private static final BorderConfiguration mediumBottom = new BorderConfiguration(BorderStyle.MEDIUM, 
+                                                            BorderStyle.NONE, 
+                                                            BorderStyle.NONE, 
+                                                            BorderStyle.NONE);
   /**
    * The style of the border of the cell.
    * <br>
@@ -78,10 +79,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static final BorderStyle none = new BorderStyle(CellStyle.BORDER_NONE, 
-                                                    CellStyle.BORDER_NONE, 
-                                                    CellStyle.BORDER_NONE, 
-                                                    CellStyle.BORDER_NONE);
+  private static final BorderConfiguration none = new BorderConfiguration(BorderStyle.NONE, 
+                                                    BorderStyle.NONE, 
+                                                    BorderStyle.NONE, 
+                                                    BorderStyle.NONE);
   /**
    * The style of the border of the cell.
    * <br>
@@ -90,10 +91,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static final BorderStyle oneThin = new BorderStyle(CellStyle.BORDER_THIN, 
-                                                        CellStyle.BORDER_NONE, 
-                                                        CellStyle.BORDER_NONE, 
-                                                        CellStyle.BORDER_NONE);
+  private static final BorderConfiguration oneThin = new BorderConfiguration(BorderStyle.THIN, 
+  BorderStyle.NONE, 
+                                                        BorderStyle.NONE, 
+                                                        BorderStyle.NONE);
   /**
    * The style of the border of the cell.
    * <br>
@@ -102,10 +103,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_NONE<br>
    * Right : BORDER_NONE<br>
    */
-  private static final BorderStyle noneThin = new BorderStyle(CellStyle.BORDER_THIN, 
-                                                        CellStyle.BORDER_THIN, 
-                                                        CellStyle.BORDER_NONE, 
-                                                        CellStyle.BORDER_NONE);
+  private static final BorderConfiguration noneThin = new BorderConfiguration(BorderStyle.THIN, 
+                                                        BorderStyle.THIN, 
+                                                        BorderStyle.NONE, 
+                                                        BorderStyle.NONE);
   /**
    * The style of the border of the cell.
    * <br>
@@ -114,10 +115,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_THIN<br>
    * Right : BORDER_THIN<br>
    */
-  private static final BorderStyle allThin = new BorderStyle(CellStyle.BORDER_THIN, 
-                                                        CellStyle.BORDER_THIN, 
-                                                        CellStyle.BORDER_THIN, 
-                                                        CellStyle.BORDER_THIN);
+  private static final BorderConfiguration allThin = new BorderConfiguration(BorderStyle.THIN, 
+                                                        BorderStyle.THIN, 
+                                                        BorderStyle.THIN, 
+                                                        BorderStyle.THIN);
   /**
    * The style of the border of the cell.
    * <br>
@@ -126,10 +127,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_MEDIUM<br>
    * Right : BORDER_MEDIUM<br>
    */
-  private static final BorderStyle allMedium = new BorderStyle(CellStyle.BORDER_MEDIUM, 
-                                                          CellStyle.BORDER_MEDIUM, 
-                                                          CellStyle.BORDER_MEDIUM, 
-                                                          CellStyle.BORDER_MEDIUM);
+  private static final BorderConfiguration allMedium = new BorderConfiguration(BorderStyle.MEDIUM, 
+                                                          BorderStyle.MEDIUM, 
+                                                          BorderStyle.MEDIUM, 
+                                                          BorderStyle.MEDIUM);
   /**
    * The style of the border of the cell.
    * <br>
@@ -138,10 +139,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_MEDIUM<br>
    * Right : BORDER_MEDIUM<br>
    */
-  private static final BorderStyle mediumLeftRight = new BorderStyle(CellStyle.BORDER_THIN, 
-                                                                CellStyle.BORDER_THIN, 
-                                                                CellStyle.BORDER_MEDIUM, 
-                                                                CellStyle.BORDER_MEDIUM);
+  private static final BorderConfiguration mediumLeftRight = new BorderConfiguration(BorderStyle.THIN, 
+                                                                BorderStyle.THIN, 
+                                                                BorderStyle.MEDIUM, 
+                                                                BorderStyle.MEDIUM);
   /**
    * The style of the border of the cell.
    * <br>
@@ -150,10 +151,10 @@ public final class CreateExcelStyleHelper {
    * Left : BORDER_MEDIUM<br>
    * Right : BORDER_MEDIUM<br>
    */
-  private static final BorderStyle mediumBottomLeftRight = new BorderStyle(CellStyle.BORDER_MEDIUM, 
-                                                                      CellStyle.BORDER_THIN, 
-                                                                      CellStyle.BORDER_MEDIUM, 
-                                                                      CellStyle.BORDER_MEDIUM);
+  private static final BorderConfiguration mediumBottomLeftRight = new BorderConfiguration(BorderStyle.MEDIUM, 
+                                                                      BorderStyle.THIN, 
+                                                                      BorderStyle.MEDIUM, 
+                                                                      BorderStyle.MEDIUM);
 
 
   /**
@@ -907,7 +908,7 @@ public final class CreateExcelStyleHelper {
    * @param borderStyle the configuration of the cell's border
    * @return a complete configuration for a cell
    */
-  private static TableStyle getHeaderStyle(XSSFColor fontColor, XSSFColor fillColor, XSSFColor borderColor, BorderStyle borderStyle) {
+  private static TableStyle getHeaderStyle(XSSFColor fontColor, XSSFColor fillColor, XSSFColor borderColor, BorderConfiguration borderStyle) {
     TableStyle header = new TableStyle();
     borderStyle.completeBorderInfo(header);
     header.setBold(true);
@@ -930,9 +931,9 @@ public final class CreateExcelStyleHelper {
    * @return a complete configuration for a cell
    */
   private static TableStyle getBodyStyle(boolean isEven, XSSFColor evenColor, XSSFColor oddColor, 
-                                          XSSFColor fontColor, XSSFColor borderColor, BorderStyle borderStyle) {
+                                          XSSFColor fontColor, XSSFColor borderColor, BorderConfiguration borderStyle) {
     TableStyle body = new TableStyle();
-    body.setAlignment(CellStyle.ALIGN_LEFT);
+    body.setAlignment(HorizontalAlignment.LEFT);
     borderStyle.completeBorderInfo(body);
     body.setFontColor(fontColor);
     if (isEven) {
