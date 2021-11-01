@@ -15,6 +15,13 @@ import java.util.List;
 public class PoiLightData {
 
   /**
+   * Constructor
+   */
+  private PoiLightData() {
+    throw new IllegalStateException("Utility class");
+  }
+
+  /**
    * Return a table fully configured with all informations.
    * 
    * @param bs the predefined style

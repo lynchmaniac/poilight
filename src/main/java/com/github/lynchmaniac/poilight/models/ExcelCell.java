@@ -26,7 +26,7 @@ public class ExcelCell implements Serializable {
    * Represent the content of the cell.
    * It can be whatever you want : String, numerical, date...
    */
-  private Object value;
+  private transient Object value;
   /**
    * Indicates if the cell must be colored or not.
    * It's useful when you want to highlight a cell.
@@ -35,7 +35,7 @@ public class ExcelCell implements Serializable {
   /**
    * Represent the style of the cell.
    */
-  private CellStyle style;
+  private transient CellStyle style;
   
   /**
    * Indicate if the content of the cell is a formula.

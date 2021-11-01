@@ -24,8 +24,8 @@ public final class PoiLightStyle {
   /**
    * Constructor.
    */
-  public PoiLightStyle() {
-    
+  private PoiLightStyle() {
+    throw new IllegalStateException("Utility class");
   }
   
   /**
