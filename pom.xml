@@ -4,7 +4,7 @@
 
 	<groupId>com.github.lynchmaniac</groupId>
 	<artifactId>poilight</artifactId>
-	<version>0.1.2</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>Poilight</name>
@@ -43,7 +43,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<file.encoding>UTF-8</file.encoding>
-		<project.custom.java.version>1.6</project.custom.java.version>
+		<project.custom.java.version>11</project.custom.java.version>
 		<maven.compiler.source>${project.custom.java.version}</maven.compiler.source>
 		<maven.compiler.target>${project.custom.java.version}</maven.compiler.target>
 	</properties>
@@ -51,7 +51,6 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
-<!-- 			<url>https://oss.sonatype.org/content/repositories/snapshots</url> -->
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
 		</snapshotRepository>
 		<repository>
@@ -68,8 +67,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.5.1</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<release>11</release>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>

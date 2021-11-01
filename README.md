@@ -3,7 +3,8 @@
 ![Build Status](https://github.com/lynchmaniac/poilight/actions/workflows/build.yaml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Poilight is a wrapper of POI to accelerate the generation of Excel's files. Poilight only deals with Excel's files.
+Poilight is a wrapper of POI to accelerate the generation of Excel's files. Poilight can deals with xls and xlsx files.
+So Poilight is compatible with Excel's files and Libreoffice.'s files.
 
 ## Installation
 
@@ -14,9 +15,21 @@ Poilight is a Maven artefact so you can put the dependency below in your pom.xml
         <dependency>
             <groupId>com.github.lynchmaniac</groupId>
             <artifactId>poilight</artifactId>
-            <version>0.1.2</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
+```
+
+And then
+
+```sh
+mvn install
+```
+
+You can do a maven test to create some example of table style, in `src/test/resources`
+
+```sh
+mvn test
 ```
 
 ## Generate a simple File

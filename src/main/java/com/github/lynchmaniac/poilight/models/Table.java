@@ -121,8 +121,8 @@ public class Table implements Serializable {
    * @param datas all the header  
    */
   public void addHeaders(ExcelCell ... datas) {
-    for (ExcelCell header : datas) {
-      addHeader(header);
+    for (ExcelCell currentHeader : datas) {
+      addHeader(currentHeader);
     }
   }
   
@@ -199,7 +199,7 @@ public class Table implements Serializable {
     int multiplier = 0;
     for (int i = 0; i < chars.length;i++) {
       //get ascii value
-      multiplier = (int)chars[i] - 96;
+      multiplier = chars[i] - 96;
       //check for position
       retVal += multiplier * Math.pow(26, i);
     }

@@ -11,8 +11,8 @@ public final class PoiLightConst {
   /**
    * Constructor.
    */
-  public PoiLightConst() {
-    
+  private PoiLightConst() {
+    throw new IllegalStateException("Const class");
   }
   
   /**

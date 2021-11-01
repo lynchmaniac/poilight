@@ -1,6 +1,5 @@
 package com.github.lynchmaniac.poilight;
 
-import com.github.lynchmaniac.poilight.PoiLight;
 import com.github.lynchmaniac.poilight.enumerations.BoardStyles;
 
 import org.apache.poi.ss.usermodel.Workbook;
